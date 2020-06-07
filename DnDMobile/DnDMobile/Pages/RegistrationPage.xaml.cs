@@ -21,7 +21,7 @@ namespace DnDMobile.Pages
         }
 
 
-        private async void ButtonRegisterProcedure(object sender, EventArgs e)
+        private void ButtonRegisterProcedure(object sender, EventArgs e)
         {
             ButtonRegister.IsEnabled = false;
             User user = new User()
@@ -37,7 +37,7 @@ namespace DnDMobile.Pages
             }
             else
             {
-                await DisplayAlert("Alert", "Enter all data.", "OK");
+                DependencyService.Get<IToast>().Show("Complete form to continue!");
             }
 
             ButtonRegister.IsEnabled = true;
