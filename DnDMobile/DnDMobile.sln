@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnDMobile.Android", "DnDMobile.Android\DnDMobile.Android.csproj", "{95786FFF-0589-4388-8EF4-558E0088ABA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnDMobile", "DnDMobile\DnDMobile.csproj", "{4505E239-5A5F-40C3-B4B5-275B641E2907}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DnDMobile", "DnDMobile\DnDMobile.csproj", "{4505E239-5A5F-40C3-B4B5-275B641E2907}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
