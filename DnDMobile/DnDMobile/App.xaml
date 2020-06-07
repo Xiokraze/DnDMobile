@@ -6,6 +6,36 @@
              mc:Ignorable="d"
              x:Class="DnDMobile.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <!--Colors-->
+            <Color x:Key="DnDBlack">#030303</Color>
+            <Color x:Key="DnDDark">#290000</Color>
+            <Color x:Key="DnDRed">#930C10</Color>
+            <Color x:Key="DnDGold">#F7CE65</Color>
+            <Color x:Key="DnDLight">#FFFEBD</Color>
+            <Color x:Key="DefaultText">#FFFFFF</Color>
+
+            <!--Styles-->
+            <!--Entries-->
+            <Style x:Key="entryStyle" TargetType="Entry">
+                <Setter Property="Margin" Value="20,30,20,0"/>
+                <Setter Property="TextColor" Value="{StaticResource DnDLight}"/>
+                <Setter Property="PlaceholderColor" Value="{StaticResource DefaultText}"/>
+                <Setter Property="FontFamily" Value="Alger.ttf#Alger"/>
+            </Style>
+            <!--Buttons-->
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="Margin" Value="20,30,20,0"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource DnDBlack}"/>
+                <Setter Property="TextColor" Value="{StaticResource DefaultText}" />
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="BorderColor" Value="{StaticResource DnDLight}" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="FontFamily" Value="Alger.ttf#Alger"/>
+                
+            </Style>
+            
+        </ResourceDictionary>
 
     </Application.Resources>
 </Application>
