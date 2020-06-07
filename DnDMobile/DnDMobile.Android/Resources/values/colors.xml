@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="launcher_background">#FFFFFF</color>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+  <color name="launcher_background">#290000</color>
+  <color name="DnDBlack">#030303</color>
+  <color name="DnDDark">#290000</color>
+  <color name="DnDRed">#930C10</color>
+  <color name="DnDGold">#F7CE65</color>
+  <color name="DnDLight">#FFFEBD</color>
+
+
+  <color name="colorPrimary">#3F51B5</color>
+  <color name="colorPrimaryDark">#303F9F</color>
+  <color name="colorAccent">#FF4081</color>
 </resources>
