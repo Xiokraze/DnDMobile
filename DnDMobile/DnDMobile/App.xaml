@@ -23,6 +23,23 @@
                 <Setter Property="PlaceholderColor" Value="{StaticResource DefaultText}"/>
                 <Setter Property="FontFamily" Value="Alger.ttf#Alger"/>
             </Style>
+            
+            <!--Labels-->
+            <Style x:Key="labelHeaderStyle" TargetType="Label">
+                <Setter Property="Margin" Value="20,10,20,0"/>
+                <Setter Property="TextColor" Value="{StaticResource DnDLight}"/>
+                <Setter Property="FontFamily" Value="Alger.ttf#Alger"/>
+                <Setter Property="FontSize" Value="36"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+            <Style x:Key="labelDnDStyle" TargetType="Label">
+                <Setter Property="Margin" Value="20,10,20,0"/>
+                <Setter Property="TextColor" Value="{StaticResource DnDRed}"/>
+                <Setter Property="FontFamily" Value="DnDC.ttf#DnDC"/>
+                <Setter Property="FontSize" Value="Header"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+            
             <!--Buttons-->
             <Style x:Key="buttonStyle" TargetType="Button">
                 <Setter Property="Margin" Value="20,30,20,0"/>
