@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DnDMobile.Pages;
+using System;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace DnDMobile
@@ -28,7 +25,7 @@ namespace DnDMobile
 
         private async void ButtonRegisterProcedure(object sender, EventArgs e)
         {
-            await DisplayAlert("Alert", "In Development", "Ok");
+            await Navigation.PushAsync(new RegistrationPage());
         }
     }
 }
