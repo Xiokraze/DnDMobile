@@ -10,7 +10,7 @@
     <item name="windowActionBar">false</item>
     
     <!-- colorPrimary is used for the default action bar background -->
-    <!--<item name="colorPrimary">@color/DnDDark</item>-->
+    <item name="colorPrimary">@color/DnDBlack</item>
     
     <!--Status Bar Color-->
     <item name="colorPrimaryDark">@color/DnDRed</item>
@@ -25,6 +25,7 @@
     <item name="colorControlNormal">@color/DnDLight</item>
 
 
+
     <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
 
@@ -34,6 +35,12 @@
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
     <item name="colorAccent">@color/DnDLight</item>
   </style>
+
+  <!--Toolbar-->
+  <!--<style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+    <item name="android:fontFamily">"Alger.ttf#Alger"</item>
+    <item name="android:textSize">36sp</item>
+  </style>-->
 
 
   <!--Splash Screen Style-->
