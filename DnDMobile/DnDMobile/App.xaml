@@ -49,7 +49,6 @@
                 <Setter Property="BorderColor" Value="{StaticResource DnDLight}" />
                 <Setter Property="BorderWidth" Value="2" />
                 <Setter Property="FontFamily" Value="Alger.ttf#Alger"/>
-                
             </Style>
             
         </ResourceDictionary>
