@@ -24,6 +24,12 @@
     <!--Default Unfocused Color-->
     <item name="colorControlNormal">@color/DnDLight</item>
 
+    <!--Selected/Tapped Colors-->
+    <item name="android:colorPressedHighlight">@color/DnDDark</item>"
+    <item name="android:colorLongPressedHighlight">@color/DnDDark</item>"
+    <item name="android:colorFocusedHighlight">@color/DnDDark</item>"
+    <item name="android:colorActivatedHighlight">@color/DnDDark</item>"
+    <item name="android:activatedBackgroundIndicator">@color/DnDDark</item>"
 
 
     <!-- colorAccent is used as the default value for colorControlActivated
