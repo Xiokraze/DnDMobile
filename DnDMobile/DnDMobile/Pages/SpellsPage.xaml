@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DnDMobile.Pages.SpellsPage"
+             Title="Spells">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout x:Name="PageStack" Opacity="0">
+                <SearchBar x:Name="SearchBarSpells" TextChanged="OnSpellSearchTextChanged" Placeholder="Search" HorizontalTextAlignment="Center" CancelButtonColor="#F7CE65" PlaceholderColor="#F7CE65" TextColor="#FFFEBD" />
+                <ListView x:Name="ListViewSpells" ItemTapped="SpellSelected"  SeparatorColor="#F7CE65">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label FontSize="Large" Style="{StaticResource labelHeaderStyle}" Text="{Binding Name, StringFormat='{0:N}'}" LineBreakMode="NoWrap"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
