@@ -1,6 +1,5 @@
 ﻿using DnDMobile.Classes;
-using Plugin.Permissions;
-using Plugin.Permissions.Abstractions;
+using Newtonsoft.Json;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -23,9 +22,9 @@ namespace DnDMobile.Pages
         }
 
 
-        private void ButtonRegisterProcedure(object sender, EventArgs e)
+        private void ButtonSaveUserProcedure(object sender, EventArgs e)
         {
-            ButtonRegister.IsEnabled = false;
+            ButtonSaveUser.IsEnabled = false;
             User user = new User()
             {
                 Username = EntryUsername.Text,
@@ -35,13 +34,13 @@ namespace DnDMobile.Pages
 
             if (EnteredData(user) && PasswordsMatch(user))
             {
-                AttemptRegistration(user);
+                AttemptSaveUser(user);
             }
-            ButtonRegister.IsEnabled = true;
+            ButtonSaveUser.IsEnabled = true;
         }
 
 
-        private void AttemptRegistration(User user)
+        private void AttemptSaveUser(User user)
         {
             Hashing hashing = new Hashing();
             user.VerificationPassword = "";
@@ -50,16 +49,16 @@ namespace DnDMobile.Pages
         }
 
 
-        private  SaveUser(User user)
+        private void SaveUser(User user)
         {
             try
             {
-                if ()
-                
+                string userObject = JsonConvert.SerializeObject(user);
+                // TODO
             }
             catch
             {
-
+                // TODO
             }
         }
 
@@ -73,7 +72,7 @@ namespace DnDMobile.Pages
             }
             else
             {
-                DependencyService.Get<IToast>().Show("Passwords did not match!");
+                DependencyService.Get<IToast>().Show("Passwords do not match!");
                 EntryPassword.Text = "";
                 EntryConfirmPassword.Text = "";
                 return false;

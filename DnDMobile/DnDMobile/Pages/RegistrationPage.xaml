@@ -26,7 +26,7 @@
             <Entry Grid.Row="2" x:Name="EntryUsername" Placeholder="Username" Style="{StaticResource entryStyle}"/>
             <Entry Grid.Row="3" x:Name="EntryPassword" IsPassword="True" Placeholder="Password" Style="{StaticResource entryStyle}"/>
             <Entry Grid.Row="4" x:Name="EntryConfirmPassword" IsPassword="True" Placeholder="Confirm Password" Style="{StaticResource entryStyle}"/>
-            <Button Grid.Row="5" x:Name="ButtonRegister" Text="Save" Clicked="ButtonRegisterProcedure" Style="{StaticResource buttonStyle}"/>
+            <Button Grid.Row="5" x:Name="ButtonSaveUser" Text="Save" Clicked="ButtonSaveUserProcedure" Style="{StaticResource buttonStyle}"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
