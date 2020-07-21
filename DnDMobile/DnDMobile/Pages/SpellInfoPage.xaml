@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DnDMobile.Pages.SpellInfoPage">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <Grid Padding="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+       
+                <BoxView Grid.Row="0" Color="#290000" Grid.ColumnSpan="3" />
+                <Label Grid.Row="0" Grid.ColumnSpan="3" Style="{StaticResource labelGridStyle}" Text="{Binding Name, StringFormat='{0:N}'}" />
+
+                <BoxView Grid.Row="1" Grid.Column="0" Color="#290000" />
+                <Label Grid.Row="1" Grid.Column="0" FontSize="Medium" Style="{StaticResource labelGridStyle}" Text="Level" />
+                <BoxView Grid.Row="1" Grid.Column="1" Color="#290000" />
+                <Label Grid.Row="1" Grid.Column="1" FontSize="Medium" Style="{StaticResource labelGridStyle}" Text="Ritual" />
+                <BoxView Grid.Row="1" Grid.Column="2" Color="#290000" />
+                <Label Grid.Row="1" Grid.Column="2" FontSize="Medium" Style="{StaticResource labelGridStyle}" Text="Con" />
+
+                <Label Grid.Row="2" Grid.Column="0" FontSize="Medium" Style="{StaticResource labelSpellStatsStyle}" Text="{Binding Level, StringFormat='{0:N}'}" HorizontalOptions="Center"/>
+                <Label Grid.Row="2" Grid.Column="1" FontSize="Medium" Style="{StaticResource labelSpellStatsStyle}" Text="{Binding Ritual, StringFormat='{0:N}'}" HorizontalOptions="Center"/>
+                <Label Grid.Row="2" Grid.Column="2" FontSize="Medium" Style="{StaticResource labelSpellStatsStyle}" Text="{Binding Concentration, StringFormat='{0:N}'}" HorizontalOptions="Center"/>
+
+                <BoxView Grid.Row="3" Grid.Column="0" Color="#290000" />
+                <Label Grid.Row="3" Grid.Column="0" FontSize="Medium" Style="{StaticResource labelGridStyle}" Text="Attack" />
+                <BoxView Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Color="#290000" />
+                <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Medium" Style="{StaticResource labelSpellStatsStyle}" Text="{Binding Attack, StringFormat='{0:N}'}" HorizontalOptions="Center"/>
+
+                <BoxView Grid.Row="4" Grid.Column="0" Color="#290000" />
+                <Label Grid.Row="4" Grid.Column="0" FontSize="Medium" Style="{StaticResource labelGridStyle}" Text="Dmg/Effect" />
+                <BoxView Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Color="#290000" />
+                <Label Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Medium" Style="{StaticResource labelSpellStatsStyle}" Text="{Binding DamageEffect, StringFormat='{0:N}'}" HorizontalOptions="Center"/>
+                
+                
+                
+                <!--<BoxView Grid.Row="5" Grid.Column="0" Color="#290000" Grid.ColumnSpan="3" />
+                <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" FontSize="Medium" Style="{StaticResource labelGridStyle}" Text="Damage/Effect" />
+
+                <Label Grid.Row="6" Grid.ColumnSpan="3" FontSize="Medium" Style="{StaticResource labelSpellStatsStyle}" Text="{Binding DamageEffect, StringFormat='{0:N}'}" HorizontalOptions="Center"/>
+
+                <BoxView Grid.Row="7" Grid.Column="0" Color="#290000" Grid.ColumnSpan="3" />
+                <Label Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" FontSize="Medium" Style="{StaticResource labelGridStyle}" Text="At Higher Levels" />
+
+                <Label Grid.Row="8" Grid.ColumnSpan="3" FontSize="Medium" Style="{StaticResource labelSpellStatsStyle}" Text="{Binding AtHigherLevel, StringFormat='{0:N}'}" HorizontalOptions="Center"/>
+
+                <BoxView Grid.Row="9" Grid.Column="0" Color="#290000" Grid.ColumnSpan="3" />
+                <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" FontSize="Medium" Style="{StaticResource labelGridStyle}" Text="Casting Time" />
+
+                <Label Grid.Row="10" Grid.ColumnSpan="3" FontSize="Medium" Style="{StaticResource labelSpellStatsStyle}" Text="{Binding CastingTime, StringFormat='{0:N}'}" HorizontalOptions="Center"/>
+
+                <BoxView Grid.Row="11" Grid.Column="0" Color="#290000" Grid.ColumnSpan="3" />
+                <Label Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="3" FontSize="Medium" Style="{StaticResource labelGridStyle}" Text="Duration" />
+
+                <Label Grid.Row="12" Grid.ColumnSpan="3" FontSize="Medium" Style="{StaticResource labelSpellStatsStyle}" Text="{Binding Duration, StringFormat='{0:N}'}" HorizontalOptions="Center"/>
+
+                <BoxView Grid.Row="13" Grid.Column="0" Color="#290000" Grid.ColumnSpan="3" />
+                <Label Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="3" FontSize="Medium" Style="{StaticResource labelGridStyle}" Text="Range" />
+
+                <Label Grid.Row="14" Grid.ColumnSpan="3" FontSize="Medium" Style="{StaticResource labelSpellStatsStyle}" Text="{Binding Range, StringFormat='{0:N}'}" HorizontalOptions="Center"/>
+
+                <BoxView Grid.Row="15" Grid.Column="0" Color="#290000" Grid.ColumnSpan="3" />
+                <Label Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="3" FontSize="Medium" Style="{StaticResource labelGridStyle}" Text="Components" />
+
+                <Label Grid.Row="16" Grid.ColumnSpan="3" FontSize="Medium" Style="{StaticResource labelSpellStatsStyle}" Text="{Binding Components, StringFormat='{0:N}'}" HorizontalOptions="Center"/>-->
+
+                
+
+            </Grid>
+            
+            
+            <!--<StackLayout Orientation="Vertical">
+                <Label FontSize="Medium" Style="{StaticResource labelSpellStatsStyle}" Text="{Binding School, StringFormat='{0:N}'}" HorizontalOptions="Center"/>
+                <Label FontSize="Medium" Style="{StaticResource labelSpellStatsStyle}" Text="{Binding Source, StringFormat='{0:N}'}" HorizontalOptions="Center"/>
+                <Label FontSize="Medium" Style="{StaticResource labelSpellStatsStyle}" Text="{Binding AtHigherLevel, StringFormat='{0:N}'}" HorizontalOptions="Center"/>
+                <Label FontSize="Medium" Style="{StaticResource labelSpellStatsStyle}" Text="{Binding CastableBy, StringFormat='{0:N}'}" HorizontalOptions="Center"/>
+                <Label FontSize="Medium" Style="{StaticResource labelSpellStatsStyle}" Text="{Binding Description, StringFormat='{0:N}'}" HorizontalOptions="Center"/>
+            </StackLayout>-->
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
