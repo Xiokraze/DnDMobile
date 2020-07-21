@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DnDMobile.Pages;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace DnDMobile
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new NavigationPage(new MenuPage());
         }
 
         protected override void OnStart()
