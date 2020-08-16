@@ -2,6 +2,8 @@
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using Android.Support.V4.Content;
+using Android.Support.V4.App;
 
 namespace DnDMobile.Droid
 {
@@ -18,6 +20,15 @@ namespace DnDMobile.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+
+            int requestPermissions = (int)RequestedPermission.Required;
+            string writePermission = Android.Manifest.Permission.WriteExternalStorage;
+
+            if (!(ContextCompat.CheckSelfPermission(this, writePermission) == (int)Permission.Granted))
+            {
+                ActivityCompat.ShouldShowRequestPermissionRationale(this, writePermission);
+                ActivityCompat.RequestPermissions(this, new string[] { writePermission }, requestPermissions);
+            }
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
