@@ -9,7 +9,118 @@
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
             <StackLayout x:Name="PageStack" Opacity="0">
-                <SearchBar x:Name="SearchBarSpells" TextChanged="OnSpellSearchTextChanged" Placeholder="Search" HorizontalTextAlignment="Center" CancelButtonColor="#F7CE65" PlaceholderColor="#F7CE65" TextColor="#FFFEBD" />
+                <Label x:Name="LabelSorting" Text="Spell Filters" Style="{StaticResource labelHeaderStyle}" />
+                <Button x:Name="ButtonShowFilters" Text="Show Filters" Clicked="ButtonShowFilterOptions" Style="{StaticResource buttonSpellStyle}" />
+
+
+                <Grid x:Name="GridFilters" Padding="5" IsVisible="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" x:Name="LabelLevelPicker" Text="Level" Style="{StaticResource labelSpellFilterStyle}" />
+                    <Picker Grid.Row="0" Grid.Column="1" x:Name="SpellLevelPicker" Title="Level" SelectedIndexChanged="SpellFilterSelected" Style="{StaticResource pickerSpellFilterStyle}">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Cantrip</x:String>
+                                <x:String>1st</x:String>
+                                <x:String>2nd</x:String>
+                                <x:String>3rd</x:String>
+                                <x:String>4th</x:String>
+                                <x:String>5th</x:String>
+                                <x:String>6th</x:String>
+                                <x:String>7th</x:String>
+                                <x:String>8th</x:String>
+                                <x:String>9th</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Label Grid.Row="1" Grid.Column="0" x:Name="LabelSchoolPicker" Text="School" Style="{StaticResource labelSpellFilterStyle}" />
+                    <Picker Grid.Row="1" Grid.Column="1" x:Name="SpellSchoolPicker" Title="School" SelectedIndexChanged="SpellFilterSelected" Style="{StaticResource pickerSpellFilterStyle}">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Abjuration</x:String>
+                                <x:String>Conjuration</x:String>
+                                <x:String>Divination</x:String>
+                                <x:String>Enchantment</x:String>
+                                <x:String>Evocation</x:String>
+                                <x:String>Illusion</x:String>
+                                <x:String>Necromancy</x:String>
+                                <x:String>Transmutation</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Label Grid.Row="2" Grid.Column="0" x:Name="LabelRitualPicker" Text="Ritual" Style="{StaticResource labelSpellFilterStyle}"/>
+                    <Picker Grid.Row="2" Grid.Column="1" x:Name="SpellRitualPicker" Title="Ritual" SelectedIndexChanged="SpellFilterSelected" Style="{StaticResource pickerSpellFilterStyle}">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Yes</x:String>
+                                <x:String>No</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Label Grid.Row="3" Grid.Column="0" x:Name="LabelConcentrationPicker" Text="Concentration" Style="{StaticResource labelSpellFilterStyle}"/>
+                    <Picker Grid.Row="3" Grid.Column="1" x:Name="SpellConcentrationPicker" Title="Concentration" SelectedIndexChanged="SpellFilterSelected" Style="{StaticResource pickerSpellFilterStyle}">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Yes</x:String>
+                                <x:String>No</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Label Grid.Row="4" Grid.Column="0" x:Name="LabelCastableByPicker" Text="Castable By" Style="{StaticResource labelSpellFilterStyle}" />
+                    <Picker Grid.Row="4" Grid.Column="1" x:Name="SpellCastableByPicker" Title="Castable By" SelectedIndexChanged="SpellFilterSelected" Style="{StaticResource pickerSpellFilterStyle}">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Bard</x:String>
+                                <x:String>Cleric</x:String>
+                                <x:String>Druid</x:String>
+                                <x:String>Paladin</x:String>
+                                <x:String>Ranger</x:String>
+                                <x:String>Sorcerer</x:String>
+                                <x:String>Warlock</x:String>
+                                <x:String>Wizard</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Label Grid.Row="5" Grid.Column="0" x:Name="LabelSourcePicker" Text="Source" Style="{StaticResource labelSpellFilterStyle}" />
+                    <StackLayout Orientation="Horizontal" Grid.Row="5" Grid.Column="1">
+                        <Picker x:Name="SpellSourcePicker" Title="Source" SelectedIndexChanged="SpellFilterSelected" Style="{StaticResource pickerSpellFilterStyle}">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Elemental Evil Player's Companion</x:String>
+                                    <x:String>Player Handbook</x:String>
+                                    <x:String>Sword Coast Adventurer's Guide</x:String>
+                                    <x:String>Xanathar's Guide to Everything</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </StackLayout>
+                    
+
+                    <Button Grid.Row="6" Grid.Column="0" x:Name="ButtonHideFilters" Text="Hide Filters" Clicked="ButtonHideFilterOptions" Style="{StaticResource buttonSpellStyle}"/>
+                    <Button Grid.Row="6" Grid.Column="1" x:Name="ButtonResetFilters" Text="Reset Filters" Clicked="ButtonResetFilterOptions" Style="{StaticResource buttonSpellStyle}"/>
+                </Grid>
+                
+                
+                
+                <Label x:Name="LabelSpells" Text="Spells" Style="{StaticResource labelHeaderStyle}" />
+                <SearchBar x:Name="SearchBarSpells" FontFamily="Alger.ttf#Alger" TextChanged="OnSpellSearchTextChanged" BackgroundColor="#930C10" Placeholder="Search" HorizontalTextAlignment="Center" CancelButtonColor="#FFFEBD" PlaceholderColor="#FFFEBD" TextColor="#FFFEBD" />
                 <ListView x:Name="ListViewSpells" ItemTapped="SpellSelected"  SeparatorColor="#F7CE65">
                     <ListView.ItemTemplate>
                         <DataTemplate>
