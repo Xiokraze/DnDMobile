@@ -12,11 +12,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="spells.txt" />
+    <None Remove="completedSpells.txt" />
+    <None Remove="firstPass.txt" />
+    <None Remove="masterSpells.txt" />
+    <None Remove="partialData.txt" />
+    <None Remove="startData.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="spells.txt" />
+    <EmbeddedResource Include="completedSpells.txt" />
   </ItemGroup>
 
   <ItemGroup>
