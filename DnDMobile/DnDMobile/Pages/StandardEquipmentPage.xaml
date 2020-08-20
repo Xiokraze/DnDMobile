@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DnDMobile.Pages.StandardEquipmentPage"
+             Title="Equipment">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="LabelEquipment" Text="Standard Equipment" Style="{StaticResource labelHeaderStyle}" />
+            <Button x:Name="ButtonShowArmor" Text="Show Armor" Clicked="ButtonShowArmor" Style="{StaticResource buttonSpellStyle}" />
+            <Grid x:Name="GridStandardArmor" Padding="5" IsVisible="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="ButtonHideArmor" Text="HideArmor" Clicked="ButtonHideArmor" Style="{StaticResource buttonSpellStyle}" />
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
