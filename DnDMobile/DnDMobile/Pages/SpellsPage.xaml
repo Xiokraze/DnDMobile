@@ -121,11 +121,11 @@
                 
                 <Label x:Name="LabelSpells" Text="Spells" Style="{StaticResource labelHeaderStyle}" />
                 <SearchBar x:Name="SearchBarSpells" FontFamily="Alger.ttf#Alger" TextChanged="OnSpellSearchTextChanged" BackgroundColor="#930C10" Placeholder="Search" HorizontalTextAlignment="Center" CancelButtonColor="#FFFEBD" PlaceholderColor="#FFFEBD" TextColor="#FFFEBD" />
-                <ListView x:Name="ListViewSpells" ItemTapped="SpellSelected"  SeparatorColor="#F7CE65">
+                <ListView x:Name="ListViewSpells" ItemTapped="SpellSelected"  SeparatorColor="#F7CE65" HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Label FontSize="Large" Style="{StaticResource labelHeaderStyle}" Text="{Binding Name, StringFormat='{0:N}'}" LineBreakMode="NoWrap"/>
+                                <Label FontSize="Large" Style="{StaticResource labelHeaderStyle}" Text="{Binding Name, StringFormat='{0:N}'}" />
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
