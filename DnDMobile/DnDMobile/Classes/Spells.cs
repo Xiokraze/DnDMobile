@@ -1,10 +1,7 @@
-﻿using Java.IO;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 
 namespace DnDMobile.Classes
 {

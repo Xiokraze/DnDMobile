@@ -24,7 +24,7 @@ namespace DnDMobile.Classes
         public string Description { get; set; }
 
 
-        // Constructor
+        // Constructor.
         public Spell() { }
     }
 }
