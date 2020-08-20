@@ -23,5 +23,11 @@ namespace DnDMobile.Pages
         {
             await Navigation.PushAsync(new SpellsPage());
         }
+
+
+        private async void ButtonViewEquipmentProcedure(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new StandardEquipmentPage());
+        }
     }
 }
