@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DnDMobile.Pages.StandardWeaponsPage"
+             Title="Standard Weapons">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout x:Name="PageStack" Opacity="0">
+                <Label x:Name="LabelEquipment1" Text="Standard" Style="{StaticResource labelHeaderStyle}" />
+                <Label x:Name="LabelEquipment2" Text="Weapons" Style="{StaticResource labelHeaderStyle}" />
+                <SearchBar x:Name="SearchBarItems" FontFamily="Alger.ttf#Alger" TextChanged="OnItemsSearchTextChanged" BackgroundColor="#930C10" Placeholder="Search" HorizontalTextAlignment="Center" CancelButtonColor="#FFFEBD" PlaceholderColor="#FFFEBD" TextColor="#FFFEBD" />
+                
+                <!--Simple Melee Weapons-->
+                <Button x:Name="ButtonShowSimpleMeleeWeapons" Text="Show Simple Melee Weapons" Clicked="ButtonShowSimpleMeleeWeaponsProcedure" Style="{StaticResource buttonSpellStyle}" />
+                <Label x:Name="LabelSimpleMeleeHeader" Text="Simple Melee Weapons" Style="{StaticResource labelHeaderStyle}" FontSize="Large" IsVisible="False"/>
+                <ScrollView x:Name="ScrollviewSimpleMelee" Orientation="Horizontal" IsVisible="False">
+                    <Grid x:Name="SimpleMeleeWeaponsGrid" StyleId="IDSimpleMelee">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ScrollView>
+                <Button  x:Name="ButtonHideSimpleMeleeWeapons" Text="Hide Simple Melee Weapons" Clicked="ButtonHideSimpleMeleeWeaponsProcedure" Style="{StaticResource buttonSpellStyle}" IsVisible="False" />
+
+                <!--Simple Ranged Weapons-->
+                <Button x:Name="ButtonShowSimpleRangedWeapons" Text="Show Simple Ranged Weapons" Clicked="ButtonShowSimpleRangedWeaponsProcedure" Style="{StaticResource buttonSpellStyle}" />
+                <Label x:Name="LabelSimpleRangedHeader" Text="Simple Ranged Weapons" Style="{StaticResource labelHeaderStyle}" FontSize="Large" IsVisible="False"/>
+                <ScrollView x:Name="ScrollviewSimpleRanged" Orientation="Horizontal" IsVisible="False">
+                    <Grid x:Name="SimpleRangedWeaponsGrid" StyleId="IDSimpleRanged">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ScrollView>
+                <Button  x:Name="ButtonHideSimpleRangedWeapons" Text="Hide Simple Ranged Weapons" Clicked="ButtonHideSimpleRangedWeaponsProcedure" Style="{StaticResource buttonSpellStyle}" IsVisible="False" />
+
+                <!--Martial Melee Weapons-->
+                <Button x:Name="ButtonShowMartialMeleeWeapons" Text="Show Martial Melee Weapons" Clicked="ButtonShowMartialMeleeWeaponsProcedure" Style="{StaticResource buttonSpellStyle}" />
+                <Label x:Name="LabelMartialMeleeHeader" Text="Martial Melee Weapons" Style="{StaticResource labelHeaderStyle}" FontSize="Large" IsVisible="False"/>
+                <ScrollView x:Name="ScrollviewMartialMelee" Orientation="Horizontal" IsVisible="False">
+                    <Grid x:Name="MartialMeleeWeaponsGrid" StyleId="IDMartialMelee" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ScrollView>
+                <Button  x:Name="ButtonHideMartialMeleeWeapons" Text="Hide Martial Melee Weapons" Clicked="ButtonHideMartialMeleeWeaponsProcedure" Style="{StaticResource buttonSpellStyle}" IsVisible="False" />
+
+                <!--Martial Ranged Weapons-->
+                <Button x:Name="ButtonShowMartialRangedWeapons" Text="Show Martial Ranged Weapons" Clicked="ButtonShowMartialRangedWeaponsProcedure" Style="{StaticResource buttonSpellStyle}" />
+                <Label x:Name="LabelMartialRangedHeader" Text="Martial Ranged Weapons" Style="{StaticResource labelHeaderStyle}" FontSize="Large" IsVisible="False"/>
+                <ScrollView x:Name="ScrollviewMartialRanged" Orientation="Horizontal" IsVisible="False">
+                    <Grid x:Name="MartialRangedWeaponsGrid" StyleId="IDMartialRanged" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ScrollView>
+                <Button  x:Name="ButtonHideMartialRangedWeapons" Text="Hide Martial Ranged Weapons" Clicked="ButtonHideMartialRangedWeaponsProcedure" Style="{StaticResource buttonSpellStyle}" IsVisible="False" />
+
+
+            </StackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>
