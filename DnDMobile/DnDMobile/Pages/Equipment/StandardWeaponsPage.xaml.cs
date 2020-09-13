@@ -168,7 +168,7 @@ namespace DnDMobile.Pages
         }
 
 
-        public void CreateWeaponGridLabel(string text, int row, int col, Grid grid)
+        public void CreateWeaponGridLabel(string text, int row, int col, Grid grid, bool isHeader = false)
         {
             Label label = new Label()
             {
@@ -176,6 +176,10 @@ namespace DnDMobile.Pages
                 Style = (Style)Application.Current.Resources["labelGridDataStyle"],
                 HorizontalOptions = LayoutOptions.Start
             };
+            if (isHeader)
+            {
+                label.TextColor = Color.FromHex("#930C10");
+            }
             Grid.SetRow(label, row);
             Grid.SetColumn(label, col);
             grid.Children.Add(label);
@@ -186,11 +190,11 @@ namespace DnDMobile.Pages
         {
             RowDefinition rowDefinition = new RowDefinition();
             grid.RowDefinitions.Add(rowDefinition);
-            CreateWeaponGridLabel("Description", 0, 0, grid);
-            CreateWeaponGridLabel("Value", 0, 1, grid);
-            CreateWeaponGridLabel("Damage", 0, 2, grid);
-            CreateWeaponGridLabel("Weight", 0, 3, grid);
-            CreateWeaponGridLabel("Properties", 0, 4, grid);
+            CreateWeaponGridLabel("Description", 0, 0, grid, true);
+            CreateWeaponGridLabel("Value", 0, 1, grid, true);
+            CreateWeaponGridLabel("Damage", 0, 2, grid, true);
+            CreateWeaponGridLabel("Weight", 0, 3, grid, true);
+            CreateWeaponGridLabel("Properties", 0, 4, grid, true);
         }
 
 
