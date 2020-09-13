@@ -37,8 +37,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Pages\StandardEquipmentPage.xaml.cs">
-      <DependentUpon>StandardEquipmentPage.xaml</DependentUpon>
+    <Compile Update="Pages\Equipment\StandardWeaponsPage.xaml.cs">
+      <DependentUpon>StandardWeaponsPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -46,10 +46,13 @@
     <Compile Update="Pages\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Pages\Equipment\StandardEquipmentPage.xaml.cs">
+      <DependentUpon>StandardEquipmentPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Pages\StandardEquipmentPage.xaml">
+    <EmbeddedResource Update="Pages\Equipment\StandardWeaponsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\MenuPage.xaml">
@@ -58,10 +61,13 @@
     <EmbeddedResource Update="Pages\RegistrationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\SpellInfoPage.xaml">
+    <EmbeddedResource Update="Pages\Spells\SpellInfoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\SpellsPage.xaml">
+    <EmbeddedResource Update="Pages\Spells\SpellsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Equipment\StandardEquipmentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
