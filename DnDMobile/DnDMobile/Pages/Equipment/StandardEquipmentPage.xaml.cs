@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DnDMobile.Pages.Equipment;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,15 +20,24 @@ namespace DnDMobile.Pages
         }
 
 
+        private async void ButtonViewGeneralItemsProcedure(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new GeneralItemsPage());
+        }
+
+
+        private async void ButtonViewStandardArmorProcedure(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new StandardArmorPage());
+        }
+
+
         private async void ButtonViewStandardWeaponsProcedure(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new StandardWeaponsPage());
         }
 
 
-        private async void ButtonViewStandardArmorProcedure(object sender, EventArgs e)
-        {
-            //await Navigation.PushAsync(new StandardArmorPage());
-        }
+        
     }
 }
