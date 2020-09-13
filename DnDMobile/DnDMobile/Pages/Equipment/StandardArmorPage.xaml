@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DnDMobile.Pages.Equipment.StandardArmorPage"
+             Title="Standard Armor">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout x:Name="PageStack" Opacity="0">
+                <Label x:Name="LabelEquipment1" Text="Standard" Style="{StaticResource labelHeaderStyle}" />
+                <Label x:Name="LabelEquipment2" Text="Armor" Style="{StaticResource labelHeaderStyle}" />
+                <SearchBar x:Name="SearchBarItems" FontFamily="Alger.ttf#Alger" TextChanged="OnItemsSearchTextChanged" BackgroundColor="#930C10" Placeholder="Search" HorizontalTextAlignment="Center" CancelButtonColor="#FFFEBD" PlaceholderColor="#FFFEBD" TextColor="#FFFEBD" />
+
+                <!--Light Armor-->
+                <Button x:Name="ButtonShowLightArmor" Text="Show Light Armor" Clicked="ButtonShowLightArmorProcedure" Style="{StaticResource buttonSpellStyle}" />
+                <Label x:Name="LabelLightArmorHeader" Text="Light Armor" Style="{StaticResource labelHeaderStyle}" FontSize="Large" IsVisible="False"/>
+                <ScrollView x:Name="ScrollviewLightArmor" Orientation="Horizontal" IsVisible="False">
+                    <Grid x:Name="LightArmorGrid" StyleId="IDLightArmor">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ScrollView>
+                <Button  x:Name="ButtonHideLightArmor" Text="Hide Light Armor" Clicked="ButtonHideLightArmorProcedure" Style="{StaticResource buttonSpellStyle}" IsVisible="False" />
+
+                <!--Medium Armor-->
+                <Button x:Name="ButtonShowMediumArmor" Text="Show Medium Armor" Clicked="ButtonShowMediumArmorProcedure" Style="{StaticResource buttonSpellStyle}" />
+                <Label x:Name="LabelMediumArmorHeader" Text="Medium Armor" Style="{StaticResource labelHeaderStyle}" FontSize="Large" IsVisible="False"/>
+                <ScrollView x:Name="ScrollviewMediumArmor" Orientation="Horizontal" IsVisible="False">
+                    <Grid x:Name="MediumArmorGrid" StyleId="IDMediumArmor">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ScrollView>
+                <Button  x:Name="ButtonHideMediumArmor" Text="Hide Light Armor" Clicked="ButtonHideMediumArmorProcedure" Style="{StaticResource buttonSpellStyle}" IsVisible="False" />
+
+                <!--Heavy Armor-->
+                <Button x:Name="ButtonShowHeavyArmor" Text="Show Heavy Armor" Clicked="ButtonShowHeavyArmorProcedure" Style="{StaticResource buttonSpellStyle}" />
+                <Label x:Name="LabelHeavyArmorHeader" Text="Heavy Armor" Style="{StaticResource labelHeaderStyle}" FontSize="Large" IsVisible="False"/>
+                <ScrollView x:Name="ScrollviewHeavyArmor" Orientation="Horizontal" IsVisible="False">
+                    <Grid x:Name="HeavyArmorGrid" StyleId="IDHeavyArmor">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ScrollView>
+                <Button  x:Name="ButtonHideHeavyArmor" Text="Hide Light Armor" Clicked="ButtonHideHeavyArmorProcedure" Style="{StaticResource buttonSpellStyle}" IsVisible="False" />
+
+                <!--Shields-->
+                <Button x:Name="ButtonShowShields" Text="Show Shields" Clicked="ButtonShowShieldsProcedure" Style="{StaticResource buttonSpellStyle}" />
+                <Label x:Name="LabelShieldsHeader" Text="Shields" Style="{StaticResource labelHeaderStyle}" FontSize="Large" IsVisible="False"/>
+                <ScrollView x:Name="ScrollviewShields" Orientation="Horizontal" IsVisible="False">
+                    <Grid x:Name="ShieldsGrid" StyleId="IDShields">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ScrollView>
+                <Button  x:Name="ButtonHideShields" Text="Hide Shields" Clicked="ButtonHideShieldsProcedure" Style="{StaticResource buttonSpellStyle}" IsVisible="False" />
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
