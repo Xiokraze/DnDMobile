@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace DnDMobile.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StandardEqupimentPage : ContentPage
+    public partial class StandardEquipmentPage : ContentPage
     {
-        public StandardEqupimentPage()
+        public StandardEquipmentPage()
         {
             InitializeComponent();
             PageStack.FadeTo(1, 2000);
@@ -27,7 +27,7 @@ namespace DnDMobile.Pages
 
         private async void ButtonViewStandardArmorProcedure(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new StandardArmorPage());
+            //await Navigation.PushAsync(new StandardArmorPage());
         }
     }
 }
