@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DnDMobile.Classes;
+using DnDMobile.Classes.ItemsFolder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,19 +17,39 @@ namespace DnDMobile.Pages
         public MenuPage()
         {
             InitializeComponent();
+            LoadMenuListView();
+        }
+
+
+        private void LoadMenuListView()
+        {
+            Items items = new Items();
+            Spells spells = new Spells();
+            List<MenuListViewItem> menuListViewItems = new List<MenuListViewItem>()
+            {
+                 new MenuListViewItem("Equipment", items.GetEquipmentCount()),
+                 new MenuListViewItem("Spells", spells.GetSpellCount())
+            };
+            menuListView.ItemsSource = menuListViewItems;
             PageStack.FadeTo(1, 2000);
         }
 
 
-        private async void ButtonViewSpellsProcedure(object sender, EventArgs e)
+        private async void MenuMaterialSelected(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SpellsPage());
-        }
+            MenuListViewItem tappedMaterial = (MenuListViewItem)((ListView)sender).SelectedItem;
 
-
-        private async void ButtonViewEquipmentProcedure(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new StandardEquipmentPage());
+            switch (tappedMaterial.Name)
+            {
+                case "Equipment":
+                    await Navigation.PushAsync(new StandardEquipmentPage());
+                    break;
+                case "Spells":
+                    await Navigation.PushAsync(new SpellsPage());
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
