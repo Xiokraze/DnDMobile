@@ -28,6 +28,7 @@ namespace DnDMobile.Pages
             {
                 new MenuListViewItem("Armor", items.GetNumberOfArmorCount()),
                 new MenuListViewItem("General Items", items.GetGeneralItemsCount()),
+                new MenuListViewItem("Trinkets", items.GetTrinketCount()),
                 new MenuListViewItem("Weapons", items.GetNumberOfWeaponsCount())
             };
             menuListView.ItemsSource = menuListViewItems;
@@ -46,6 +47,9 @@ namespace DnDMobile.Pages
                     break;
                 case "General Items":
                     await Navigation.PushAsync(new GeneralItemsPage());
+                    break;
+                case "Trinkets":
+                    await Navigation.PushAsync(new TrinketPage());
                     break;
                 case "Weapons":
                     await Navigation.PushAsync(new StandardWeaponsPage());
