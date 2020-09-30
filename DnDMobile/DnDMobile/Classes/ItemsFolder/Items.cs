@@ -58,7 +58,14 @@ namespace DnDMobile.Classes.ItemsFolder
             int weaponsCount = GetNumberOfWeaponsCount();
             int armorCount = GetNumberOfArmorCount();
             int generalItemsCount = GetGeneralItemsCount();
-            return weaponsCount + armorCount + generalItemsCount;
+            int trinketCount = GetTrinketCount();
+            return weaponsCount + armorCount + generalItemsCount + trinketCount;
+        }
+
+
+        public int GetTrinketCount()
+        {
+            return GetGeneralItemsTrinkets().Count;
         }
 
 
