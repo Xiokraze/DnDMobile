@@ -7,14 +7,21 @@
              x:Class="DnDMobile.Pages.MenuPage"
              Title="Main Menu">
     <ContentPage.Content>
-        <Grid x:Name="PageStack" Opacity="0" VerticalOptions="StartAndExpand">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Label Grid.Row="0" Text="Menu" Style="{StaticResource labelHeaderStyle}"/>
+        <StackLayout x:Name="PageStack">
+            <Label Text="Menu" Style="{StaticResource labelHeaderStyle}"/>
             <Label Grid.Row="1" Text="&amp;" Style="{StaticResource labelDnDStyle}"/>
-            <Button Grid.Row="2" x:Name="ButtonViewSpells" Text="Spells" Clicked="ButtonViewSpellsProcedure" Style="{StaticResource buttonStyle}"/>
-            <Button Grid.Row="3" x:Name="ButtonViewGear" Text="Equipment" Clicked="ButtonViewEquipmentProcedure" Style="{StaticResource buttonStyle}"/>
-        </Grid>
+            <ListView x:Name="menuListView" ItemTapped="MenuMaterialSelected" Style="{StaticResource listviewMenuStyle}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Margin="10,0,10,10">
+                                <Label FontSize="Large"  Text="{Binding Name}" Style="{StaticResource labelHeaderStyle}"/>
+                                <Label FontSize="Small" Text="{Binding Count, StringFormat='{0:0} Items'}" Style="{StaticResource labelHeaderStyle}" TextColor="#930C10" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
