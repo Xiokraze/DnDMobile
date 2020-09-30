@@ -1,4 +1,5 @@
-﻿using DnDMobile.Pages.Equipment;
+﻿using DnDMobile.Classes.ItemsFolder;
+using DnDMobile.Pages.Equipment;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,28 +17,42 @@ namespace DnDMobile.Pages
         public StandardEquipmentPage()
         {
             InitializeComponent();
+            LoadMenuListView();
+        }
+
+
+        private void LoadMenuListView()
+        {
+            Items items = new Items();
+            List<MenuListViewItem> menuListViewItems = new List<MenuListViewItem>()
+            {
+                new MenuListViewItem("Armor", items.GetNumberOfArmorCount()),
+                new MenuListViewItem("General Items", items.GetGeneralItemsCount()),
+                new MenuListViewItem("Weapons", items.GetNumberOfWeaponsCount())
+            };
+            menuListView.ItemsSource = menuListViewItems;
             PageStack.FadeTo(1, 2000);
         }
 
 
-        private async void ButtonViewGeneralItemsProcedure(object sender, EventArgs e)
+        private async void MenuMaterialSelected(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new GeneralItemsPage());
+            MenuListViewItem tappedMaterial = (MenuListViewItem)((ListView)sender).SelectedItem;
+
+            switch (tappedMaterial.Name)
+            {
+                case "Armor":
+                    await Navigation.PushAsync(new StandardArmorPage());
+                    break;
+                case "General Items":
+                    await Navigation.PushAsync(new GeneralItemsPage());
+                    break;
+                case "Weapons":
+                    await Navigation.PushAsync(new StandardWeaponsPage());
+                    break;
+                default:
+                    break;
+            }
         }
-
-
-        private async void ButtonViewStandardArmorProcedure(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new StandardArmorPage());
-        }
-
-
-        private async void ButtonViewStandardWeaponsProcedure(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new StandardWeaponsPage());
-        }
-
-
-        
     }
 }
