@@ -1,12 +1,6 @@
-﻿using DnDMobile.Classes;
+﻿using DnDMobile.Classes.ItemsFolder;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +9,7 @@ namespace DnDMobile.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StandardWeaponsPage : ContentPage
     {
+        GUIHelper guiHelper = new GUIHelper();
         private static readonly Items items = new Items();
         bool pageLoad = true;
 
@@ -99,72 +94,48 @@ namespace DnDMobile.Pages
 
         private void ButtonShowSimpleMeleeWeaponsProcedure(object sender, EventArgs e)
         {
-            ButtonShowSimpleMeleeWeapons.IsVisible = false;
-            LabelSimpleMeleeHeader.IsVisible = true;
-            ScrollviewSimpleMelee.IsVisible = true;
-            ButtonHideSimpleMeleeWeapons.IsVisible = true;
+            guiHelper.ShowElementsProcedure(ButtonShowSimpleMeleeWeapons, ButtonHideSimpleMeleeWeapons, LabelSimpleMeleeHeader, ScrollviewSimpleMelee);
         }
 
 
         private void ButtonHideSimpleMeleeWeaponsProcedure(object sender, EventArgs e)
         {
-            ButtonShowSimpleMeleeWeapons.IsVisible = true;
-            LabelSimpleMeleeHeader.IsVisible = false;
-            ScrollviewSimpleMelee.IsVisible = false;
-            ButtonHideSimpleMeleeWeapons.IsVisible = false;
+            guiHelper.HideElementsProcedure(ButtonShowSimpleMeleeWeapons, ButtonHideSimpleMeleeWeapons, LabelSimpleMeleeHeader, ScrollviewSimpleMelee);
         }
 
 
         private void ButtonShowSimpleRangedWeaponsProcedure(object sender, EventArgs e)
         {
-            ButtonShowSimpleRangedWeapons.IsVisible = false;
-            LabelSimpleRangedHeader.IsVisible = true;
-            ScrollviewSimpleRanged.IsVisible = true;
-            ButtonHideSimpleRangedWeapons.IsVisible = true;
+            guiHelper.ShowElementsProcedure(ButtonShowSimpleRangedWeapons, ButtonHideSimpleRangedWeapons, LabelSimpleRangedHeader, ScrollviewSimpleRanged);
         }
 
 
         private void ButtonHideSimpleRangedWeaponsProcedure(object sender, EventArgs e)
         {
-            ButtonShowSimpleRangedWeapons.IsVisible = true;
-            LabelSimpleRangedHeader.IsVisible = false;
-            ScrollviewSimpleRanged.IsVisible = false;
-            ButtonHideSimpleRangedWeapons.IsVisible = false;
+            guiHelper.HideElementsProcedure(ButtonShowSimpleRangedWeapons, ButtonHideSimpleRangedWeapons, LabelSimpleRangedHeader, ScrollviewSimpleRanged);
         }
 
 
         private void ButtonShowMartialMeleeWeaponsProcedure(object sender, EventArgs e)
         {
-            ButtonShowMartialMeleeWeapons.IsVisible = false;
-            LabelMartialMeleeHeader.IsVisible = true;
-            ScrollviewMartialMelee.IsVisible = true;
-            ButtonHideMartialMeleeWeapons.IsVisible = true;
+            guiHelper.ShowElementsProcedure(ButtonShowMartialMeleeWeapons, ButtonHideMartialMeleeWeapons, LabelMartialMeleeHeader, ScrollviewMartialMelee);
         }
 
 
         private void ButtonHideMartialMeleeWeaponsProcedure(object sender, EventArgs e)
         {
-            ButtonShowMartialMeleeWeapons.IsVisible = true;
-            LabelMartialMeleeHeader.IsVisible = false;
-            ScrollviewMartialMelee.IsVisible = false;
-            ButtonHideMartialMeleeWeapons.IsVisible = false;
+            guiHelper.HideElementsProcedure(ButtonShowMartialMeleeWeapons, ButtonHideMartialMeleeWeapons, LabelMartialMeleeHeader, ScrollviewMartialMelee);
         }
 
         private void ButtonShowMartialRangedWeaponsProcedure(object sender, EventArgs e)
         {
-            ButtonShowMartialRangedWeapons.IsVisible = false;
-            LabelMartialRangedHeader.IsVisible = true;
-            ScrollviewMartialRanged.IsVisible = true;
-            ButtonHideMartialRangedWeapons.IsVisible = true;
+            guiHelper.ShowElementsProcedure(ButtonShowMartialRangedWeapons, ButtonHideMartialRangedWeapons, LabelMartialRangedHeader, ScrollviewMartialRanged);
         }
 
 
         private void ButtonHideMartialRangedWeaponsProcedure(object sender, EventArgs e)
         {
-            ButtonShowMartialRangedWeapons.IsVisible = true;
-            LabelMartialRangedHeader.IsVisible = false;
-            ScrollviewMartialRanged.IsVisible = false;
-            ButtonHideMartialRangedWeapons.IsVisible = false;
+            guiHelper.HideElementsProcedure(ButtonShowMartialRangedWeapons, ButtonHideMartialRangedWeapons, LabelMartialRangedHeader, ScrollviewMartialRanged);
         }
 
 
