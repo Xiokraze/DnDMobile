@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DnDMobile.Pages.Equipment.GeneralItemsPage"
+             Title="General Items">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout x:Name="PageStack" Opacity="0">
+                <Label x:Name="LabelEquipment1" Text="General" Style="{StaticResource labelHeaderStyle}" />
+                <Label x:Name="LabelEquipment2" Text="Items" Style="{StaticResource labelHeaderStyle}" />
+
+                <Picker x:Name="ItemTypePicker" Title="Filter By Type" SelectedIndexChanged="ItemFilterSelected" Style="{StaticResource pickerSpellFilterStyle}">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>All Items</x:String>
+                            <x:String>Ammunition</x:String>
+                            <x:String>Arcane Focus</x:String>
+                            <x:String>Druidic Focus</x:String>
+                            <x:String>General Good</x:String>
+                            <x:String>Holy Symbol</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <SearchBar x:Name="SearchBarItems" FontFamily="Alger.ttf#Alger" TextChanged="OnItemsSearchTextChanged" BackgroundColor="#930C10" Placeholder="Search" HorizontalTextAlignment="Center" CancelButtonColor="#FFFEBD" PlaceholderColor="#FFFEBD" TextColor="#FFFEBD" />
+                <ListView x:Name="ListViewGeneralItems" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="50">
+                                <ScrollView Orientation="Horizontal">
+                                    <StackLayout Orientation="Horizontal" >
+                                        <Label FontSize="Large"  Text="{Binding Description}" Style="{StaticResource labelItemListViewHeaderStyle}"/>
+                                        <Label Text="{Binding Value, StringFormat='Value: {0:0}'}" Style="{StaticResource labelItemListViewStyle}" />
+                                        <Label Text="{Binding Weight, StringFormat='Weight: {0:N}'}" Style="{StaticResource labelItemListViewStyle}" />
+                                        <Label Text="{Binding Classification, StringFormat='Type: {0}'}" Style="{StaticResource labelItemListViewStyle}" />
+                                    </StackLayout>
+                                </ScrollView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+    
