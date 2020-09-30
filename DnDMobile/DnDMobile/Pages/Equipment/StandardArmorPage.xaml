@@ -15,6 +15,7 @@
 
                 <!--Light Armor-->
                 <Button x:Name="ButtonShowLightArmor" Text="Show Light Armor" Clicked="ButtonShowLightArmorProcedure" Style="{StaticResource buttonSpellStyle}" />
+                <Button  x:Name="ButtonHideLightArmor" Text="Hide Light Armor" Clicked="ButtonHideLightArmorProcedure" Style="{StaticResource buttonSpellStyle}" IsVisible="False" />
                 <Label x:Name="LabelLightArmorHeader" Text="Light Armor" Style="{StaticResource labelHeaderStyle}" FontSize="Large" IsVisible="False"/>
                 <ScrollView x:Name="ScrollviewLightArmor" Orientation="Horizontal" IsVisible="False">
                     <Grid x:Name="LightArmorGrid" StyleId="IDLightArmor">
@@ -30,10 +31,10 @@
                         </Grid.ColumnDefinitions>
                     </Grid>
                 </ScrollView>
-                <Button  x:Name="ButtonHideLightArmor" Text="Hide Light Armor" Clicked="ButtonHideLightArmorProcedure" Style="{StaticResource buttonSpellStyle}" IsVisible="False" />
-
+                
                 <!--Medium Armor-->
                 <Button x:Name="ButtonShowMediumArmor" Text="Show Medium Armor" Clicked="ButtonShowMediumArmorProcedure" Style="{StaticResource buttonSpellStyle}" />
+                <Button  x:Name="ButtonHideMediumArmor" Text="Hide Medium Armor" Clicked="ButtonHideMediumArmorProcedure" Style="{StaticResource buttonSpellStyle}" IsVisible="False" />
                 <Label x:Name="LabelMediumArmorHeader" Text="Medium Armor" Style="{StaticResource labelHeaderStyle}" FontSize="Large" IsVisible="False"/>
                 <ScrollView x:Name="ScrollviewMediumArmor" Orientation="Horizontal" IsVisible="False">
                     <Grid x:Name="MediumArmorGrid" StyleId="IDMediumArmor">
@@ -49,10 +50,10 @@
                         </Grid.ColumnDefinitions>
                     </Grid>
                 </ScrollView>
-                <Button  x:Name="ButtonHideMediumArmor" Text="Hide Light Armor" Clicked="ButtonHideMediumArmorProcedure" Style="{StaticResource buttonSpellStyle}" IsVisible="False" />
-
+                
                 <!--Heavy Armor-->
                 <Button x:Name="ButtonShowHeavyArmor" Text="Show Heavy Armor" Clicked="ButtonShowHeavyArmorProcedure" Style="{StaticResource buttonSpellStyle}" />
+                <Button  x:Name="ButtonHideHeavyArmor" Text="Hide Heavy Armor" Clicked="ButtonHideHeavyArmorProcedure" Style="{StaticResource buttonSpellStyle}" IsVisible="False" />
                 <Label x:Name="LabelHeavyArmorHeader" Text="Heavy Armor" Style="{StaticResource labelHeaderStyle}" FontSize="Large" IsVisible="False"/>
                 <ScrollView x:Name="ScrollviewHeavyArmor" Orientation="Horizontal" IsVisible="False">
                     <Grid x:Name="HeavyArmorGrid" StyleId="IDHeavyArmor">
@@ -68,10 +69,10 @@
                         </Grid.ColumnDefinitions>
                     </Grid>
                 </ScrollView>
-                <Button  x:Name="ButtonHideHeavyArmor" Text="Hide Light Armor" Clicked="ButtonHideHeavyArmorProcedure" Style="{StaticResource buttonSpellStyle}" IsVisible="False" />
 
                 <!--Shields-->
                 <Button x:Name="ButtonShowShields" Text="Show Shields" Clicked="ButtonShowShieldsProcedure" Style="{StaticResource buttonSpellStyle}" />
+                <Button  x:Name="ButtonHideShields" Text="Hide Shields" Clicked="ButtonHideShieldsProcedure" Style="{StaticResource buttonSpellStyle}" IsVisible="False" />
                 <Label x:Name="LabelShieldsHeader" Text="Shields" Style="{StaticResource labelHeaderStyle}" FontSize="Large" IsVisible="False"/>
                 <ScrollView x:Name="ScrollviewShields" Orientation="Horizontal" IsVisible="False">
                     <Grid x:Name="ShieldsGrid" StyleId="IDShields">
@@ -87,9 +88,6 @@
                         </Grid.ColumnDefinitions>
                     </Grid>
                 </ScrollView>
-                <Button  x:Name="ButtonHideShields" Text="Hide Shields" Clicked="ButtonHideShieldsProcedure" Style="{StaticResource buttonSpellStyle}" IsVisible="False" />
-
-
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

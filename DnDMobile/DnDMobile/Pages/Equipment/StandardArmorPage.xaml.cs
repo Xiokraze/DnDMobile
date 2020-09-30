@@ -1,4 +1,4 @@
-﻿using DnDMobile.Classes;
+﻿using DnDMobile.Classes.ItemsFolder;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -9,6 +9,7 @@ namespace DnDMobile.Pages.Equipment
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StandardArmorPage : ContentPage
     {
+        GUIHelper guiHelper = new GUIHelper();
         private static readonly Items items = new Items();
         bool pageLoad = true;
 
@@ -92,73 +93,49 @@ namespace DnDMobile.Pages.Equipment
 
         private void ButtonShowLightArmorProcedure(object sender, EventArgs e)
         {
-            ButtonShowLightArmor.IsVisible = false;
-            LabelLightArmorHeader.IsVisible = true;
-            ScrollviewLightArmor.IsVisible = true;
-            ButtonHideLightArmor.IsVisible = true;
+            guiHelper.ShowElementsProcedure(ButtonShowLightArmor, ButtonHideLightArmor, LabelLightArmorHeader, ScrollviewLightArmor);
         }
 
 
         private void ButtonHideLightArmorProcedure(object sender, EventArgs e)
         {
-            ButtonShowLightArmor.IsVisible = true;
-            LabelLightArmorHeader.IsVisible = false;
-            ScrollviewLightArmor.IsVisible = false;
-            ButtonHideLightArmor.IsVisible = false;
+            guiHelper.HideElementsProcedure(ButtonShowLightArmor, ButtonHideLightArmor, LabelLightArmorHeader, ScrollviewLightArmor);
         }
 
 
         private void ButtonShowMediumArmorProcedure(object sender, EventArgs e)
         {
-            ButtonShowMediumArmor.IsVisible = false;
-            LabelMediumArmorHeader.IsVisible = true;
-            ScrollviewMediumArmor.IsVisible = true;
-            ButtonHideMediumArmor.IsVisible = true;
+            guiHelper.ShowElementsProcedure(ButtonShowMediumArmor, ButtonHideMediumArmor, LabelMediumArmorHeader, ScrollviewMediumArmor);
         }
 
 
         private void ButtonHideMediumArmorProcedure(object sender, EventArgs e)
         {
-            ButtonShowMediumArmor.IsVisible = true;
-            LabelMediumArmorHeader.IsVisible = false;
-            ScrollviewMediumArmor.IsVisible = false;
-            ButtonHideMediumArmor.IsVisible = false;
+            guiHelper.HideElementsProcedure(ButtonShowMediumArmor, ButtonHideMediumArmor, LabelMediumArmorHeader, ScrollviewMediumArmor);
         }
 
 
         private void ButtonShowHeavyArmorProcedure(object sender, EventArgs e)
         {
-            ButtonShowHeavyArmor.IsVisible = false;
-            LabelHeavyArmorHeader.IsVisible = true;
-            ScrollviewHeavyArmor.IsVisible = true;
-            ButtonHideHeavyArmor.IsVisible = true;
+            guiHelper.ShowElementsProcedure(ButtonShowHeavyArmor, ButtonHideHeavyArmor, LabelHeavyArmorHeader, ScrollviewHeavyArmor);
         }
 
 
         private void ButtonHideHeavyArmorProcedure(object sender, EventArgs e)
         {
-            ButtonShowHeavyArmor.IsVisible = true;
-            LabelHeavyArmorHeader.IsVisible = false;
-            ScrollviewHeavyArmor.IsVisible = false;
-            ButtonHideHeavyArmor.IsVisible = false;
+            guiHelper.HideElementsProcedure(ButtonShowHeavyArmor, ButtonHideHeavyArmor, LabelHeavyArmorHeader, ScrollviewHeavyArmor);
         }
 
 
         private void ButtonShowShieldsProcedure(object sender, EventArgs e)
         {
-            ButtonShowShields.IsVisible = false;
-            LabelShieldsHeader.IsVisible = true;
-            ScrollviewShields.IsVisible = true;
-            ButtonHideShields.IsVisible = true;
+            guiHelper.ShowElementsProcedure(ButtonShowShields, ButtonHideShields, LabelShieldsHeader, ScrollviewShields);
         }
 
 
         private void ButtonHideShieldsProcedure(object sender, EventArgs e)
         {
-            ButtonShowShields.IsVisible = true;
-            LabelShieldsHeader.IsVisible = false;
-            ScrollviewShields.IsVisible = false;
-            ButtonHideShields.IsVisible = false;
+            guiHelper.HideElementsProcedure(ButtonShowShields, ButtonHideShields, LabelShieldsHeader, ScrollviewShields);
         }
 
 
