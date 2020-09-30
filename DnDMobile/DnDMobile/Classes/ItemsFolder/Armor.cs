@@ -1,4 +1,4 @@
-﻿namespace DnDMobile.Classes
+﻿namespace DnDMobile.Classes.ItemsFolder
 {
     class Armor
     {
