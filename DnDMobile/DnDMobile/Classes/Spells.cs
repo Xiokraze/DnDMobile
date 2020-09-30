@@ -18,6 +18,12 @@ namespace DnDMobile.Classes
         }
 
 
+        public int GetSpellCount()
+        {
+            return SpellList.Count;
+        }
+
+
         public List<Spell> FilterSpellsByLevel(string spellLevel, List<Spell> spellList)
         {
             List<Spell> spellMatches = new List<Spell>();
