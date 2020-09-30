@@ -59,6 +59,21 @@
                 <Setter Property="FontSize" Value="Header"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
+            <Style x:Key="labelItemListViewHeaderStyle" TargetType="Label">
+                <Setter Property="Margin" Value="20,0,5,0"/>
+                <Setter Property="TextColor" Value="{StaticResource DnDLight}"/>
+                <Setter Property="FontFamily" Value="Alger.ttf#Alger"/>
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+            <Style x:Key="labelItemListViewStyle" TargetType="Label">
+                <Setter Property="Margin" Value="5,0,5,0"/>
+                <Setter Property="TextColor" Value="{StaticResource DnDLight}"/>
+                <Setter Property="FontFamily" Value="Alger.ttf#Alger"/>
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="TextColor" Value="{StaticResource DnDRed}"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
             
             <!--Buttons-->
             <Style x:Key="buttonStyle" TargetType="Button">
@@ -86,6 +101,15 @@
                 <Setter Property="TextColor" Value="{StaticResource DnDLight}" />
                 <Setter Property="TitleColor" Value="{StaticResource DnDRed}" />
                 <Setter Property="FontFamily" Value="Alger.ttf#Alger"/>
+            </Style>
+            
+            
+            <!--ListViews-->
+            <Style x:Key="listviewMenuStyle" TargetType="ListView">
+                <Setter Property="SeparatorColor" Value="{StaticResource DnDRed}" />
+                <Setter Property="HasUnevenRows" Value="True" />
+                <Setter Property="RowHeight" Value="250" />
+                <Setter Property="Margin" Value="10,20,10,0" />
             </Style>
             
         </ResourceDictionary>
