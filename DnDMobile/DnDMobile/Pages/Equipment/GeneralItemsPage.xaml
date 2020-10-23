@@ -32,7 +32,7 @@
                             <ViewCell Height="50">
                                 <ScrollView Orientation="Horizontal">
                                     <StackLayout Orientation="Horizontal" >
-                                        <Label FontSize="Large"  Text="{Binding Description}" Style="{StaticResource labelItemListViewHeaderStyle}"/>
+                                        <Label FontSize="Medium"  Text="{Binding Description}" Style="{StaticResource labelItemListViewHeaderStyle}"/>
                                         <Label Text="{Binding Value, StringFormat='Value: {0:0}'}" Style="{StaticResource labelItemListViewStyle}" />
                                         <Label Text="{Binding Weight, StringFormat='Weight: {0:N}'}" Style="{StaticResource labelItemListViewStyle}" />
                                         <Label Text="{Binding Classification, StringFormat='Type: {0}'}" Style="{StaticResource labelItemListViewStyle}" />
