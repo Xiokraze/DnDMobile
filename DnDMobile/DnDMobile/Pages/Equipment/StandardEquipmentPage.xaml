@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="DnDMobile.Pages.StandardEquipmentPage"
-             Title="Standard Equipment Menu">
+             Title="Standard Items Menu">
     <ContentPage.Content>
         <StackLayout x:Name="PageStack">
             <Label Text="Menu" Style="{StaticResource labelHeaderStyle}"/>

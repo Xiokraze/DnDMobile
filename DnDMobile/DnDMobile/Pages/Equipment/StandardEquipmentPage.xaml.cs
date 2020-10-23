@@ -27,6 +27,8 @@ namespace DnDMobile.Pages
             List<MenuListViewItem> menuListViewItems = new List<MenuListViewItem>()
             {
                 new MenuListViewItem("Armor", items.GetNumberOfArmorCount()),
+                new MenuListViewItem("Art", items.GetArtCount()),
+                new MenuListViewItem("Gems", items.GetGemCount()),
                 new MenuListViewItem("General Items", items.GetGeneralItemsCount()),
                 new MenuListViewItem("Trinkets", items.GetTrinketCount()),
                 new MenuListViewItem("Weapons", items.GetNumberOfWeaponsCount())
@@ -44,6 +46,12 @@ namespace DnDMobile.Pages
             {
                 case "Armor":
                     await Navigation.PushAsync(new StandardArmorPage());
+                    break;
+                case "Art":
+                    //await Navigation.PushAsync(new StandardArmorPage());
+                    break;
+                case "Gems":
+                    //await Navigation.PushAsync(new StandardArmorPage());
                     break;
                 case "General Items":
                     await Navigation.PushAsync(new GeneralItemsPage());
