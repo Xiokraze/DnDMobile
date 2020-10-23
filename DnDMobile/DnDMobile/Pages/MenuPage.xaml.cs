@@ -2,10 +2,6 @@
 using DnDMobile.Classes.ItemsFolder;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -27,7 +23,7 @@ namespace DnDMobile.Pages
             Spells spells = new Spells();
             List<MenuListViewItem> menuListViewItems = new List<MenuListViewItem>()
             {
-                 new MenuListViewItem("Equipment", items.GetEquipmentCount()),
+                 new MenuListViewItem("Items", items.GetEquipmentCount()),
                  new MenuListViewItem("Spells", spells.GetSpellCount())
             };
             menuListView.ItemsSource = menuListViewItems;
@@ -41,7 +37,7 @@ namespace DnDMobile.Pages
 
             switch (tappedMaterial.Name)
             {
-                case "Equipment":
+                case "Items":
                     await Navigation.PushAsync(new StandardEquipmentPage());
                     break;
                 case "Spells":
