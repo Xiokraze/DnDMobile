@@ -18,6 +18,17 @@ namespace DnDMobile.Classes.ItemsFolder
         private List<GeneralItem> GeneralItemsDruidicFocus { get; } = FetchGeneralItemsDruidicFocus();
         private List<GeneralItem> GeneralItemsHolySymbol { get; } = FetchGeneralItemsHolySymbol();
         private List<string> GeneralItemsTrinkets { get; } = FetchGeneralItemsTrinkets();
+        private List<string> Art25 { get; set; } = FetchArt25();
+        private List<string> Art250 { get; set; } = FetchArt250();
+        private List<string> Art750 { get; set; } = FetchArt750();
+        private List<string> Art2500 { get; set; } = FetchArt2500();
+        private List<string> Art7500 { get; set; } = FetchArt7500();
+        private List<string> Gems10 { get; set; } = FetchGems10();
+        private List<string> Gems50 { get; set; } = FetchGems50();
+        private List<string> Gems100 { get; set; } = FetchGems100();
+        private List<string> Gems500 { get; set; } = FetchGems500();
+        private List<string> Gems1000 { get; set; } = FetchGems1000();
+        private List<string> Gems5000 { get; set; } = FetchGems5000();
 
         public Items() { }
 
@@ -59,13 +70,38 @@ namespace DnDMobile.Classes.ItemsFolder
             int armorCount = GetNumberOfArmorCount();
             int generalItemsCount = GetGeneralItemsCount();
             int trinketCount = GetTrinketCount();
-            return weaponsCount + armorCount + generalItemsCount + trinketCount;
+            int artCount = GetArtCount();
+            int gemCount = GetGemCount();
+            return weaponsCount + armorCount + generalItemsCount + trinketCount + artCount + gemCount;
         }
 
 
         public int GetTrinketCount()
         {
             return GetGeneralItemsTrinkets().Count;
+        }
+
+
+        public int GetArtCount()
+        {
+            int art25Count = Art25.Count;
+            int art250Count = Art250.Count;
+            int art750Count = Art750.Count;
+            int art2500Count = Art2500.Count;
+            int art7500Count = Art7500.Count;
+            return art25Count + art250Count + art750Count + art2500Count + art7500Count;
+        }
+
+
+        public int GetGemCount()
+        {
+            int get10Count = Gems10.Count;
+            int get50Count = Gems50.Count;
+            int get100Count = Gems100.Count;
+            int get500Count = Gems500.Count;
+            int get1000Count = Gems5000.Count;
+            int get5000Count = Gems5000.Count;
+            return get10Count + get50Count + get100Count + get500Count + get1000Count + get5000Count;
         }
 
 
@@ -150,6 +186,71 @@ namespace DnDMobile.Classes.ItemsFolder
         public List<string> GetGeneralItemsTrinkets()
         {
             return GeneralItemsTrinkets;
+        }
+
+
+        public List<string> GetArt25()
+        {
+            return Art25;
+        }
+
+
+        public List<string> GetArt250()
+        {
+            return Art250;
+        }
+
+        public List<string> GetArt750()
+        {
+            return Art750;
+        }
+
+
+        public List<string> GetArt2500()
+        {
+            return Art2500;
+        }
+
+
+        public List<string> GetArt7500()
+        {
+            return Art7500;
+        }
+
+
+        public List<string> GetGems10()
+        {
+            return Gems10;
+        }
+
+
+        public List<string> GetGems50()
+        {
+            return Gems50;
+        }
+
+
+        public List<string> GetGems100()
+        {
+            return Gems100;
+        }
+
+
+        public List<string> GetGems500()
+        {
+            return Gems500;
+        }
+
+
+        public List<string> GetGems1000()
+        {
+            return Gems1000;
+        }
+
+
+        public List<string> GetGems5000()
+        {
+            return Gems5000;
         }
 
 
@@ -524,6 +625,205 @@ namespace DnDMobile.Classes.ItemsFolder
                 "A metal urn containing the ashes of a hero"
             };
             return trinkets;
+        }
+
+
+        private static List<string> FetchArt25()
+        {
+            List<string> art = new List<string>()
+            {
+                "Silver ewer",
+                "Carved bone statuette",
+                "Small gold bracelet",
+                "Cloth-of-gold vestments",
+                "Black velvet mask stitched with silver thread",
+                "Copper chalice with silver filigree",
+                "Pair of engraved bone dice",
+                "Small mirror set in a painted wooden frame",
+                "Embroidered silk handkerchief",
+                "Gold locket with a painted portrait inside"
+            };
+            return art;
+        }
+
+
+        private static List<string> FetchArt250()
+        {
+            List<string> art = new List<string>()
+            {
+                "Gold ring set with bloodstones",
+                "Carved ivory statuette",
+                "Large gold bracelet",
+                "Silver necklace with a gemstone pendant",
+                "Bronze crown",
+                "Silk robe with gold embroidery",
+                "Large well-made tapestry",
+                "Brass mug with jade inlay",
+                "Box of turquoise animal figurines",
+                "Gold bird cage with electrum filigree"
+            };
+            return art;
+        }
+
+
+        private static List<string> FetchArt750()
+        {
+            List<string> art = new List<string>()
+            {
+                "Silver chalice set with moonstones",
+                "Silver-plated steel longsword with jet set in hilt",
+                "Carved harp of exotic wood with ivory inlay and zircon gems",
+                "Small gold idol",
+                "Gold dragon comb set with red garnets as eyes",
+                "Bottle stopper cork embossed with gold leaf and set with amethysts",
+                "Ceremonial electrum dagger with a black pearl in the pommel",
+                "Silver and gold brooch",
+                "Obsidian statuette with gold fittings and inlay",
+                "Painted gold war mask"
+            };
+            return art;
+        }
+
+
+        private static List<string> FetchArt2500()
+        {
+            List<string> art = new List<string>()
+            {
+                "Fine gold chain set with a fire opal",
+                "Old masterpiece painting",
+                "Embroidered silk and velvet mantle set with numerous moonstones",
+                "Platinum bracelet set with a sapphire",
+                "Embroidered glove set with jewel chips",
+                "Jeweled anklet",
+                "Gold music box",
+                "Gold circlet set with four aquamarines",
+                "Eye patch with a mock eye set in blue sapphire and moonstone",
+                "A necklace string of small pink pearls"
+            };
+            return art;
+        }
+
+
+        private static List<string> FetchArt7500()
+        {
+            List<string> art = new List<string>()
+            {
+                "Jeweled gold crown",
+                "Jeweled platinum ring",
+                "Small gold statuette set with rubies",
+                "Gold cup set with emeralds",
+                "Gold jewelry box with platinum filigree",
+                "Painted gold child’s sarcophagus",
+                "Jade game board with solid gold playing pieces",
+                "Bejeweled ivory drinking horn with gold filigree"
+            };
+            return art;
+        }
+
+
+        private static List<string> FetchGems10()
+        {
+            List<string> gems = new List<string>()
+            {
+                "Azurite (opaque mottled deep blue)",
+                "Banded agate (translucent striped brown, blue, white, or red)",
+                "Blue quartz (transparent pale blue)",
+                "Eye agate (translucent circles or gray, white, brown, blue, or green)",
+                "Hematite (opaque gray-black)",
+                "Lapis lazuli (opaque light and dark blue with yellow flecks)",
+                "Malachite (opaque striated light and dark green)",
+                "Moss agate (translucent pink or yellow-white with mossy gray or green markings)",
+                "Obsidian (opaque black)",
+                "Rhodochrosite (opaque light pink)",
+                "Tiger eye (translucent brown with golden center)",
+                "Turquoise (opaque light blue-green)"
+            };
+            return gems;
+        }
+
+
+        private static List<string> FetchGems50()
+        {
+            List<string> gems = new List<string>()
+            {
+                "Bloodstone (opaque dark gray with red flecks)",
+                "Carnelian (opaque orange to red-brown)",
+                "Chalcedony (opaque white)",
+                "Chrysoprase (translucent green)",
+                "Citrine (transparent pale yellow-brown)",
+                "Jasper (opaque blue, black, or brown)",
+                "Moonstone (translucent white with pale blue glow)",
+                "Onyx (opaque bands of black and white, or pure black or white)",
+                "Quartz (transparent white, smoky gray, or yellow)",
+                "Sardonyx (opaque bands of red and white)",
+                "Star rose quartz (translucent rosy stone with white star-shaped center)",
+                "Zircon (transparent pale blue-green)"
+            };
+            return gems;
+        }
+
+
+        private static List<string> FetchGems100()
+        {
+            List<string> gems = new List<string>()
+            {
+                "Amber (transparent watery gold to rich gold)",
+                "Amethyst (transparent deep purple)",
+                "Chrysoberyl (transparent yellow-green to pale green)",
+                "Coral (opaque crimson)",
+                "Garnet (transparent red, brown-green, or violet)",
+                "Jade (translucent light green, deep green, or white)",
+                "Jet (opaque deep black)",
+                "Pearl (opaque lustrous white, yellow, or pink)",
+                "Spinel (transparent red, red-brown, or deep green)",
+                "Tourmaline (transparent pale green, blue, brown, or red)"
+            };
+            return gems;
+        }
+
+
+        private static List<string> FetchGems500()
+        {
+            List<string> gems = new List<string>()
+            {
+                "Alexandrite (transparent dark green)",
+                "Aquamarine (transparent pale blue-green)",
+                "Black pearl (opaque pure black)",
+                "Blue spinel (transparent deep blue)",
+                "Peridot (transparent rich olive green)",
+                "Topaz (transparent golden yellow)"
+            };
+            return gems;
+        }
+
+
+        private static List<string> FetchGems1000()
+        {
+            List<string> gems = new List<string>()
+            {
+                "Black opal (translucent dark green with black mottling and golden flecks)",
+                "Blue sapphire (transparent blue-white to medium blue)",
+                "Emerald (transparent deep bright green)",
+                "Fire opal (translucent fiery red)",
+                "Opal (translucent pale blue with green and golden mottling)",
+                "Star ruby (translucent ruby with white star-shaped center)",
+                "Star sapphire (translucent blue sapphire with white star-shaped center)",
+                "Yellow sapphire (transparent fiery yellow or yellow-green)"
+            };
+            return gems;
+        }
+
+
+        private static List<string> FetchGems5000()
+        {
+            List<string> gems = new List<string>()
+            {
+                "Black sapphire (translucent lustrous black with glowing highlights)",
+                "Diamond (transparent blue-white, canary, pink, brown, or blue)",
+                "Jacinth (transparent fiery orange)",
+                "Ruby (transparent clear red to deep crimson)"
+            };
+            return gems;
         }
     }
 }
