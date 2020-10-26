@@ -1,4 +1,5 @@
-﻿using DnDMobile.Classes.ItemsFolder;
+﻿using DnDMobile.Classes;
+using DnDMobile.Classes.ItemsFolder;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -9,29 +10,96 @@ namespace DnDMobile.Pages.Equipment
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GeneralItemsPage : ContentPage
     {
-        GUIHelper guiHelper = new GUIHelper();
-        private static readonly Items items = new Items();
-        private List<GeneralItem> generalItems = new List<GeneralItem>();
-        List<GeneralItem> filteredGeneralItems = new List<GeneralItem>();
+        private readonly List<GeneralItem> generalItemList = new List<GeneralItem>();
 
 
         public GeneralItemsPage()
         {
             InitializeComponent();
-            LoadGeneralItems();
             PageStack.FadeTo(1, 2000);
+            LoadGeneralItems();
         }
 
 
         private void LoadGeneralItems()
         {
-            generalItems.AddRange(items.GetGeneralItems());
-            generalItems.AddRange(items.GetGeneralItemsAmmunition());
-            generalItems.AddRange(items.GetGeneralItemsArcaneFocusn());
-            generalItems.AddRange(items.GetGeneralItemsDruidicFocus());
-            generalItems.AddRange(items.GetGeneralItemsHolySymbol());
-            generalItems.Sort((x, y) => x.Description.CompareTo(y.Description));
-            FilterList();
+            Items items = new Items();
+            InitializeItems(items.GetGeneralItems());
+            InitializeItems(items.GetGeneralItemsAmmunition());
+            InitializeItems(items.GetGeneralItemsArcaneFocusn());
+            InitializeItems(items.GetGeneralItemsDruidicFocus());
+            InitializeItems(items.GetGeneralItemsHolySymbol());
+            generalItemList.Sort((x, y) => x.Description.CompareTo(y.Description));
+            ListViewItems.ItemsSource = generalItemList;
+
+            // Update type picker options.
+            ItemFilterPicker.ItemsSource = StaticVariables.generalTypes;
+        }
+
+
+        private void InitializeItems(List<GeneralItem> generalItems)
+        {
+            foreach (GeneralItem generalItem in generalItems)
+            {
+                generalItemList.Add(generalItem);
+            }
+        }
+
+
+        private void ItemFilterPickerSelected(object sender, EventArgs e)
+        {
+            int selectedIndex = ItemFilterPicker.SelectedIndex;
+            if (selectedIndex != -1)
+            {
+                var itemType = ItemFilterPicker.ItemsSource[selectedIndex];
+                if (object.Equals(itemType, StaticVariables.ammunition))
+                {
+                    FilterItemList(StaticVariables.ammunition);
+                }
+                else if (object.Equals(itemType, StaticVariables.arcaneFocus))
+                {
+                    FilterItemList(StaticVariables.arcaneFocus);
+                }
+                else if (object.Equals(itemType, StaticVariables.druidicFocus))
+                {
+                    FilterItemList(StaticVariables.druidicFocus);
+                }
+                else if (object.Equals(itemType, StaticVariables.generalGood))
+                {
+                    FilterItemList(StaticVariables.generalGood);
+                }
+                else if (object.Equals(itemType, StaticVariables.holySymbol))
+                {
+                    FilterItemList(StaticVariables.holySymbol);
+                }
+                else
+                {
+                    ListViewItems.ItemsSource = generalItemList;
+                    ItemFilterPicker.SelectedIndex = -1;
+                }
+            }
+        }
+
+
+        private void FilterItemList(string type)
+        {
+            List<GeneralItem> filterMatches = new List<GeneralItem>();
+            foreach (GeneralItem generalItem in generalItemList)
+            {
+                if (object.Equals(type, generalItem.Type))
+                {
+                    filterMatches.Add(generalItem);
+                }
+            }
+            ListViewItems.ItemsSource = filterMatches;
+        }
+
+
+        private async void ListItemTapped(object sender, EventArgs e)
+        {
+            ListView listView = (ListView)sender;
+            GeneralItem generalItem = (GeneralItem)listView.SelectedItem;
+            await Navigation.PushAsync(new GeneralItemInfoPage(generalItem));
         }
 
 
@@ -54,79 +122,19 @@ namespace DnDMobile.Pages.Equipment
         {
             if (string.IsNullOrEmpty(searchText))
             {
-                ListViewGeneralItems.ItemsSource = generalItems;
+                ListViewItems.ItemsSource = generalItemList;
             }
             else
             {
                 List<GeneralItem> tempList = new List<GeneralItem>();
-                foreach (GeneralItem item in generalItems)
+                foreach (GeneralItem item in generalItemList)
                 {
                     if (item.Description.ToLower().Contains(searchText))
                     {
                         tempList.Add(item);
                     }
                 }
-                ListViewGeneralItems.ItemsSource = tempList;
-            }
-        }
-
-
-        private void FilterItemsByType(string type)
-        {
-            filteredGeneralItems.Clear();
-
-            if (!string.IsNullOrEmpty(type))
-            {
-                foreach (GeneralItem item in generalItems)
-                {
-                    if (item.Classification == type)
-                    {
-                        filteredGeneralItems.Add(item);
-                    }
-                }
-            }
-        }
-
-
-        private void ItemFilterSelected(object sender, EventArgs e)
-        {
-            int selectedIndex = ItemTypePicker.SelectedIndex;
-            if (selectedIndex != -1)
-            {
-                string itemType = (string)ItemTypePicker.ItemsSource[selectedIndex];
-                switch (itemType)
-                {
-                    case "All Items":
-                        FilterItemsByType("");
-                        break;
-                    case "Ammunition":
-                        FilterItemsByType("Ammunition");
-                        break;
-                    case "Arcane Focus":
-                        FilterItemsByType("Arcane Focus");
-                        break;
-                    case "Druidic Focus":
-                        FilterItemsByType("Druidic Focus");
-                        break;
-                    case "General Good":
-                        FilterItemsByType("General Good");
-                        break;
-                    case "Holy Symbol":
-                        FilterItemsByType("Holy Symbol");
-                        break;
-                    default:
-                        break;
-                }
-                if (filteredGeneralItems.Count > 0)
-                {
-                    ListViewGeneralItems.ItemsSource = null;
-                    ListViewGeneralItems.ItemsSource = filteredGeneralItems;
-                }
-                else
-                {
-                    ListViewGeneralItems.ItemsSource = null;
-                    ListViewGeneralItems.ItemsSource = generalItems;
-                }
+                ListViewItems.ItemsSource = tempList;
             }
         }
     }
