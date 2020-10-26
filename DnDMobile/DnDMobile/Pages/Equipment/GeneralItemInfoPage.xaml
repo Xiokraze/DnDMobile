@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DnDMobile.Pages.Equipment.GeneralItemInfoPage">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Item Info" Style="{StaticResource labelHeaderStyle}" />
+                <Grid Padding="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <BoxView Grid.Row="0" Color="#290000" Grid.ColumnSpan="3" />
+                    <Label Grid.Row="0" Grid.ColumnSpan="3" Style="{StaticResource labelGridHeaderStyle}" Text="{Binding Description, StringFormat='{0:N}'}" />
+
+                    <BoxView Grid.Row="1" Grid.Column="0" Color="#290000" />
+                    <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource labelGridHeaderStyle}" Text="Value" />
+                    <BoxView Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Color="#290000" />
+                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource labelGridDataStyle}" Text="{Binding Value, StringFormat='{0:N}'}" />
+
+                    <BoxView Grid.Row="2" Grid.Column="0" Color="#290000" />
+                    <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource labelGridHeaderStyle}" Text="Weight" />
+                    <BoxView Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Color="#290000" />
+                    <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource labelGridDataStyle}" Text="{Binding Weight, StringFormat='{0:N}'}" />
+
+                    <BoxView Grid.Row="3" Grid.Column="0" Color="#290000" />
+                    <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource labelGridHeaderStyle}" Text="Type" />
+                    <BoxView Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Color="#290000" />
+                    <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource labelGridDataStyle}" Text="{Binding Type, StringFormat='{0:N}'}" />
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
