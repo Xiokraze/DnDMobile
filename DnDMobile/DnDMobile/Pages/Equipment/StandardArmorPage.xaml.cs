@@ -1,4 +1,5 @@
-﻿using DnDMobile.Classes.ItemsFolder;
+﻿using DnDMobile.Classes;
+using DnDMobile.Classes.ItemsFolder;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -9,9 +10,7 @@ namespace DnDMobile.Pages.Equipment
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StandardArmorPage : ContentPage
     {
-        int rowNumber = 0;
-        Grid grid;
-
+        private readonly List<Armor> armorList = new List<Armor>();
 
         public StandardArmorPage()
         {
@@ -21,83 +20,80 @@ namespace DnDMobile.Pages.Equipment
         }
 
 
-        private void InitializeItemLists(string searchText = "")
+        private void InitializeItemLists()
         {
-            grid = StandardArmorGrid;
             Items items = new Items();
-            InitializeArmor(items.GetStandardLightArmor(), "Light Armor");
-            InitializeArmor(items.GetStandardMediumArmor(), "Medium Armor");
-            InitializeArmor(items.GetStandardHeavyArmor(), "Heavy Armor");
-            InitializeArmor(items.GetStandardShields(), "Shields");
+            InitializeItems(items.GetStandardLightArmor());
+            InitializeItems(items.GetStandardMediumArmor());
+            InitializeItems(items.GetStandardHeavyArmor());
+            InitializeItems(items.GetStandardShields());
+            armorList.Sort((x, y) => x.Description.CompareTo(y.Description));
+            ListViewItems.ItemsSource = armorList;
+
+            // Update type picker options.
+            ItemFilterPicker.ItemsSource = StaticVariables.armorTypes;
         }
 
 
-        public void CreateWeaponGridLabel(string text, int column, bool isHeader = false)
+        private void InitializeItems(List<Armor> weapons)
         {
-            Label label = new Label()
+            foreach (Armor weapon in weapons)
             {
-                Text = text,
-                Style = (Style)Application.Current.Resources["labelGridDataStyle"],
-                HorizontalOptions = LayoutOptions.Center
-            };
-            if (isHeader)
-            {
-                label.TextColor = Color.FromHex("#930C10");
+                armorList.Add(weapon);
             }
-            Grid.SetRow(label, rowNumber);
-            Grid.SetColumn(label, column);
-            grid.Children.Add(label);
         }
 
 
-        private void AddArmorGridHeaders()
+        private void ItemFilterPickerSelected(object sender, EventArgs e)
         {
-            RowDefinition rowDefinition = new RowDefinition();
-            grid.RowDefinitions.Add(rowDefinition);
-            CreateWeaponGridLabel("Description", 0, true);
-            CreateWeaponGridLabel("Value", 1, true);
-            CreateWeaponGridLabel("Armor Class", 2, true);
-            CreateWeaponGridLabel("Required Strength", 3, true);
-            CreateWeaponGridLabel("Weight", 4, true);
-            rowNumber++;
+            int selectedIndex = ItemFilterPicker.SelectedIndex;
+            if (selectedIndex != -1)
+            {
+                Object itemType = ItemFilterPicker.ItemsSource[selectedIndex];
+                if (object.Equals(itemType, StaticVariables.lightAmor))
+                {
+                    FilterItemList(StaticVariables.lightAmor);
+                }
+                else if (object.Equals(itemType, StaticVariables.mediumAmor))
+                {
+                    FilterItemList(StaticVariables.mediumAmor);
+                }
+                else if (object.Equals(itemType, StaticVariables.heavyAmor))
+                {
+                    FilterItemList(StaticVariables.heavyAmor);
+                }
+                else if (object.Equals(itemType, StaticVariables.shields))
+                {
+                    FilterItemList(StaticVariables.shields);
+                }
+                else
+                {
+                    ListViewItems.ItemsSource = armorList;
+                    ItemFilterPicker.SelectedIndex = -1;
+                }
+            }
         }
 
 
-        private void AddLabel(string labelText)
+        private void FilterItemList(string type)
         {
-            rowNumber++;
-            RowDefinition rowDefinition = new RowDefinition();
-            grid.RowDefinitions.Add(rowDefinition);
-            Label label = new Label()
-            { 
-                Text = labelText,
-                FontSize = 22,
-                Style = (Style)Application.Current.Resources["labelHeaderStyle"]
-        };
-            Grid.SetRow(label, rowNumber);
-            Grid.SetColumnSpan(label, 5);
-            grid.Children.Add(label);
-            rowNumber++;
-        }
-
-
-        private void InitializeArmor(List<Armor> armorList, string labelText)
-        {
-            
-            AddLabel(labelText);
-            AddArmorGridHeaders();
-
+            List<Armor> filterMatches = new List<Armor>();
             foreach (Armor armor in armorList)
             {
-                RowDefinition rowDefinition = new RowDefinition();
-                grid.RowDefinitions.Add(rowDefinition);
-                CreateWeaponGridLabel(armor.Description, 0);
-                CreateWeaponGridLabel(armor.Value, 1);
-                CreateWeaponGridLabel(armor.ArmorClass, 2);
-                CreateWeaponGridLabel(armor.RequiredStrength, 3);
-                CreateWeaponGridLabel(armor.Weight, 4);
-                rowNumber++;
+                if (object.Equals(type, armor.Type))
+                {
+                    filterMatches.Add(armor);
+                }
             }
+            ListViewItems.ItemsSource = filterMatches;
+        }
+
+
+        private async void ListItemTapped(object sender, EventArgs e)
+        {
+            ListView listView = (ListView)sender;
+            Armor armor = (Armor)listView.SelectedItem;
+            await Navigation.PushAsync(new ArmorInfoPage(armor));
         }
     }
 }

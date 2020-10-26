@@ -7,25 +7,20 @@
              x:Class="DnDMobile.Pages.Equipment.StandardArmorPage"
              Title="Standard Armor">
     <ContentPage.Content>
-        <ScrollView Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+        <ScrollView Orientation="Vertical">
             <StackLayout x:Name="PageStack" Opacity="0">
-                <Label x:Name="LabelEquipment1" Text="Standard" Style="{StaticResource labelHeaderStyle}" />
-                <Label x:Name="LabelEquipment2" Text="Armor" Style="{StaticResource labelHeaderStyle}" />
-                
-                <ScrollView x:Name="ScrollViewStandardArmor" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                    <Grid x:Name="StandardArmorGrid" StyleId="IDLightArmor" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
-                    </Grid>
-                </ScrollView>
+                <Label Text="Standard Armor" Style="{StaticResource labelHeaderStyle}" />
+                <Picker x:Name="ItemFilterPicker" Title="Filter" SelectedIndexChanged="ItemFilterPickerSelected" Style="{StaticResource pickerSpellFilterStyle}" />
+
+                <ListView x:Name="ListViewItems" ItemTapped="ListItemTapped" SeparatorColor="#F7CE65" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label FontSize="Large" Style="{StaticResource labelHeaderStyle}" Text="{Binding Description, StringFormat='{0:N}'}" />
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
