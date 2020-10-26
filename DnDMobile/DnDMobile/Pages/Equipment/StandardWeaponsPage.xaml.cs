@@ -1,4 +1,6 @@
-﻿using DnDMobile.Classes.ItemsFolder;
+﻿using DnDMobile.Classes;
+using DnDMobile.Classes.ItemsFolder;
+using DnDMobile.Pages.Equipment;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -9,197 +11,90 @@ namespace DnDMobile.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StandardWeaponsPage : ContentPage
     {
-        GUIHelper guiHelper = new GUIHelper();
-        private static readonly Items items = new Items();
-        bool pageLoad = true;
+        private readonly List<Weapon> weaponList = new List<Weapon>();
 
         public StandardWeaponsPage()
         {
             InitializeComponent();
             PageStack.FadeTo(1, 2000);
             InitializeItemLists();
-            pageLoad = false;
         }
 
 
-        private void OnItemsSearchTextChanged(object sender, EventArgs e)
+        private void InitializeItemLists()
         {
-            SearchBar searchBar = (SearchBar)sender;
-            string searchText = searchBar.Text.ToLower();
-            if (string.IsNullOrEmpty(searchText))
-            {
-                pageLoad = true;
-            }
-            else
-            {
-                pageLoad = false;
-            }
-            InitializeItemLists(searchText);
+            Items items = new Items();
+            InitializeItems(items.GetSimpleMeleeWeapons());
+            InitializeItems(items.GetSimpleRangedWeapons());
+            InitializeItems(items.GetMartialMeleeWeapons());
+            InitializeItems(items.GetMartialRangedWeapons());
+            weaponList.Sort((x, y) => x.Description.CompareTo(y.Description));
+            ListViewItems.ItemsSource = weaponList;
+
+            // Update type picker options.
+            ItemFilterPicker.ItemsSource = StaticVariables.meleeTypes;
         }
 
 
-        private void InitializeItemLists(string searchText = "")
+        private void InitializeItems(List<Weapon> weapons)
         {
-            InitializeWeapons(searchText, items.GetSimpleMeleeWeapons(), SimpleMeleeWeaponsGrid);
-            InitializeWeapons(searchText, items.GetSimpleRangedWeapons(), SimpleRangedWeaponsGrid);
-            InitializeWeapons(searchText, items.GetMartialMeleeWeapons(), MartialMeleeWeaponsGrid);
-            InitializeWeapons(searchText, items.GetMartialRangedWeapons(), MartialRangedWeaponsGrid);
-
-        }
-
-
-        private void ShowGrid(string gridID)
-        {
-            switch (gridID)
-            {
-                case "IDSimpleMelee":
-                    ButtonShowSimpleMeleeWeaponsProcedure(null, null);
-                    break;
-                case "IDSimpleRanged":
-                    ButtonShowSimpleRangedWeaponsProcedure(null, null);
-                    break;
-                case "IDMartialMelee":
-                    ButtonShowMartialMeleeWeaponsProcedure(null, null);
-                    break;
-                case "IDMartialRanged":
-                    ButtonShowMartialRangedWeaponsProcedure(null, null);
-                    break;
-                default:
-                    break;
-            }
-        }
-
-
-        private void HideGrid(string gridID)
-        {
-            switch (gridID)
-            {
-                case "IDSimpleMelee":
-                    ButtonHideSimpleMeleeWeaponsProcedure(null, null);
-                    break;
-                case "IDSimpleRanged":
-                    ButtonHideSimpleRangedWeaponsProcedure(null, null);
-                    break;
-                case "IDMartialMelee":
-                    ButtonHideMartialMeleeWeaponsProcedure(null, null);
-                    break;
-                case "IDMartialRanged":
-                    ButtonHideMartialRangedWeaponsProcedure(null, null);
-                    break;
-                default:
-                    break;
-            }
-        }
-
-
-        private void ButtonShowSimpleMeleeWeaponsProcedure(object sender, EventArgs e)
-        {
-            guiHelper.ShowElementsProcedure(ButtonShowSimpleMeleeWeapons, ButtonHideSimpleMeleeWeapons, LabelSimpleMeleeHeader, ScrollviewSimpleMelee);
-        }
-
-
-        private void ButtonHideSimpleMeleeWeaponsProcedure(object sender, EventArgs e)
-        {
-            guiHelper.HideElementsProcedure(ButtonShowSimpleMeleeWeapons, ButtonHideSimpleMeleeWeapons, LabelSimpleMeleeHeader, ScrollviewSimpleMelee);
-        }
-
-
-        private void ButtonShowSimpleRangedWeaponsProcedure(object sender, EventArgs e)
-        {
-            guiHelper.ShowElementsProcedure(ButtonShowSimpleRangedWeapons, ButtonHideSimpleRangedWeapons, LabelSimpleRangedHeader, ScrollviewSimpleRanged);
-        }
-
-
-        private void ButtonHideSimpleRangedWeaponsProcedure(object sender, EventArgs e)
-        {
-            guiHelper.HideElementsProcedure(ButtonShowSimpleRangedWeapons, ButtonHideSimpleRangedWeapons, LabelSimpleRangedHeader, ScrollviewSimpleRanged);
-        }
-
-
-        private void ButtonShowMartialMeleeWeaponsProcedure(object sender, EventArgs e)
-        {
-            guiHelper.ShowElementsProcedure(ButtonShowMartialMeleeWeapons, ButtonHideMartialMeleeWeapons, LabelMartialMeleeHeader, ScrollviewMartialMelee);
-        }
-
-
-        private void ButtonHideMartialMeleeWeaponsProcedure(object sender, EventArgs e)
-        {
-            guiHelper.HideElementsProcedure(ButtonShowMartialMeleeWeapons, ButtonHideMartialMeleeWeapons, LabelMartialMeleeHeader, ScrollviewMartialMelee);
-        }
-
-        private void ButtonShowMartialRangedWeaponsProcedure(object sender, EventArgs e)
-        {
-            guiHelper.ShowElementsProcedure(ButtonShowMartialRangedWeapons, ButtonHideMartialRangedWeapons, LabelMartialRangedHeader, ScrollviewMartialRanged);
-        }
-
-
-        private void ButtonHideMartialRangedWeaponsProcedure(object sender, EventArgs e)
-        {
-            guiHelper.HideElementsProcedure(ButtonShowMartialRangedWeapons, ButtonHideMartialRangedWeapons, LabelMartialRangedHeader, ScrollviewMartialRanged);
-        }
-
-
-        public void CreateWeaponGridLabel(string text, int row, int col, Grid grid, bool isHeader = false)
-        {
-            Label label = new Label()
-            {
-                Text = text,
-                Style = (Style)Application.Current.Resources["labelGridDataStyle"],
-                HorizontalOptions = LayoutOptions.Start
-            };
-            if (isHeader)
-            {
-                label.TextColor = Color.FromHex("#930C10");
-            }
-            Grid.SetRow(label, row);
-            Grid.SetColumn(label, col);
-            grid.Children.Add(label);
-        }
-
-
-        private void AddWeaponGridHeaders(Grid grid)
-        {
-            RowDefinition rowDefinition = new RowDefinition();
-            grid.RowDefinitions.Add(rowDefinition);
-            CreateWeaponGridLabel("Description", 0, 0, grid, true);
-            CreateWeaponGridLabel("Value", 0, 1, grid, true);
-            CreateWeaponGridLabel("Damage", 0, 2, grid, true);
-            CreateWeaponGridLabel("Weight", 0, 3, grid, true);
-            CreateWeaponGridLabel("Properties", 0, 4, grid, true);
-        }
-
-
-        private void InitializeWeapons(string searchDescription, List<Weapon> weapons, Grid grid)
-        {
-            grid.RowDefinitions.Clear();
-            grid.Children.Clear();
-            AddWeaponGridHeaders(grid);
-            int rowNumber = 1;
-            Boolean matchFound = false;
-
             foreach (Weapon weapon in weapons)
             {
-                if (string.IsNullOrEmpty(searchDescription) || weapon.Description.ToLower().Contains(searchDescription.ToLower()))
+                weaponList.Add(weapon);
+            }
+        }
+
+
+        private void ItemFilterPickerSelected(object sender, EventArgs e)
+        {
+            int selectedIndex = ItemFilterPicker.SelectedIndex;
+            if (selectedIndex != -1)
+            {
+                Object itemType = ItemFilterPicker.ItemsSource[selectedIndex];
+                if (object.Equals(itemType, StaticVariables.simpleMelee))
                 {
-                    matchFound = true;
-                    RowDefinition rowDefinition = new RowDefinition();
-                    grid.RowDefinitions.Add(rowDefinition);
-                    CreateWeaponGridLabel(weapon.Description, rowNumber, 0, grid);
-                    CreateWeaponGridLabel(weapon.Value, rowNumber, 1, grid);
-                    CreateWeaponGridLabel(weapon.Damage, rowNumber, 2, grid);
-                    CreateWeaponGridLabel(weapon.Weight, rowNumber, 3, grid);
-                    CreateWeaponGridLabel(weapon.Properties, rowNumber, 4, grid);
-                    rowNumber++;
+                    FilterItemList(StaticVariables.simpleMelee);
+                }
+                else if (object.Equals(itemType, StaticVariables.simpleRanged))
+                {
+                    FilterItemList(StaticVariables.simpleRanged);
+                }
+                else if (object.Equals(itemType, StaticVariables.martialMelee))
+                {
+                    FilterItemList(StaticVariables.martialMelee);
+                }
+                else if (object.Equals(itemType, StaticVariables.martialRanged))
+                {
+                    FilterItemList(StaticVariables.martialRanged);
+                }
+                else
+                {
+                    ListViewItems.ItemsSource = weaponList;
+                    ItemFilterPicker.SelectedIndex = -1;
                 }
             }
-            if (matchFound && pageLoad != true)
+        }
+
+
+        private void FilterItemList(string type)
+        {
+            List<Weapon> filterMatches = new List<Weapon>();
+            foreach (Weapon weapon in weaponList)
             {
-                ShowGrid(grid.StyleId);
+                if (object.Equals(type, weapon.Type))
+                {
+                    filterMatches.Add(weapon);
+                }
             }
-            else
-            {
-                HideGrid(grid.StyleId);
-            }
+            ListViewItems.ItemsSource = filterMatches;
+        }
+
+
+        private async void ListItemTapped(object sender, EventArgs e)
+        {
+            ListView listView = (ListView)sender;
+            Weapon weapon = (Weapon)listView.SelectedItem;
+            await Navigation.PushAsync(new WeaponsInfoPage(weapon));
         }
     }
 }
