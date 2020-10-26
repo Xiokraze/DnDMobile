@@ -307,16 +307,16 @@ namespace DnDMobile.Classes.ItemsFolder
         {
             List<Weapon> simpleMeleeWeapons = new List<Weapon>
             {
-                new Weapon("Club", "1 sp", "1d4 bludgeoning", "2 lbs", "Light"),
-                new Weapon("Dagger", "2 gp", "1d4 piercing",  "1 lbs", "Finesse, Light, Thrown (range 20/60)"),
-                new Weapon("Greatclub", "2 sp", "1d8 bludgeoning", "10 lbs", "Two-handed"),
-                new Weapon("Handaxe", "5 gp", "1d6 slashing", "2 lbs", "Light, Thrown (range 20/60)"),
-                new Weapon("Javelin", "5 sp", "1d6 piercing", "2 lbs", "Thrown (range 30/120)"),
-                new Weapon("Light Hammer", "2 gp", "1d4 bludgeoning", "2 lbs", "Light, Thrown (range 20/60)"),
-                new Weapon("Mace", "5 gp", "1d6 bludgeoning", "4 lbs",  "-"),
-                new Weapon("Quarterstaff", "2 sp", "1d6 bludgeoning", "4 lbs", "Versatile (1d8)"),
-                new Weapon("Sickle", "1 gp", "1d4 slashing", "2 lbs", "Light"),
-                new Weapon("Spear", "1 gp", "1d6 piercing", "3 lbs", "Thrown (range 20/60), Versatile (1d8)")
+                new Weapon("Club", "1 sp", "1d4 bludgeoning", "2 lbs", "Light", StaticVariables.simpleMelee),
+                new Weapon("Dagger", "2 gp", "1d4 piercing",  "1 lbs", "Finesse, Light, Thrown (range 20/60)", StaticVariables.simpleMelee),
+                new Weapon("Greatclub", "2 sp", "1d8 bludgeoning", "10 lbs", "Two-handed", StaticVariables.simpleMelee),
+                new Weapon("Handaxe", "5 gp", "1d6 slashing", "2 lbs", "Light, Thrown (range 20/60)", StaticVariables.simpleMelee),
+                new Weapon("Javelin", "5 sp", "1d6 piercing", "2 lbs", "Thrown (range 30/120)", StaticVariables.simpleMelee),
+                new Weapon("Light Hammer", "2 gp", "1d4 bludgeoning", "2 lbs", "Light, Thrown (range 20/60)", StaticVariables.simpleMelee),
+                new Weapon("Mace", "5 gp", "1d6 bludgeoning", "4 lbs",  "-", StaticVariables.simpleMelee),
+                new Weapon("Quarterstaff", "2 sp", "1d6 bludgeoning", "4 lbs", "Versatile (1d8)", StaticVariables.simpleMelee),
+                new Weapon("Sickle", "1 gp", "1d4 slashing", "2 lbs", "Light", StaticVariables.simpleMelee),
+                new Weapon("Spear", "1 gp", "1d6 piercing", "3 lbs", "Thrown (range 20/60), Versatile (1d8)", StaticVariables.simpleMelee)
             };
             return simpleMeleeWeapons;
         }
@@ -326,10 +326,10 @@ namespace DnDMobile.Classes.ItemsFolder
         {
             List<Weapon> simpleRangedWeapons = new List<Weapon>
             {
-                new Weapon("Crossbow, Light", "25 gp", "1d8 piercing", "5 lbs", "Ammunition (range 80/320), Loading, Two-handed"),
-                new Weapon("Dart", "5 cp", "1d4 piercing", "1/4 lbs", "Finesse, Thrown (range 20/60)"),
-                new Weapon("Shortbow", "25 gp", "1d6 piercing", "2 lbs", "Ammunition (range 80/320), Two-handed"),
-                new Weapon("Sling", "1 sp", "1d4 bludgeoning", "-", "Ammunition (range 30/120)")
+                new Weapon("Crossbow, Light", "25 gp", "1d8 piercing", "5 lbs", "Ammunition (range 80/320), Loading, Two-handed", StaticVariables.simpleRanged),
+                new Weapon("Dart", "5 cp", "1d4 piercing", "1/4 lbs", "Finesse, Thrown (range 20/60)", StaticVariables.simpleRanged),
+                new Weapon("Shortbow", "25 gp", "1d6 piercing", "2 lbs", "Ammunition (range 80/320), Two-handed", StaticVariables.simpleRanged),
+                new Weapon("Sling", "1 sp", "1d4 bludgeoning", "-", "Ammunition (range 30/120)", StaticVariables.simpleRanged)
             };
             return simpleRangedWeapons;
         }
@@ -339,24 +339,24 @@ namespace DnDMobile.Classes.ItemsFolder
         {
             List<Weapon> martialMeleeWeapons = new List<Weapon>
             {
-                new Weapon("Battleaxe", "10 gp", "1d8 slashing", "4 lbs", "Versatile (1d10)"),
-                new Weapon("Flail", "10 gp", "1d8 bludgeoning", "2 lbs", "-"),
-                new Weapon("Glaive", "20 gp", "1d10 slashing", "6 lbs", "Heavy, Reach, Two-handed"),
-                new Weapon("Greataxe", "30 gp", "1d12 slashing", "7 lbs", "Heavy, Two-handed"),
-                new Weapon("Greatsword", "50 gp", "2d6 slashing", "6 lbs", "Heavy, Two-handed"),
-                new Weapon("Halberd", "20 gp",    "1d10 slashing", "6 lbs", "Heavy, Reach, Two-handed"),
-                new Weapon("Lance", "10 gp", "1d12 piercing", "6 lbs", "Reach, Special"),
-                new Weapon("Longsword", "15 gp", "1d8 slashing", "3 lbs", "Versatile (1d10)"),
-                new Weapon("Maul", "10 gp", "2d6 bludgeoning", "10 lbs", "Heavy, Two-handed"),
-                new Weapon("Morningstar", "15 gp", "1d8 piercing", "4 lbs", "-"),
-                new Weapon("Pike", "5 gp", "1d10 piercing", "18 lbs", "Heavy, Reach, Two-handed"),
-                new Weapon("Rapier", "25 gp", "1d8 piercing", "2 lbs", "Finesse"),
-                new Weapon("Scimitar", "25 gp", "1d6 slashing", "3 lbs", "Finesse, Light"),
-                new Weapon("Shortsword", "10 gp", "1d6 piercing", "2 lbs", "Finesse, Light"),
-                new Weapon("Trident", "5 gp", "1d6 piercing", "4 lbs", "Thrown (range 20/60), Versatile (1d8)"),
-                new Weapon("War Pick", "5 gp", "1d8 piercing", "2 lbs", "-"),
-                new Weapon("Warhammer", "15 gp", "1d8 bludgeoning", "2 lbs", "Versatile (1d10)"),
-                new Weapon("Whip", "2 gp", "1d4 slashing", "3 lbs", "Finesse, Reach")
+                new Weapon("Battleaxe", "10 gp", "1d8 slashing", "4 lbs", "Versatile (1d10)", StaticVariables.martialMelee),
+                new Weapon("Flail", "10 gp", "1d8 bludgeoning", "2 lbs", "-", StaticVariables.martialMelee),
+                new Weapon("Glaive", "20 gp", "1d10 slashing", "6 lbs", "Heavy, Reach, Two-handed", StaticVariables.martialMelee),
+                new Weapon("Greataxe", "30 gp", "1d12 slashing", "7 lbs", "Heavy, Two-handed", StaticVariables.martialMelee),
+                new Weapon("Greatsword", "50 gp", "2d6 slashing", "6 lbs", "Heavy, Two-handed", StaticVariables.martialMelee),
+                new Weapon("Halberd", "20 gp",    "1d10 slashing", "6 lbs", "Heavy, Reach, Two-handed", StaticVariables.martialMelee),
+                new Weapon("Lance", "10 gp", "1d12 piercing", "6 lbs", "Reach, Special", StaticVariables.martialMelee),
+                new Weapon("Longsword", "15 gp", "1d8 slashing", "3 lbs", "Versatile (1d10)", StaticVariables.martialMelee),
+                new Weapon("Maul", "10 gp", "2d6 bludgeoning", "10 lbs", "Heavy, Two-handed", StaticVariables.martialMelee),
+                new Weapon("Morningstar", "15 gp", "1d8 piercing", "4 lbs", "-", StaticVariables.martialMelee),
+                new Weapon("Pike", "5 gp", "1d10 piercing", "18 lbs", "Heavy, Reach, Two-handed", StaticVariables.martialMelee),
+                new Weapon("Rapier", "25 gp", "1d8 piercing", "2 lbs", "Finesse", StaticVariables.martialMelee),
+                new Weapon("Scimitar", "25 gp", "1d6 slashing", "3 lbs", "Finesse, Light", StaticVariables.martialMelee),
+                new Weapon("Shortsword", "10 gp", "1d6 piercing", "2 lbs", "Finesse, Light", StaticVariables.martialMelee),
+                new Weapon("Trident", "5 gp", "1d6 piercing", "4 lbs", "Thrown (range 20/60), Versatile (1d8)", StaticVariables.martialMelee),
+                new Weapon("War Pick", "5 gp", "1d8 piercing", "2 lbs", "-", StaticVariables.martialMelee),
+                new Weapon("Warhammer", "15 gp", "1d8 bludgeoning", "2 lbs", "Versatile (1d10)", StaticVariables.martialMelee),
+                new Weapon("Whip", "2 gp", "1d4 slashing", "3 lbs", "Finesse, Reach", StaticVariables.martialMelee)
             };
             return martialMeleeWeapons;
         }
@@ -366,11 +366,11 @@ namespace DnDMobile.Classes.ItemsFolder
         {
             List<Weapon> martialRangedWeapons = new List<Weapon>
             {
-                new Weapon("Blowgun", "10 gp", "1 piercing", "1 lbs", "Ammunition (range 25/100), Loading"),
-                new Weapon("Crossbow, Hand", "75 gp", "1d6 piercing", "3 lbs", "Ammunition (range 30/120), Light, Loading"),
-                new Weapon("Crossbow, Heavy", "50 gp", "1d10 piercing", "18 lbs", "Ammunition (range 100/400), Heavy, Loading, Two-handed"),
-                new Weapon("Longbow", "50 gp", "1d8 piercing", "2 lbs", "Ammunition (range 150/600), Heavy, Two-handed"),
-                new Weapon("Net", "1 gp", "-", "3 lbs", "Special, Thrown (range 5/15)")
+                new Weapon("Blowgun", "10 gp", "1 piercing", "1 lbs", "Ammunition (range 25/100), Loading", StaticVariables.martialRanged),
+                new Weapon("Crossbow, Hand", "75 gp", "1d6 piercing", "3 lbs", "Ammunition (range 30/120), Light, Loading", StaticVariables.martialRanged),
+                new Weapon("Crossbow, Heavy", "50 gp", "1d10 piercing", "18 lbs", "Ammunition (range 100/400), Heavy, Loading, Two-handed", StaticVariables.martialRanged),
+                new Weapon("Longbow", "50 gp", "1d8 piercing", "2 lbs", "Ammunition (range 150/600), Heavy, Two-handed", StaticVariables.martialRanged),
+                new Weapon("Net", "1 gp", "-", "3 lbs", "Special, Thrown (range 5/15)", StaticVariables.martialRanged)
             };
             return martialRangedWeapons;
         }
