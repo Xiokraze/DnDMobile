@@ -38,12 +38,12 @@
                     <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource labelGridDataStyle}" Text="{Binding ArmorClass, StringFormat='{0:N}'}" />
 
                     <BoxView Grid.Row="3" Grid.Column="0" Color="#290000" />
-                    <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource labelGridHeaderStyle}" Text="Required Strength" />
+                    <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource labelGridHeaderStyle}" Text="Strength" />
                     <BoxView Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Color="#290000" />
                     <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource labelGridDataStyle}" Text="{Binding RequiredStrength, StringFormat='{0:N}'}" />
 
                     <BoxView Grid.Row="4" Grid.Column="0" Color="#290000" />
-                    <Label Grid.Row="4" Grid.Column="0" Style="{StaticResource labelGridHeaderStyle}" Text="Stealth Impact" />
+                    <Label Grid.Row="4" Grid.Column="0" Style="{StaticResource labelGridHeaderStyle}" Text="Stealth" />
                     <BoxView Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Color="#290000" />
                     <Label Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource labelGridDataStyle}" Text="{Binding StealthImpact, StringFormat='{0:N}'}" />
 
