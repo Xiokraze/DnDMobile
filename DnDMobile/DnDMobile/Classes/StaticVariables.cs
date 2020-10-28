@@ -32,20 +32,20 @@ namespace DnDMobile.Classes
         public static string[] generalTypes = { ammunition, arcaneFocus, druidicFocus, generalGood, holySymbol, reset };
 
         // Gems.
-        public static string gp10 = "10gp";
-        public static string gp50 = "50gp";
-        public static string gp100 = "100gp";
-        public static string gp500 = "500gp";
-        public static string gp1000 = "1000gp";
-        public static string gp5000 = "5000gp";
+        public static string gp10 = "10 gp";
+        public static string gp50 = "50 gp";
+        public static string gp100 = "100 gp";
+        public static string gp500 = "500 gp";
+        public static string gp1000 = "1000 gp";
+        public static string gp5000 = "5000 gp";
         public static string[] gemTypes = { gp10, gp50, gp100, gp500, gp1000, gp5000, reset };
 
         // Art. 
-        public static string gp25 = "25gp";
-        public static string gp250 = "250gp";
-        public static string gp750 = "750gp";
-        public static string gp2500 = "2500gp";
-        public static string gp7500 = "7500gp";
+        public static string gp25 = "25 gp";
+        public static string gp250 = "250 gp";
+        public static string gp750 = "750 gp";
+        public static string gp2500 = "2500 gp";
+        public static string gp7500 = "7500 gp";
         public static string[] artTypes = { gp25, gp250, gp750, gp2500, gp7500, reset };
     }
 }
