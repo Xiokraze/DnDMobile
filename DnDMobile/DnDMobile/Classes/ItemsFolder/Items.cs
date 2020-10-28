@@ -18,17 +18,17 @@ namespace DnDMobile.Classes.ItemsFolder
         private List<GeneralItem> GeneralItemsDruidicFocus { get; } = FetchGeneralItemsDruidicFocus();
         private List<GeneralItem> GeneralItemsHolySymbol { get; } = FetchGeneralItemsHolySymbol();
         private List<string> GeneralItemsTrinkets { get; } = FetchGeneralItemsTrinkets();
-        private List<string> Art25 { get; set; } = FetchArt25();
-        private List<string> Art250 { get; set; } = FetchArt250();
-        private List<string> Art750 { get; set; } = FetchArt750();
-        private List<string> Art2500 { get; set; } = FetchArt2500();
-        private List<string> Art7500 { get; set; } = FetchArt7500();
-        private List<string> Gems10 { get; set; } = FetchGems10();
-        private List<string> Gems50 { get; set; } = FetchGems50();
-        private List<string> Gems100 { get; set; } = FetchGems100();
-        private List<string> Gems500 { get; set; } = FetchGems500();
-        private List<string> Gems1000 { get; set; } = FetchGems1000();
-        private List<string> Gems5000 { get; set; } = FetchGems5000();
+        private List<Art> Art25 { get; set; } = FetchArt25();
+        private List<Art> Art250 { get; set; } = FetchArt250();
+        private List<Art> Art750 { get; set; } = FetchArt750();
+        private List<Art> Art2500 { get; set; } = FetchArt2500();
+        private List<Art> Art7500 { get; set; } = FetchArt7500();
+        private List<Gem> Gems10 { get; set; } = FetchGems10();
+        private List<Gem> Gems50 { get; set; } = FetchGems50();
+        private List<Gem> Gems100 { get; set; } = FetchGems100();
+        private List<Gem> Gems500 { get; set; } = FetchGems500();
+        private List<Gem> Gems1000 { get; set; } = FetchGems1000();
+        private List<Gem> Gems5000 { get; set; } = FetchGems5000();
 
         public Items() { }
 
@@ -189,66 +189,66 @@ namespace DnDMobile.Classes.ItemsFolder
         }
 
 
-        public List<string> GetArt25()
+        public List<Art> GetArt25()
         {
             return Art25;
         }
 
 
-        public List<string> GetArt250()
+        public List<Art> GetArt250()
         {
             return Art250;
         }
 
-        public List<string> GetArt750()
+        public List<Art> GetArt750()
         {
             return Art750;
         }
 
 
-        public List<string> GetArt2500()
+        public List<Art> GetArt2500()
         {
             return Art2500;
         }
 
 
-        public List<string> GetArt7500()
+        public List<Art> GetArt7500()
         {
             return Art7500;
         }
 
 
-        public List<string> GetGems10()
+        public List<Gem> GetGems10()
         {
             return Gems10;
         }
 
 
-        public List<string> GetGems50()
+        public List<Gem> GetGems50()
         {
             return Gems50;
         }
 
 
-        public List<string> GetGems100()
+        public List<Gem> GetGems100()
         {
             return Gems100;
         }
 
 
-        public List<string> GetGems500()
+        public List<Gem> GetGems500()
         {
             return Gems500;
         }
 
 
-        public List<string> GetGems1000()
+        public List<Gem> GetGems1000()
         {
             return Gems1000;
         }
 
 
-        public List<string> GetGems5000()
+        public List<Gem> GetGems5000()
         {
             return Gems5000;
         }
@@ -628,200 +628,200 @@ namespace DnDMobile.Classes.ItemsFolder
         }
 
 
-        private static List<string> FetchArt25()
+        private static List<Art> FetchArt25()
         {
-            List<string> art = new List<string>()
+            List<Art> art = new List<Art>()
             {
-                "Silver ewer",
-                "Carved bone statuette",
-                "Small gold bracelet",
-                "Cloth-of-gold vestments",
-                "Black velvet mask stitched with silver thread",
-                "Copper chalice with silver filigree",
-                "Pair of engraved bone dice",
-                "Small mirror set in a painted wooden frame",
-                "Embroidered silk handkerchief",
-                "Gold locket with a painted portrait inside"
+                new Art("Silver ewer", StaticVariables.gp25),
+                new Art("Carved bone statuette", StaticVariables.gp25),
+                new Art("Small gold bracelet", StaticVariables.gp25),
+                new Art("Cloth-of-gold vestments", StaticVariables.gp25),
+                new Art("Black velvet mask stitched with silver thread", StaticVariables.gp25),
+                new Art("Copper chalice with silver filigree", StaticVariables.gp25),
+                new Art("Pair of engraved bone dice", StaticVariables.gp25),
+                new Art("Small mirror set in a painted wooden frame", StaticVariables.gp25),
+                new Art("Embroidered silk handkerchief", StaticVariables.gp25),
+                new Art("Gold locket with a painted portrait inside", StaticVariables.gp25)
             };
             return art;
         }
 
 
-        private static List<string> FetchArt250()
+        private static List<Art> FetchArt250()
         {
-            List<string> art = new List<string>()
+            List<Art> art = new List<Art>()
             {
-                "Gold ring set with bloodstones",
-                "Carved ivory statuette",
-                "Large gold bracelet",
-                "Silver necklace with a gemstone pendant",
-                "Bronze crown",
-                "Silk robe with gold embroidery",
-                "Large well-made tapestry",
-                "Brass mug with jade inlay",
-                "Box of turquoise animal figurines",
-                "Gold bird cage with electrum filigree"
+                new Art("Gold ring set with bloodstones", StaticVariables.gp250),
+                new Art("Carved ivory statuette", StaticVariables.gp250),
+                new Art("Large gold bracelet", StaticVariables.gp250),
+                new Art("Silver necklace with a gemstone pendant", StaticVariables.gp250),
+                new Art("Bronze crown", StaticVariables.gp250),
+                new Art("Silk robe with gold embroidery", StaticVariables.gp250),
+                new Art("Large well-made tapestry", StaticVariables.gp250),
+                new Art("Brass mug with jade inlay", StaticVariables.gp250),
+                new Art("Box of turquoise animal figurines", StaticVariables.gp250),
+                new Art("Gold bird cage with electrum filigree", StaticVariables.gp250)
             };
             return art;
         }
 
 
-        private static List<string> FetchArt750()
+        private static List<Art> FetchArt750()
         {
-            List<string> art = new List<string>()
+            List<Art> art = new List<Art>()
             {
-                "Silver chalice set with moonstones",
-                "Silver-plated steel longsword with jet set in hilt",
-                "Carved harp of exotic wood with ivory inlay and zircon gems",
-                "Small gold idol",
-                "Gold dragon comb set with red garnets as eyes",
-                "Bottle stopper cork embossed with gold leaf and set with amethysts",
-                "Ceremonial electrum dagger with a black pearl in the pommel",
-                "Silver and gold brooch",
-                "Obsidian statuette with gold fittings and inlay",
-                "Painted gold war mask"
+                new Art("Silver chalice set with moonstones", StaticVariables.gp750),
+                new Art("Silver-plated steel longsword with jet set in hilt", StaticVariables.gp750),
+                new Art("Carved harp of exotic wood with ivory inlay and zircon gems", StaticVariables.gp750),
+                new Art("Small gold idol", StaticVariables.gp750),
+                new Art("Gold dragon comb set with red garnets as eyes", StaticVariables.gp750),
+                new Art("Bottle stopper cork embossed with gold leaf and set with amethysts", StaticVariables.gp750),
+                new Art("Ceremonial electrum dagger with a black pearl in the pommel", StaticVariables.gp750),
+                new Art("Silver and gold brooch", StaticVariables.gp750),
+                new Art("Obsidian statuette with gold fittings and inlay", StaticVariables.gp750),
+                new Art("Painted gold war mask", StaticVariables.gp750)
             };
             return art;
         }
 
 
-        private static List<string> FetchArt2500()
+        private static List<Art> FetchArt2500()
         {
-            List<string> art = new List<string>()
+            List<Art> art = new List<Art>()
             {
-                "Fine gold chain set with a fire opal",
-                "Old masterpiece painting",
-                "Embroidered silk and velvet mantle set with numerous moonstones",
-                "Platinum bracelet set with a sapphire",
-                "Embroidered glove set with jewel chips",
-                "Jeweled anklet",
-                "Gold music box",
-                "Gold circlet set with four aquamarines",
-                "Eye patch with a mock eye set in blue sapphire and moonstone",
-                "A necklace string of small pink pearls"
+                new Art("Fine gold chain set with a fire opal", StaticVariables.gp2500),
+                new Art("Old masterpiece painting", StaticVariables.gp2500),
+                new Art("Embroidered silk and velvet mantle set with numerous moonstones", StaticVariables.gp2500),
+                new Art("Platinum bracelet set with a sapphire", StaticVariables.gp2500),
+                new Art("Embroidered glove set with jewel chips", StaticVariables.gp2500),
+                new Art("Jeweled anklet", StaticVariables.gp2500),
+                new Art("Gold music box", StaticVariables.gp2500),
+                new Art("Gold circlet set with four aquamarines", StaticVariables.gp2500),
+                new Art("Eye patch with a mock eye set in blue sapphire and moonstone", StaticVariables.gp2500),
+                new Art("A necklace string of small pink pearls", StaticVariables.gp2500)
             };
             return art;
         }
 
 
-        private static List<string> FetchArt7500()
+        private static List<Art> FetchArt7500()
         {
-            List<string> art = new List<string>()
+            List<Art> art = new List<Art>()
             {
-                "Jeweled gold crown",
-                "Jeweled platinum ring",
-                "Small gold statuette set with rubies",
-                "Gold cup set with emeralds",
-                "Gold jewelry box with platinum filigree",
-                "Painted gold child’s sarcophagus",
-                "Jade game board with solid gold playing pieces",
-                "Bejeweled ivory drinking horn with gold filigree"
+                new Art("Jeweled gold crown", StaticVariables.gp7500),
+                new Art("Jeweled platinum ring", StaticVariables.gp7500),
+                new Art("Small gold statuette set with rubies", StaticVariables.gp7500),
+                new Art("Gold cup set with emeralds", StaticVariables.gp7500),
+                new Art("Gold jewelry box with platinum filigree", StaticVariables.gp7500),
+                new Art("Painted gold child’s sarcophagus", StaticVariables.gp7500),
+                new Art("Jade game board with solid gold playing pieces", StaticVariables.gp7500),
+                new Art("Bejeweled ivory drinking horn with gold filigree", StaticVariables.gp7500)
             };
             return art;
         }
 
 
-        private static List<string> FetchGems10()
+        private static List<Gem> FetchGems10()
         {
-            List<string> gems = new List<string>()
+            List<Gem> gems = new List<Gem>()
             {
-                "Azurite (opaque mottled deep blue)",
-                "Banded agate (translucent striped brown, blue, white, or red)",
-                "Blue quartz (transparent pale blue)",
-                "Eye agate (translucent circles or gray, white, brown, blue, or green)",
-                "Hematite (opaque gray-black)",
-                "Lapis lazuli (opaque light and dark blue with yellow flecks)",
-                "Malachite (opaque striated light and dark green)",
-                "Moss agate (translucent pink or yellow-white with mossy gray or green markings)",
-                "Obsidian (opaque black)",
-                "Rhodochrosite (opaque light pink)",
-                "Tiger eye (translucent brown with golden center)",
-                "Turquoise (opaque light blue-green)"
+                new Gem("Azurite", "opaque mottled deep blue", StaticVariables.gp10),
+                new Gem("Banded Agate", "translucent striped brown, blue, white, or red", StaticVariables.gp10),
+                new Gem("Blue Quartz", "transparent pale blue", StaticVariables.gp10),
+                new Gem("Eye Agate", "translucent circles or gray, white, brown, blue, or green", StaticVariables.gp10),
+                new Gem("Hematite", "opaque gray-black", StaticVariables.gp10),
+                new Gem("Lapis Lazuli", "opaque light and dark blue with yellow flecks", StaticVariables.gp10),
+                new Gem("Malachite", "opaque striated light and dark green)", StaticVariables.gp10),
+                new Gem("Moss Agate", "translucent pink or yellow-white with mossy gray or green markings", StaticVariables.gp10),
+                new Gem("Obsidian", "opaque black", StaticVariables.gp10),
+                new Gem("Rhodochrosite", "opaque light pink", StaticVariables.gp10),
+                new Gem("Tiger Eye", "translucent brown with golden center", StaticVariables.gp10),
+                new Gem("Turquoise", "opaque light blue-green", StaticVariables.gp10)
             };
             return gems;
         }
 
 
-        private static List<string> FetchGems50()
+        private static List<Gem> FetchGems50()
         {
-            List<string> gems = new List<string>()
+            List<Gem> gems = new List<Gem>()
             {
-                "Bloodstone (opaque dark gray with red flecks)",
-                "Carnelian (opaque orange to red-brown)",
-                "Chalcedony (opaque white)",
-                "Chrysoprase (translucent green)",
-                "Citrine (transparent pale yellow-brown)",
-                "Jasper (opaque blue, black, or brown)",
-                "Moonstone (translucent white with pale blue glow)",
-                "Onyx (opaque bands of black and white, or pure black or white)",
-                "Quartz (transparent white, smoky gray, or yellow)",
-                "Sardonyx (opaque bands of red and white)",
-                "Star rose quartz (translucent rosy stone with white star-shaped center)",
-                "Zircon (transparent pale blue-green)"
+                new Gem("Bloodstone", "opaque dark gray with red flecks", StaticVariables.gp50),
+                new Gem("Carnelian", "opaque orange to red-brown", StaticVariables.gp50),
+                new Gem("Chalcedony", "opaque white", StaticVariables.gp50),
+                new Gem("Chrysoprase", "translucent green", StaticVariables.gp50),
+                new Gem("Citrine", "transparent pale yellow-brown", StaticVariables.gp50),
+                new Gem("Jasper", "opaque blue, black, or brown", StaticVariables.gp50),
+                new Gem("Moonstone", "translucent white with pale blue glow", StaticVariables.gp50),
+                new Gem("Onyx", "opaque bands of black and white, or pure black or white", StaticVariables.gp50),
+                new Gem("Quartz", "transparent white, smoky gray, or yellow", StaticVariables.gp50),
+                new Gem("Sardonyx", "opaque bands of red and white", StaticVariables.gp50),
+                new Gem("Star rose quartz", "translucent rosy stone with white star-shaped center", StaticVariables.gp50),
+                new Gem("Zircon", "transparent pale blue-green", StaticVariables.gp50)
             };
             return gems;
         }
 
 
-        private static List<string> FetchGems100()
+        private static List<Gem> FetchGems100()
         {
-            List<string> gems = new List<string>()
+            List<Gem> gems = new List<Gem>()
             {
-                "Amber (transparent watery gold to rich gold)",
-                "Amethyst (transparent deep purple)",
-                "Chrysoberyl (transparent yellow-green to pale green)",
-                "Coral (opaque crimson)",
-                "Garnet (transparent red, brown-green, or violet)",
-                "Jade (translucent light green, deep green, or white)",
-                "Jet (opaque deep black)",
-                "Pearl (opaque lustrous white, yellow, or pink)",
-                "Spinel (transparent red, red-brown, or deep green)",
-                "Tourmaline (transparent pale green, blue, brown, or red)"
+                new Gem("Amber", "transparent watery gold to rich gold", StaticVariables.gp100),
+                new Gem("Amethyst", "transparent deep purple", StaticVariables.gp100),
+                new Gem("Chrysoberyl", "transparent yellow-green to pale green", StaticVariables.gp100),
+                new Gem("Coral", "opaque crimson", StaticVariables.gp100),
+                new Gem("Garnet", "transparent red, brown-green, or violet", StaticVariables.gp100),
+                new Gem("Jade", "translucent light green, deep green, or white", StaticVariables.gp100),
+                new Gem("Jet", "opaque deep black", StaticVariables.gp100),
+                new Gem("Pearl", "opaque lustrous white, yellow, or pink", StaticVariables.gp100),
+                new Gem("Spinel", "transparent red, red-brown, or deep green", StaticVariables.gp100),
+                new Gem("Tourmaline", "transparent pale green, blue, brown, or red", StaticVariables.gp100)
             };
             return gems;
         }
 
 
-        private static List<string> FetchGems500()
+        private static List<Gem> FetchGems500()
         {
-            List<string> gems = new List<string>()
+            List<Gem> gems = new List<Gem>()
             {
-                "Alexandrite (transparent dark green)",
-                "Aquamarine (transparent pale blue-green)",
-                "Black pearl (opaque pure black)",
-                "Blue spinel (transparent deep blue)",
-                "Peridot (transparent rich olive green)",
-                "Topaz (transparent golden yellow)"
+                new Gem("Alexandrite", "transparent dark green", StaticVariables.gp500),
+                new Gem("Aquamarine", "transparent pale blue-green", StaticVariables.gp500),
+                new Gem("Black Pearl", "opaque pure black", StaticVariables.gp500),
+                new Gem("Blue Spinel", "transparent deep blue", StaticVariables.gp500),
+                new Gem("Peridot", "transparent rich olive green", StaticVariables.gp500),
+                new Gem("Topaz", "transparent golden yellow", StaticVariables.gp500)
             };
             return gems;
         }
 
 
-        private static List<string> FetchGems1000()
+        private static List<Gem> FetchGems1000()
         {
-            List<string> gems = new List<string>()
+            List<Gem> gems = new List<Gem>()
             {
-                "Black opal (translucent dark green with black mottling and golden flecks)",
-                "Blue sapphire (transparent blue-white to medium blue)",
-                "Emerald (transparent deep bright green)",
-                "Fire opal (translucent fiery red)",
-                "Opal (translucent pale blue with green and golden mottling)",
-                "Star ruby (translucent ruby with white star-shaped center)",
-                "Star sapphire (translucent blue sapphire with white star-shaped center)",
-                "Yellow sapphire (transparent fiery yellow or yellow-green)"
+                new Gem("Black Opal", "translucent dark green with black mottling and golden flecks", StaticVariables.gp1000),
+                new Gem("Blue Sapphire", "transparent blue-white to medium blue", StaticVariables.gp1000),
+                new Gem("Emerald", "transparent deep bright green", StaticVariables.gp1000),
+                new Gem("Fire Opal", "translucent fiery red", StaticVariables.gp1000),
+                new Gem("Opal", "translucent pale blue with green and golden mottling", StaticVariables.gp1000),
+                new Gem("Star Ruby", "translucent ruby with white star-shaped center", StaticVariables.gp1000),
+                new Gem("Star Sapphire", "translucent blue sapphire with white star-shaped center", StaticVariables.gp1000),
+                new Gem("Yellow Sapphire", "transparent fiery yellow or yellow-green", StaticVariables.gp1000)
             };
             return gems;
         }
 
 
-        private static List<string> FetchGems5000()
+        private static List<Gem> FetchGems5000()
         {
-            List<string> gems = new List<string>()
+            List<Gem> gems = new List<Gem>()
             {
-                "Black sapphire (translucent lustrous black with glowing highlights)",
-                "Diamond (transparent blue-white, canary, pink, brown, or blue)",
-                "Jacinth (transparent fiery orange)",
-                "Ruby (transparent clear red to deep crimson)"
+                new Gem("Black Sapphire", "translucent lustrous black with glowing highlights", StaticVariables.gp5000),
+                new Gem("Diamond", "transparent blue-white, canary, pink, brown, or blue", StaticVariables.gp5000),
+                new Gem("Jacinth", "transparent fiery orange", StaticVariables.gp5000),
+                new Gem("Ruby", "transparent clear red to deep crimson", StaticVariables.gp5000)
             };
             return gems;
         }
