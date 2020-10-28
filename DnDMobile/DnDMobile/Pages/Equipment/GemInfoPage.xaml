@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DnDMobile.Pages.Equipment.GemInfoPage">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Gem Info" Style="{StaticResource labelHeaderStyle}" />
+                <Grid Padding="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <BoxView Grid.Row="0" Color="#290000" Grid.ColumnSpan="3" />
+                    <Label Grid.Row="0" Grid.ColumnSpan="3" Style="{StaticResource labelGridHeaderStyle}" Text="{Binding Name, StringFormat='{0:N}'}" />
+
+                    <BoxView Grid.Row="1" Grid.Column="0" Color="#290000" />
+                    <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource labelGridHeaderStyle}" Text="Description" />
+                    <BoxView Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Color="#290000" />
+                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource labelGridDataStyle}" Text="{Binding Description, StringFormat='{0:N}'}" />
+
+                    <BoxView Grid.Row="2" Grid.Column="0" Color="#290000" />
+                    <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource labelGridHeaderStyle}" Text="Value" />
+                    <BoxView Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Color="#290000" />
+                    <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource labelGridDataStyle}" Text="{Binding Value, StringFormat='{0:N}'}" />
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

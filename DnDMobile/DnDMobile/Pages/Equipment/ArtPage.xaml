@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DnDMobile.Pages.Equipment.ArtPage">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout x:Name="PageStack" Opacity="0">
+                <Label Text="Art" Style="{StaticResource labelHeaderStyle}" />
+                <Picker x:Name="ItemFilterPicker" Title="Filter" SelectedIndexChanged="ItemFilterPickerSelected" Style="{StaticResource pickerSpellFilterStyle}" />
+
+                <ListView x:Name="ListViewItems" ItemTapped="ListItemTapped" SeparatorColor="#F7CE65" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label FontSize="Large" Style="{StaticResource labelHeaderStyle}"  Text="{Binding Description, StringFormat='{0:N}'}" HorizontalOptions="Start"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
