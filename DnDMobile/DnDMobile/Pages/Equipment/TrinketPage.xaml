@@ -16,7 +16,7 @@
                             <ViewCell Height="50">
                                 <ScrollView Orientation="Horizontal">
                                     <StackLayout Orientation="Horizontal" >
-                                        <Label FontSize="Medium" Style="{StaticResource labelHeaderStyle}" Text="{Binding}" />
+                                        <Label FontSize="Large" Style="{StaticResource labelHeaderStyle}" Text="{Binding}" />
                                     </StackLayout>
                                 </ScrollView>
                             </ViewCell>
