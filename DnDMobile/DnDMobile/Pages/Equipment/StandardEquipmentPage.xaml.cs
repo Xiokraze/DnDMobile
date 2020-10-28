@@ -48,10 +48,10 @@ namespace DnDMobile.Pages
                     await Navigation.PushAsync(new StandardArmorPage());
                     break;
                 case "Art":
-                    //await Navigation.PushAsync(new StandardArmorPage());
+                    await Navigation.PushAsync(new ArtPage());
                     break;
                 case "Gems":
-                    //await Navigation.PushAsync(new StandardArmorPage());
+                    await Navigation.PushAsync(new GemsPage());
                     break;
                 case "General Items":
                     await Navigation.PushAsync(new GeneralItemsPage());
