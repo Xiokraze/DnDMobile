@@ -1,5 +1,6 @@
 ﻿using DnDMobile.Classes;
 using DnDMobile.Classes.ItemsFolder;
+using DnDMobile.Pages.Generators;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -23,7 +24,8 @@ namespace DnDMobile.Pages
             Spells spells = new Spells();
             List<MenuListViewItem> menuListViewItems = new List<MenuListViewItem>()
             {
-                 new MenuListViewItem("Items", items.GetEquipmentCount()),
+                 new MenuListViewItem("Standard Items", items.GetEquipmentCount()),
+                 new MenuListViewItem("Random Generators"),
                  new MenuListViewItem("Spells", spells.GetSpellCount())
             };
             menuListView.ItemsSource = menuListViewItems;
@@ -37,11 +39,14 @@ namespace DnDMobile.Pages
 
             switch (tappedMaterial.Name)
             {
-                case "Items":
+                case "Standard Items":
                     await Navigation.PushAsync(new StandardEquipmentPage());
                     break;
                 case "Spells":
                     await Navigation.PushAsync(new SpellsPage());
+                    break;
+                case "Random Generators":
+                    await Navigation.PushAsync(new GeneratorPage());
                     break;
                 default:
                     break;

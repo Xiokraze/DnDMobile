@@ -16,7 +16,7 @@
                         <ViewCell>
                             <StackLayout Orientation="Vertical" Margin="10,0,10,10">
                                 <Label FontSize="Large"  Text="{Binding Name}" Style="{StaticResource labelHeaderStyle}"/>
-                                <Label FontSize="Small" Text="{Binding Count, StringFormat='{0:0} Items'}" Style="{StaticResource labelHeaderStyle}" TextColor="#930C10" />
+                                <!--<Label FontSize="Small" Text="{Binding Count, StringFormat='{0:0} Items'}" Style="{StaticResource labelHeaderStyle}" TextColor="#930C10" />-->
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
