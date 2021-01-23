@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DnDMobile.Classes
 {
@@ -8,6 +6,7 @@ namespace DnDMobile.Classes
     {
         // General.
         public static string reset = "Reset";
+        public static Random randomNumber = new Random();
 
         // Weapons.
         public static string simpleMelee = "Simple Melee";
