@@ -9,6 +9,12 @@ namespace DnDMobile.Classes.ItemsFolder
         public string Name { get; set; }
         public int Count { get; set; }
 
+
+        public MenuListViewItem(string name)
+        {
+            this.Name = name;
+        }
+
         public MenuListViewItem(string name, int count)
         {
             this.Name = name;
