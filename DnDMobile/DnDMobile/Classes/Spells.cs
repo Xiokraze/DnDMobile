@@ -9,6 +9,7 @@ namespace DnDMobile.Classes
     {
         private List<Spell> SpellList { get; } = FetchSpells();
 
+
         public Spells() { }
 
 
