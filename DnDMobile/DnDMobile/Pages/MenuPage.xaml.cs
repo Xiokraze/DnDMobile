@@ -21,7 +21,6 @@ namespace DnDMobile.Pages
 
         private void LoadMenuListView()
         {
-            Spells spells = new Spells();
             int itemCount = Weapons.Count + ArmorList.Count + GeneralItems.Count + Trinkets.Count + ArtList.Count + Gemstones.Count;
             List<MenuListViewItem> menuListViewItems = new List<MenuListViewItem>()
             {
