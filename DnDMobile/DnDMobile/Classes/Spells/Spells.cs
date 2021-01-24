@@ -18,13 +18,13 @@ namespace DnDMobile.Classes
         public List<Spell> FilterSpellsByLevel(string spellLevel, List<Spell> spellList)
         {
             List<Spell> spellMatches = new List<Spell>();
-            foreach (Spell spell in spellList)
+            spellList.ForEach(x => 
             {
-                if (spell.Level == spellLevel)
+                if (x.Level == spellLevel)
                 {
-                    spellMatches.Add(spell);
+                    spellMatches.Add(x);
                 }
-            }
+            });
             return spellMatches;
         }
 
@@ -32,13 +32,13 @@ namespace DnDMobile.Classes
         public List<Spell> FilterSpellsByCastableBy(string spellCastableBy, List<Spell> spellList)
         {
             List<Spell> spellMatches = new List<Spell>();
-            foreach (Spell spell in spellList)
+            spellList.ForEach(x =>
             {
-                if (spell.CastableBy.ToLower().Contains(spellCastableBy.ToLower()))
+                if (x.CastableBy.ToLower().Contains(spellCastableBy.ToLower()))
                 {
-                    spellMatches.Add(spell);
+                    spellMatches.Add(x);
                 }
-            }
+            });
             return spellMatches;
         }
 
@@ -46,13 +46,13 @@ namespace DnDMobile.Classes
         public List<Spell> FilterSpellsBySchool(string spellSchool, List<Spell> spellList)
         {
             List<Spell> spellMatches = new List<Spell>();
-            foreach (Spell spell in spellList)
+            spellList.ForEach(x =>
             {
-                if (spell.School == spellSchool)
+                if (x.School == spellSchool)
                 {
-                    spellMatches.Add(spell);
+                    spellMatches.Add(x);
                 }
-            }
+            });
             return spellMatches;
         }
 
@@ -60,13 +60,13 @@ namespace DnDMobile.Classes
         public List<Spell> FilterSpellsByConcentration(string spellConcentration, List<Spell> spellList)
         {
             List<Spell> spellMatches = new List<Spell>();
-            foreach (Spell spell in spellList)
+            spellList.ForEach(x =>
             {
-                if (spell.Concentration == spellConcentration)
+                if (x.Concentration == spellConcentration)
                 {
-                    spellMatches.Add(spell);
+                    spellMatches.Add(x);
                 }
-            }
+            });
             return spellMatches;
         }
 
@@ -74,13 +74,13 @@ namespace DnDMobile.Classes
         public List<Spell> FilterSpellsByRitual(string spellRitual, List<Spell> spellList)
         {
             List<Spell> spellMatches = new List<Spell>();
-            foreach (Spell spell in spellList)
+            spellList.ForEach(x =>
             {
-                if (spell.Ritual == spellRitual)
+                if (x.Ritual == spellRitual)
                 {
-                    spellMatches.Add(spell);
+                    spellMatches.Add(x);
                 }
-            }
+            });
             return spellMatches;
         }
 
@@ -88,13 +88,13 @@ namespace DnDMobile.Classes
         public List<Spell> FilterSpellsBySource(string spellSource, List<Spell> spellList)
         {
             List<Spell> spellMatches = new List<Spell>();
-            foreach (Spell spell in spellList)
+            spellList.ForEach(x =>
             {
-                if (spell.Source.ToLower().Contains(spellSource.ToLower()))
+                if (x.Source.ToLower().Contains(spellSource.ToLower()))
                 {
-                    spellMatches.Add(spell);
+                    spellMatches.Add(x);
                 }
-            }
+            });
             return spellMatches;
         }
 
