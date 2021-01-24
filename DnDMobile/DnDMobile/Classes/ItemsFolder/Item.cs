@@ -39,8 +39,8 @@
     public class GeneralItem : Item
     {
         public string Weight { get; protected set; }
-        public string Type { get; protected set; }
-        public GeneralItem(string descr, string value, string weight, string type) : base(descr, value)
+        public ItemType Type { get; protected set; }
+        public GeneralItem(string descr, string value, string weight, ItemType type) : base(descr, value)
         {
             this.Description = descr;
             this.Value = value;
@@ -54,7 +54,7 @@
     {
         public string Damage { get; protected set; }
         public string Properties { get; protected set; }
-        public Weapon(string descr, string value, string dmg, string weight, string properties, string type) : base(descr, value, weight, type)
+        public Weapon(string descr, string value, string dmg, string weight, string properties, ItemType type) : base(descr, value, weight, type)
         {
             this.Description = descr;
             this.Value = value;
@@ -71,7 +71,7 @@
         public string ArmorClass { get; protected set; }
         public string RequiredStrength { get; protected set; }
         public string StealthImpact { get; protected set; }
-        public Armor(string descr, string value, string ac, string str, string stealth, string weight, string type) : base(descr, value, weight, type)
+        public Armor(string descr, string value, string ac, string str, string stealth, string weight, ItemType type) : base(descr, value, weight, type)
         {
             this.Description = descr;
             this.Value = value;

@@ -46,9 +46,9 @@ namespace DnDMobile.Classes.ItemsFolder
         {
             List<Armor> lightArmor = new List<Armor>
             {
-                new Armor("Padded", "5 gp", "11 + Dex Modifier", "-", "Disadvantage", "8 lbs", StaticVariables.lightAmor),
-                new Armor("Leather", "10 gp", "11 + Dex Modifier", "-", "-", "10 lbs", StaticVariables.lightAmor),
-                new Armor("Studded Leather", "45 gp", "12 + Dex Modifier", "-", "-", "13 lbs", StaticVariables.lightAmor)
+                new Armor("Padded", "5 gp", "11 + Dex Modifier", "-", "Disadvantage", "8 lbs", ItemType.LightArmor),
+                new Armor("Leather", "10 gp", "11 + Dex Modifier", "-", "-", "10 lbs", ItemType.LightArmor),
+                new Armor("Studded Leather", "45 gp", "12 + Dex Modifier", "-", "-", "13 lbs", ItemType.LightArmor)
             };
             return lightArmor;
         }
@@ -58,11 +58,11 @@ namespace DnDMobile.Classes.ItemsFolder
         {
             List<Armor> mediumArmor = new List<Armor>
             {
-                new Armor("Hide", "10 gp", "12 + Dex Modifier (Max 2)", "-", "-", "12 lbs", StaticVariables.mediumAmor),
-                new Armor("Chain Shirt", "50 gp", "13 + Dex Modifier (Max 2)", "-", "-", "20 lbs", StaticVariables.mediumAmor),
-                new Armor("Scale Mail", "50 gp", "14 + Dex Modifier (Max 2)", "-", "Disadvantage", "45 lbs", StaticVariables.mediumAmor),
-                new Armor("Breastplate", "400 gp", "14 + Dex Modifier (Max 2)", "-", "-", "20 lbs", StaticVariables.mediumAmor),
-                new Armor("Half Plate", "750 gp", "15 + Dex Modifier (Max 2)", "-", "Disadvantage", "40 lbs", StaticVariables.mediumAmor)
+                new Armor("Hide", "10 gp", "12 + Dex Modifier (Max 2)", "-", "-", "12 lbs", ItemType.MediumArmor),
+                new Armor("Chain Shirt", "50 gp", "13 + Dex Modifier (Max 2)", "-", "-", "20 lbs", ItemType.MediumArmor),
+                new Armor("Scale Mail", "50 gp", "14 + Dex Modifier (Max 2)", "-", "Disadvantage", "45 lbs", ItemType.MediumArmor),
+                new Armor("Breastplate", "400 gp", "14 + Dex Modifier (Max 2)", "-", "-", "20 lbs", ItemType.MediumArmor),
+                new Armor("Half Plate", "750 gp", "15 + Dex Modifier (Max 2)", "-", "Disadvantage", "40 lbs", ItemType.MediumArmor)
             };
             return mediumArmor;
         }
@@ -72,10 +72,10 @@ namespace DnDMobile.Classes.ItemsFolder
         {
             List<Armor> heavyArmor = new List<Armor>
             {
-                new Armor("Ring Mail", "30 gp", "14", "-", "Disadvantage", "40 lbs", StaticVariables.heavyAmor),
-                new Armor("Chain Mail", "75 gp", "16", "13", "Disadvantage", "55 lbs", StaticVariables.heavyAmor),
-                new Armor("Splint", "200 gp", "17", "15", "Disadvantage", "60 lbs", StaticVariables.heavyAmor),
-                new Armor("Plate", "1,500 gp", "18", "15", "Disadvantage", "65 lbs", StaticVariables.heavyAmor)
+                new Armor("Ring Mail", "30 gp", "14", "-", "Disadvantage", "40 lbs", ItemType.HeavyArmor),
+                new Armor("Chain Mail", "75 gp", "16", "13", "Disadvantage", "55 lbs", ItemType.HeavyArmor),
+                new Armor("Splint", "200 gp", "17", "15", "Disadvantage", "60 lbs", ItemType.HeavyArmor),
+                new Armor("Plate", "1,500 gp", "18", "15", "Disadvantage", "65 lbs", ItemType.HeavyArmor)
             };
             return heavyArmor;
         }
@@ -85,7 +85,7 @@ namespace DnDMobile.Classes.ItemsFolder
         {
             List<Armor> shields = new List<Armor>
             {
-                new Armor("Shield", "10 gp", "+2", "-", "-", "6 lbs", StaticVariables.shields)
+                new Armor("Shield", "10 gp", "+2", "-", "-", "6 lbs", ItemType.Shield)
             };
             return shields;
         }
@@ -95,16 +95,16 @@ namespace DnDMobile.Classes.ItemsFolder
         {
             List<Weapon> simpleMeleeWeapons = new List<Weapon>
             {
-                new Weapon("Club", "1 sp", "1d4 bludgeoning", "2 lbs", "Light", StaticVariables.simpleMelee),
-                new Weapon("Dagger", "2 gp", "1d4 piercing",  "1 lbs", "Finesse, Light, Thrown (range 20/60)", StaticVariables.simpleMelee),
-                new Weapon("Greatclub", "2 sp", "1d8 bludgeoning", "10 lbs", "Two-handed", StaticVariables.simpleMelee),
-                new Weapon("Handaxe", "5 gp", "1d6 slashing", "2 lbs", "Light, Thrown (range 20/60)", StaticVariables.simpleMelee),
-                new Weapon("Javelin", "5 sp", "1d6 piercing", "2 lbs", "Thrown (range 30/120)", StaticVariables.simpleMelee),
-                new Weapon("Light Hammer", "2 gp", "1d4 bludgeoning", "2 lbs", "Light, Thrown (range 20/60)", StaticVariables.simpleMelee),
-                new Weapon("Mace", "5 gp", "1d6 bludgeoning", "4 lbs",  "-", StaticVariables.simpleMelee),
-                new Weapon("Quarterstaff", "2 sp", "1d6 bludgeoning", "4 lbs", "Versatile (1d8)", StaticVariables.simpleMelee),
-                new Weapon("Sickle", "1 gp", "1d4 slashing", "2 lbs", "Light", StaticVariables.simpleMelee),
-                new Weapon("Spear", "1 gp", "1d6 piercing", "3 lbs", "Thrown (range 20/60), Versatile (1d8)", StaticVariables.simpleMelee)
+                new Weapon("Club", "1 sp", "1d4 bludgeoning", "2 lbs", "Light", ItemType.SimpleMelee),
+                new Weapon("Dagger", "2 gp", "1d4 piercing",  "1 lbs", "Finesse, Light, Thrown (range 20/60)", ItemType.SimpleMelee),
+                new Weapon("Greatclub", "2 sp", "1d8 bludgeoning", "10 lbs", "Two-handed", ItemType.SimpleMelee),
+                new Weapon("Handaxe", "5 gp", "1d6 slashing", "2 lbs", "Light, Thrown (range 20/60)", ItemType.SimpleMelee),
+                new Weapon("Javelin", "5 sp", "1d6 piercing", "2 lbs", "Thrown (range 30/120)", ItemType.SimpleMelee),
+                new Weapon("Light Hammer", "2 gp", "1d4 bludgeoning", "2 lbs", "Light, Thrown (range 20/60)", ItemType.SimpleMelee),
+                new Weapon("Mace", "5 gp", "1d6 bludgeoning", "4 lbs",  "-", ItemType.SimpleMelee),
+                new Weapon("Quarterstaff", "2 sp", "1d6 bludgeoning", "4 lbs", "Versatile (1d8)", ItemType.SimpleMelee),
+                new Weapon("Sickle", "1 gp", "1d4 slashing", "2 lbs", "Light", ItemType.SimpleMelee),
+                new Weapon("Spear", "1 gp", "1d6 piercing", "3 lbs", "Thrown (range 20/60), Versatile (1d8)", ItemType.SimpleMelee)
             };
             return simpleMeleeWeapons;
         }
@@ -114,10 +114,10 @@ namespace DnDMobile.Classes.ItemsFolder
         {
             List<Weapon> simpleRangedWeapons = new List<Weapon>
             {
-                new Weapon("Crossbow, Light", "25 gp", "1d8 piercing", "5 lbs", "Ammunition (range 80/320), Loading, Two-handed", StaticVariables.simpleRanged),
-                new Weapon("Dart", "5 cp", "1d4 piercing", "1/4 lbs", "Finesse, Thrown (range 20/60)", StaticVariables.simpleRanged),
-                new Weapon("Shortbow", "25 gp", "1d6 piercing", "2 lbs", "Ammunition (range 80/320), Two-handed", StaticVariables.simpleRanged),
-                new Weapon("Sling", "1 sp", "1d4 bludgeoning", "-", "Ammunition (range 30/120)", StaticVariables.simpleRanged)
+                new Weapon("Crossbow, Light", "25 gp", "1d8 piercing", "5 lbs", "Ammunition (range 80/320), Loading, Two-handed", ItemType.SimpleRanged),
+                new Weapon("Dart", "5 cp", "1d4 piercing", "1/4 lbs", "Finesse, Thrown (range 20/60)", ItemType.SimpleRanged),
+                new Weapon("Shortbow", "25 gp", "1d6 piercing", "2 lbs", "Ammunition (range 80/320), Two-handed", ItemType.SimpleRanged),
+                new Weapon("Sling", "1 sp", "1d4 bludgeoning", "-", "Ammunition (range 30/120)", ItemType.SimpleRanged)
             };
             return simpleRangedWeapons;
         }
@@ -127,24 +127,24 @@ namespace DnDMobile.Classes.ItemsFolder
         {
             List<Weapon> martialMeleeWeapons = new List<Weapon>
             {
-                new Weapon("Battleaxe", "10 gp", "1d8 slashing", "4 lbs", "Versatile (1d10)", StaticVariables.martialMelee),
-                new Weapon("Flail", "10 gp", "1d8 bludgeoning", "2 lbs", "-", StaticVariables.martialMelee),
-                new Weapon("Glaive", "20 gp", "1d10 slashing", "6 lbs", "Heavy, Reach, Two-handed", StaticVariables.martialMelee),
-                new Weapon("Greataxe", "30 gp", "1d12 slashing", "7 lbs", "Heavy, Two-handed", StaticVariables.martialMelee),
-                new Weapon("Greatsword", "50 gp", "2d6 slashing", "6 lbs", "Heavy, Two-handed", StaticVariables.martialMelee),
-                new Weapon("Halberd", "20 gp",    "1d10 slashing", "6 lbs", "Heavy, Reach, Two-handed", StaticVariables.martialMelee),
-                new Weapon("Lance", "10 gp", "1d12 piercing", "6 lbs", "Reach, Special", StaticVariables.martialMelee),
-                new Weapon("Longsword", "15 gp", "1d8 slashing", "3 lbs", "Versatile (1d10)", StaticVariables.martialMelee),
-                new Weapon("Maul", "10 gp", "2d6 bludgeoning", "10 lbs", "Heavy, Two-handed", StaticVariables.martialMelee),
-                new Weapon("Morningstar", "15 gp", "1d8 piercing", "4 lbs", "-", StaticVariables.martialMelee),
-                new Weapon("Pike", "5 gp", "1d10 piercing", "18 lbs", "Heavy, Reach, Two-handed", StaticVariables.martialMelee),
-                new Weapon("Rapier", "25 gp", "1d8 piercing", "2 lbs", "Finesse", StaticVariables.martialMelee),
-                new Weapon("Scimitar", "25 gp", "1d6 slashing", "3 lbs", "Finesse, Light", StaticVariables.martialMelee),
-                new Weapon("Shortsword", "10 gp", "1d6 piercing", "2 lbs", "Finesse, Light", StaticVariables.martialMelee),
-                new Weapon("Trident", "5 gp", "1d6 piercing", "4 lbs", "Thrown (range 20/60), Versatile (1d8)", StaticVariables.martialMelee),
-                new Weapon("War Pick", "5 gp", "1d8 piercing", "2 lbs", "-", StaticVariables.martialMelee),
-                new Weapon("Warhammer", "15 gp", "1d8 bludgeoning", "2 lbs", "Versatile (1d10)", StaticVariables.martialMelee),
-                new Weapon("Whip", "2 gp", "1d4 slashing", "3 lbs", "Finesse, Reach", StaticVariables.martialMelee)
+                new Weapon("Battleaxe", "10 gp", "1d8 slashing", "4 lbs", "Versatile (1d10)", ItemType.MartialMelee),
+                new Weapon("Flail", "10 gp", "1d8 bludgeoning", "2 lbs", "-", ItemType.MartialMelee),
+                new Weapon("Glaive", "20 gp", "1d10 slashing", "6 lbs", "Heavy, Reach, Two-handed", ItemType.MartialMelee),
+                new Weapon("Greataxe", "30 gp", "1d12 slashing", "7 lbs", "Heavy, Two-handed", ItemType.MartialMelee),
+                new Weapon("Greatsword", "50 gp", "2d6 slashing", "6 lbs", "Heavy, Two-handed", ItemType.MartialMelee),
+                new Weapon("Halberd", "20 gp",    "1d10 slashing", "6 lbs", "Heavy, Reach, Two-handed", ItemType.MartialMelee),
+                new Weapon("Lance", "10 gp", "1d12 piercing", "6 lbs", "Reach, Special", ItemType.MartialMelee),
+                new Weapon("Longsword", "15 gp", "1d8 slashing", "3 lbs", "Versatile (1d10)", ItemType.MartialMelee),
+                new Weapon("Maul", "10 gp", "2d6 bludgeoning", "10 lbs", "Heavy, Two-handed", ItemType.MartialMelee),
+                new Weapon("Morningstar", "15 gp", "1d8 piercing", "4 lbs", "-", ItemType.MartialMelee),
+                new Weapon("Pike", "5 gp", "1d10 piercing", "18 lbs", "Heavy, Reach, Two-handed", ItemType.MartialMelee),
+                new Weapon("Rapier", "25 gp", "1d8 piercing", "2 lbs", "Finesse", ItemType.MartialMelee),
+                new Weapon("Scimitar", "25 gp", "1d6 slashing", "3 lbs", "Finesse, Light", ItemType.MartialMelee),
+                new Weapon("Shortsword", "10 gp", "1d6 piercing", "2 lbs", "Finesse, Light", ItemType.MartialMelee),
+                new Weapon("Trident", "5 gp", "1d6 piercing", "4 lbs", "Thrown (range 20/60), Versatile (1d8)", ItemType.MartialMelee),
+                new Weapon("War Pick", "5 gp", "1d8 piercing", "2 lbs", "-", ItemType.MartialMelee),
+                new Weapon("Warhammer", "15 gp", "1d8 bludgeoning", "2 lbs", "Versatile (1d10)", ItemType.MartialMelee),
+                new Weapon("Whip", "2 gp", "1d4 slashing", "3 lbs", "Finesse, Reach", ItemType.MartialMelee)
             };
             return martialMeleeWeapons;
         }
@@ -154,11 +154,11 @@ namespace DnDMobile.Classes.ItemsFolder
         {
             List<Weapon> martialRangedWeapons = new List<Weapon>
             {
-                new Weapon("Blowgun", "10 gp", "1 piercing", "1 lbs", "Ammunition (range 25/100), Loading", StaticVariables.martialRanged),
-                new Weapon("Crossbow, Hand", "75 gp", "1d6 piercing", "3 lbs", "Ammunition (range 30/120), Light, Loading", StaticVariables.martialRanged),
-                new Weapon("Crossbow, Heavy", "50 gp", "1d10 piercing", "18 lbs", "Ammunition (range 100/400), Heavy, Loading, Two-handed", StaticVariables.martialRanged),
-                new Weapon("Longbow", "50 gp", "1d8 piercing", "2 lbs", "Ammunition (range 150/600), Heavy, Two-handed", StaticVariables.martialRanged),
-                new Weapon("Net", "1 gp", "-", "3 lbs", "Special, Thrown (range 5/15)", StaticVariables.martialRanged)
+                new Weapon("Blowgun", "10 gp", "1 piercing", "1 lbs", "Ammunition (range 25/100), Loading", ItemType.MartialRanged),
+                new Weapon("Crossbow, Hand", "75 gp", "1d6 piercing", "3 lbs", "Ammunition (range 30/120), Light, Loading", ItemType.MartialRanged),
+                new Weapon("Crossbow, Heavy", "50 gp", "1d10 piercing", "18 lbs", "Ammunition (range 100/400), Heavy, Loading, Two-handed", ItemType.MartialRanged),
+                new Weapon("Longbow", "50 gp", "1d8 piercing", "2 lbs", "Ammunition (range 150/600), Heavy, Two-handed", ItemType.MartialRanged),
+                new Weapon("Net", "1 gp", "-", "3 lbs", "Special, Thrown (range 5/15)", ItemType.MartialRanged)
             };
             return martialRangedWeapons;
         }
@@ -168,92 +168,92 @@ namespace DnDMobile.Classes.ItemsFolder
         {
             List<GeneralItem> generalItems = new List<GeneralItem>()
             {
-                new GeneralItem("Abacus", "2 gp",  "2 lb", "General Good"),
-                new GeneralItem("Acid (vial)", "25 gp", "1 lb", "General Good"),
-                new GeneralItem("Alchemist's fire (flask)", "50 gp", "1 lb", "General Good"),
-                new GeneralItem("Antitoxin (vial)", "50 gp", "-", "General Good"),
-                new GeneralItem("Backpack", "2 gp", "5 lbs", "General Good"),
-                new GeneralItem("Ball bearings (bag of 1,000)", "1 gp", "2 lbs", "General Good"),
-                new GeneralItem("Barrel",  "2 gp", "70 lbs", "General Good"),
-                new GeneralItem("Basket",  "4 sp", "2 lbs", "General Good"),
-                new GeneralItem("Bedroll", "1 gp", "7 lbs", "General Good"),
-                new GeneralItem("Bell", "1 gp", "-", "General Good"),
-                new GeneralItem("Blanket", "5 sp", "3 lbs", "General Good"),
-                new GeneralItem("Block and tackle", "1 gp", "5 lbs", "General Good"),
-                new GeneralItem("Book", "25 gp", "5 lbs", "General Good"),
-                new GeneralItem("Bottle, glass",   "2 gp", "2 lbs", "General Good"),
-                new GeneralItem("Bucket",  "5 cp", "2 lbs", "General Good"),
-                new GeneralItem("Caltrops (bag of 20)", "1 gp", "2 lbs", "General Good"),
-                new GeneralItem("Candle",  "1 cp", "-", "General Good"),
-                new GeneralItem("Case, crossbow bolt", "1 gp", "1 lb", "General Good"),
-                new GeneralItem("Case, map or scroll", "1 gp", "1 lb", "General Good"),
-                new GeneralItem("Chain (10 feet)", "5 gp", "10 lbs", "General Good"),
-                new GeneralItem("Chalk (1 piece)", "1 cp", "-", "General Good"),
-                new GeneralItem("Chest", "5 gp", "25 lbs", "General Good"),
-                new GeneralItem("Climber's kit", "25 gp", "12 lbs", "General Good"),
-                new GeneralItem("Clothes, common", "5 sp", "3 lbs", "General Good"),
-                new GeneralItem("Clothes, costume", "5 gp", "4 lbs", "General Good"),
-                new GeneralItem("Clothes, fine", "15 gp", "6 lbs", "General Good"),
-                new GeneralItem("Clothes, traveler's", "2 gp", "4 lbs", "General Good"),
-                new GeneralItem("Component pouch", "25 gp", "2 lbs", "General Good"),
-                new GeneralItem("Crowbar", "2 gp", "5 lbs", "General Good"),
-                new GeneralItem("Fishing tackle", "1 gp",  "4 lbs", "General Good"),
-                new GeneralItem("Flask or tankard", "2 cp", "1 lb", "General Good"),
-                new GeneralItem("Grappling hook", "2 gp",  "4 lbs", "General Good"),
-                new GeneralItem("Hammer",  "1 gp", "3 lbs", "General Good"),
-                new GeneralItem("Hammer, sledge", "2 gp",  "10 lbs", "General Good"),
-                new GeneralItem("Healer's kit", "5 gp", "3 lbs", "General Good"),
-                new GeneralItem("Holy water (flask)",  "25 gp", "1 lb", "General Good"),
-                new GeneralItem("Hourglass", "25 gp", "1 lb", "General Good"),
-                new GeneralItem("Hunting trap", "5 gp", "25 lbs", "General Good"),
-                new GeneralItem("Ink (1 ounce bottle)", "10 gp", "-", "General Good"),
-                new GeneralItem("Ink pen", "2 cp", "-", "General Good"),
-                new GeneralItem("Jug or pitcher", "2 cp", "4 lbs", "General Good"),
-                new GeneralItem("Ladder (10 foot)", "1 sp", "25 lb", "General Good"),
-                new GeneralItem("Lamp", "5 sp", "1 lb", "General Good"),
-                new GeneralItem("Lantern, bullseye", "10 gp", "2 lbs", "General Good"),
-                new GeneralItem("Lantern, hooded", "5 gp", "2 lbs", "General Good"),
-                new GeneralItem("Lock", "10 gp", "1 lb", "General Good"),
-                new GeneralItem("Magnifying glass", "100 gp", "-", "General Good"),
-                new GeneralItem("Manacles", "2 gp", "6 lbs", "General Good"),
-                new GeneralItem("Mess kit", "2 sp", "1 lb", "General Good"),
-                new GeneralItem("Mirror, steel", "5 gp", "1/2 lb", "General Good"),
-                new GeneralItem("Oil (flask)", "1 sp", "1 lb", "General Good"),
-                new GeneralItem("Paper (one sheet)", "2 sp", "-", "General Good"),
-                new GeneralItem("Parchment (one sheet)", "1 sp", "-", "General Good"),
-                new GeneralItem("Perfume (vial)", "5 gp", "-", "General Good"),
-                new GeneralItem("Pick, miner's", "2 gp", "10 lbs", "General Good"),
-                new GeneralItem("Piton", "5 cp", "1/4 lb", "General Good"),
-                new GeneralItem("Poison, basic (vial)", "100 gp", "-", "General Good"),
-                new GeneralItem("Pole (10-foot)", "5 cp", "7 lbs", "General Good"),
-                new GeneralItem("Pot, iron", "2 gp", "10 lbs", "General Good"),
-                new GeneralItem("Potion of Healing (2d4 + 2)", "50 gp", "1/2 lb", "General Good"),
-                new GeneralItem("Potion of Greater Healing (4d4 + 4)", "200-250 gp", "1/2 lb", "General Good"),
-                new GeneralItem("Potion of Superior Healing (8d4 + 8)", "2000-2500 gp", "1/2 lb", "General Good"),
-                new GeneralItem("Potion of Supreme Healing (10d4 + 20)", "20000-25000 gp", "1/2 lb", "General Good"),
-                new GeneralItem("Pouch", "5 sp", "1 lb", "General Good"),
-                new GeneralItem("Quiver", "1 gp", "1 lb", "General Good"),
-                new GeneralItem("Ram, portable", "4 gp", "35 lbs", "General Good"),
-                new GeneralItem("Rations (1 day)", "5 sp", "2 lbs", "General Good"),
-                new GeneralItem("Robes", "1 gp", "4 lbs", "General Good"),
-                new GeneralItem("Rope, hempen (50 feet)", "1 gp", "10 lbs", "General Good"),
-                new GeneralItem("Rope, silk (50 feet)", "10 gp", "5 lbs", "General Good"),
-                new GeneralItem("Sack", "1 cp", "1/2 lb", "General Good"),
-                new GeneralItem("Scale, merchant's", "5 gp", "3 lbs", "General Good"),
-                new GeneralItem("Sealing wax", "5 sp", "-", "General Good"),
-                new GeneralItem("Shovel", "2 gp", "5 lbs", "General Good"),
-                new GeneralItem("Signal whistle", "5 cp",  "-", "General Good"),
-                new GeneralItem("Signet ring"," 5 gp", "-", "General Good"),
-                new GeneralItem("Soap", "2 cp", "-", "General Good"),
-                new GeneralItem("Spellbook", "50 gp", "3 lbs", "General Good"),
-                new GeneralItem("Spikes, iron (10)", "1 gp", "5 lbs", "General Good"),
-                new GeneralItem("Spyglass", "1,000 gp", "1 lb", "General Good"),
-                new GeneralItem("Tent, two-person", "2 gp", "20 lbs", "General Good"),
-                new GeneralItem("Tinderbox", "5 sp", "1 lb", "General Good"),
-                new GeneralItem("Torch", "1 cp", "1 lb", "General Good"),
-                new GeneralItem("Vial", "1 gp", "-", "General Good"),
-                new GeneralItem("Waterskin (full)", "2 sp", "5 lbs", "General Good"),
-                new GeneralItem("Whetstone", "1 cp", "1 lb", "General Good")
+                new GeneralItem("Abacus", "2 gp",  "2 lb", ItemType.GeneralGood),
+                new GeneralItem("Acid (vial)", "25 gp", "1 lb", ItemType.GeneralGood),
+                new GeneralItem("Alchemist's fire (flask)", "50 gp", "1 lb", ItemType.GeneralGood),
+                new GeneralItem("Antitoxin (vial)", "50 gp", "-", ItemType.GeneralGood),
+                new GeneralItem("Backpack", "2 gp", "5 lbs", ItemType.GeneralGood),
+                new GeneralItem("Ball bearings (bag of 1,000)", "1 gp", "2 lbs", ItemType.GeneralGood),
+                new GeneralItem("Barrel",  "2 gp", "70 lbs", ItemType.GeneralGood),
+                new GeneralItem("Basket",  "4 sp", "2 lbs", ItemType.GeneralGood),
+                new GeneralItem("Bedroll", "1 gp", "7 lbs", ItemType.GeneralGood),
+                new GeneralItem("Bell", "1 gp", "-", ItemType.GeneralGood),
+                new GeneralItem("Blanket", "5 sp", "3 lbs", ItemType.GeneralGood),
+                new GeneralItem("Block and tackle", "1 gp", "5 lbs", ItemType.GeneralGood),
+                new GeneralItem("Book", "25 gp", "5 lbs", ItemType.GeneralGood),
+                new GeneralItem("Bottle, glass",   "2 gp", "2 lbs", ItemType.GeneralGood),
+                new GeneralItem("Bucket",  "5 cp", "2 lbs", ItemType.GeneralGood),
+                new GeneralItem("Caltrops (bag of 20)", "1 gp", "2 lbs", ItemType.GeneralGood),
+                new GeneralItem("Candle",  "1 cp", "-", ItemType.GeneralGood),
+                new GeneralItem("Case, crossbow bolt", "1 gp", "1 lb", ItemType.GeneralGood),
+                new GeneralItem("Case, map or scroll", "1 gp", "1 lb", ItemType.GeneralGood),
+                new GeneralItem("Chain (10 feet)", "5 gp", "10 lbs", ItemType.GeneralGood),
+                new GeneralItem("Chalk (1 piece)", "1 cp", "-", ItemType.GeneralGood),
+                new GeneralItem("Chest", "5 gp", "25 lbs", ItemType.GeneralGood),
+                new GeneralItem("Climber's kit", "25 gp", "12 lbs", ItemType.GeneralGood),
+                new GeneralItem("Clothes, common", "5 sp", "3 lbs", ItemType.GeneralGood),
+                new GeneralItem("Clothes, costume", "5 gp", "4 lbs", ItemType.GeneralGood),
+                new GeneralItem("Clothes, fine", "15 gp", "6 lbs", ItemType.GeneralGood),
+                new GeneralItem("Clothes, traveler's", "2 gp", "4 lbs", ItemType.GeneralGood),
+                new GeneralItem("Component pouch", "25 gp", "2 lbs", ItemType.GeneralGood),
+                new GeneralItem("Crowbar", "2 gp", "5 lbs", ItemType.GeneralGood),
+                new GeneralItem("Fishing tackle", "1 gp",  "4 lbs", ItemType.GeneralGood),
+                new GeneralItem("Flask or tankard", "2 cp", "1 lb", ItemType.GeneralGood),
+                new GeneralItem("Grappling hook", "2 gp",  "4 lbs", ItemType.GeneralGood),
+                new GeneralItem("Hammer",  "1 gp", "3 lbs", ItemType.GeneralGood),
+                new GeneralItem("Hammer, sledge", "2 gp",  "10 lbs", ItemType.GeneralGood),
+                new GeneralItem("Healer's kit", "5 gp", "3 lbs", ItemType.GeneralGood),
+                new GeneralItem("Holy water (flask)",  "25 gp", "1 lb", ItemType.GeneralGood),
+                new GeneralItem("Hourglass", "25 gp", "1 lb", ItemType.GeneralGood),
+                new GeneralItem("Hunting trap", "5 gp", "25 lbs", ItemType.GeneralGood),
+                new GeneralItem("Ink (1 ounce bottle)", "10 gp", "-", ItemType.GeneralGood),
+                new GeneralItem("Ink pen", "2 cp", "-", ItemType.GeneralGood),
+                new GeneralItem("Jug or pitcher", "2 cp", "4 lbs", ItemType.GeneralGood),
+                new GeneralItem("Ladder (10 foot)", "1 sp", "25 lb", ItemType.GeneralGood),
+                new GeneralItem("Lamp", "5 sp", "1 lb", ItemType.GeneralGood),
+                new GeneralItem("Lantern, bullseye", "10 gp", "2 lbs", ItemType.GeneralGood),
+                new GeneralItem("Lantern, hooded", "5 gp", "2 lbs", ItemType.GeneralGood),
+                new GeneralItem("Lock", "10 gp", "1 lb", ItemType.GeneralGood),
+                new GeneralItem("Magnifying glass", "100 gp", "-", ItemType.GeneralGood),
+                new GeneralItem("Manacles", "2 gp", "6 lbs", ItemType.GeneralGood),
+                new GeneralItem("Mess kit", "2 sp", "1 lb", ItemType.GeneralGood),
+                new GeneralItem("Mirror, steel", "5 gp", "1/2 lb", ItemType.GeneralGood),
+                new GeneralItem("Oil (flask)", "1 sp", "1 lb", ItemType.GeneralGood),
+                new GeneralItem("Paper (one sheet)", "2 sp", "-", ItemType.GeneralGood),
+                new GeneralItem("Parchment (one sheet)", "1 sp", "-", ItemType.GeneralGood),
+                new GeneralItem("Perfume (vial)", "5 gp", "-", ItemType.GeneralGood),
+                new GeneralItem("Pick, miner's", "2 gp", "10 lbs", ItemType.GeneralGood),
+                new GeneralItem("Piton", "5 cp", "1/4 lb", ItemType.GeneralGood),
+                new GeneralItem("Poison, basic (vial)", "100 gp", "-", ItemType.GeneralGood),
+                new GeneralItem("Pole (10-foot)", "5 cp", "7 lbs", ItemType.GeneralGood),
+                new GeneralItem("Pot, iron", "2 gp", "10 lbs", ItemType.GeneralGood),
+                new GeneralItem("Potion of Healing (2d4 + 2)", "50 gp", "1/2 lb", ItemType.GeneralGood),
+                new GeneralItem("Potion of Greater Healing (4d4 + 4)", "200-250 gp", "1/2 lb", ItemType.GeneralGood),
+                new GeneralItem("Potion of Superior Healing (8d4 + 8)", "2000-2500 gp", "1/2 lb", ItemType.GeneralGood),
+                new GeneralItem("Potion of Supreme Healing (10d4 + 20)", "20000-25000 gp", "1/2 lb", ItemType.GeneralGood),
+                new GeneralItem("Pouch", "5 sp", "1 lb", ItemType.GeneralGood),
+                new GeneralItem("Quiver", "1 gp", "1 lb", ItemType.GeneralGood),
+                new GeneralItem("Ram, portable", "4 gp", "35 lbs", ItemType.GeneralGood),
+                new GeneralItem("Rations (1 day)", "5 sp", "2 lbs", ItemType.GeneralGood),
+                new GeneralItem("Robes", "1 gp", "4 lbs", ItemType.GeneralGood),
+                new GeneralItem("Rope, hempen (50 feet)", "1 gp", "10 lbs", ItemType.GeneralGood),
+                new GeneralItem("Rope, silk (50 feet)", "10 gp", "5 lbs", ItemType.GeneralGood),
+                new GeneralItem("Sack", "1 cp", "1/2 lb", ItemType.GeneralGood),
+                new GeneralItem("Scale, merchant's", "5 gp", "3 lbs", ItemType.GeneralGood),
+                new GeneralItem("Sealing wax", "5 sp", "-", ItemType.GeneralGood),
+                new GeneralItem("Shovel", "2 gp", "5 lbs", ItemType.GeneralGood),
+                new GeneralItem("Signal whistle", "5 cp",  "-", ItemType.GeneralGood),
+                new GeneralItem("Signet ring"," 5 gp", "-", ItemType.GeneralGood),
+                new GeneralItem("Soap", "2 cp", "-", ItemType.GeneralGood),
+                new GeneralItem("Spellbook", "50 gp", "3 lbs", ItemType.GeneralGood),
+                new GeneralItem("Spikes, iron (10)", "1 gp", "5 lbs", ItemType.GeneralGood),
+                new GeneralItem("Spyglass", "1,000 gp", "1 lb", ItemType.GeneralGood),
+                new GeneralItem("Tent, two-person", "2 gp", "20 lbs", ItemType.GeneralGood),
+                new GeneralItem("Tinderbox", "5 sp", "1 lb", ItemType.GeneralGood),
+                new GeneralItem("Torch", "1 cp", "1 lb", ItemType.GeneralGood),
+                new GeneralItem("Vial", "1 gp", "-", ItemType.GeneralGood),
+                new GeneralItem("Waterskin (full)", "2 sp", "5 lbs", ItemType.GeneralGood),
+                new GeneralItem("Whetstone", "1 cp", "1 lb", ItemType.GeneralGood)
             };
             return generalItems;
         }
@@ -263,10 +263,10 @@ namespace DnDMobile.Classes.ItemsFolder
         {
             List<GeneralItem> ammunition = new List<GeneralItem>()
             {
-                new GeneralItem("Arrows (20)", "1 gp", "1 lb", "Ammunition"),
-                new GeneralItem("Blowgun Needles (50)", "1 gp", "1 lb", "Ammunition"),
-                new GeneralItem("Crossbow Bolts (20)", "1 gp", "1 1/2 lbs", "Ammunition"),
-                new GeneralItem("Sling Bullets (20)", "4 cp", "1 1/2 lbs", "Ammunition")
+                new GeneralItem("Arrows (20)", "1 gp", "1 lb", ItemType.Ammunition),
+                new GeneralItem("Blowgun Needles (50)", "1 gp", "1 lb", ItemType.Ammunition),
+                new GeneralItem("Crossbow Bolts (20)", "1 gp", "1 1/2 lbs", ItemType.Ammunition),
+                new GeneralItem("Sling Bullets (20)", "4 cp", "1 1/2 lbs", ItemType.Ammunition)
             };
             return ammunition;
         }
@@ -276,11 +276,11 @@ namespace DnDMobile.Classes.ItemsFolder
         {
             List<GeneralItem> arcaneFocus = new List<GeneralItem>()
             {
-                new GeneralItem("Crystal", "10 gp", "1 lb", "Arcane Focus"),
-                new GeneralItem("Orb", "20 gp", "3 lbs", "Arcane Focus"),
-                new GeneralItem("Rod", "10 gp", "2 lb", "Arcane Focus"),
-                new GeneralItem("Staff", "5 gp", "4 lbs", "Arcane Focus"),
-                new GeneralItem("Wand", "10 gp", "1 lb", "Arcane Focus")
+                new GeneralItem("Crystal", "10 gp", "1 lb", ItemType.ArcaneFocus),
+                new GeneralItem("Orb", "20 gp", "3 lbs", ItemType.ArcaneFocus),
+                new GeneralItem("Rod", "10 gp", "2 lb", ItemType.ArcaneFocus),
+                new GeneralItem("Staff", "5 gp", "4 lbs", ItemType.ArcaneFocus),
+                new GeneralItem("Wand", "10 gp", "1 lb", ItemType.ArcaneFocus)
             };
             return arcaneFocus;
         }
@@ -290,10 +290,10 @@ namespace DnDMobile.Classes.ItemsFolder
         {
             List<GeneralItem>druidicFocus = new List<GeneralItem>()
             {
-                new GeneralItem("Sprig of Mistletoe", "1 gp", "-", "Druidic Focus"),
-                new GeneralItem("Totem", "1 gp", "-", "Druidic Focus"),
-                new GeneralItem("Wooden Staff", "5 gp", "4 lbs", "Druidic Focus"),
-                new GeneralItem("Yew Wand", "10 gp", "1 lb", "Druidic Focus")
+                new GeneralItem("Sprig of Mistletoe", "1 gp", "-", ItemType.DruidicFocus),
+                new GeneralItem("Totem", "1 gp", "-", ItemType.DruidicFocus),
+                new GeneralItem("Wooden Staff", "5 gp", "4 lbs", ItemType.DruidicFocus),
+                new GeneralItem("Yew Wand", "10 gp", "1 lb", ItemType.DruidicFocus)
             };
             return druidicFocus;
         }
@@ -303,9 +303,9 @@ namespace DnDMobile.Classes.ItemsFolder
         {
             List<GeneralItem> holySymbol = new List<GeneralItem>()
             {
-                new GeneralItem("Amulet", "5 gp", "1 lb", "Holy Symbol"),
-                new GeneralItem("Emblem", "5 gp", "-", "Holy Symbol"),
-                new GeneralItem("Reliquary", "5 gp", "2 lbs", "Holy Symbol")
+                new GeneralItem("Amulet", "5 gp", "1 lb", ItemType.HolySymbol),
+                new GeneralItem("Emblem", "5 gp", "-", ItemType.HolySymbol),
+                new GeneralItem("Reliquary", "5 gp", "2 lbs", ItemType.HolySymbol)
             };
             return holySymbol;
         }

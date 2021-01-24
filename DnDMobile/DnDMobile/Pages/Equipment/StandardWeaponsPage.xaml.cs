@@ -51,21 +51,21 @@ namespace DnDMobile.Pages
             if (selectedIndex != -1)
             {
                 Object itemType = ItemFilterPicker.ItemsSource[selectedIndex];
-                if (object.Equals(itemType, StaticVariables.simpleMelee))
+                if (object.Equals(itemType, ItemType.SimpleMelee))
                 {
-                    FilterItemList(StaticVariables.simpleMelee);
+                    FilterItemList(ItemType.SimpleMelee);
                 }
-                else if (object.Equals(itemType, StaticVariables.simpleRanged))
+                else if (object.Equals(itemType, ItemType.SimpleRanged))
                 {
-                    FilterItemList(StaticVariables.simpleRanged);
+                    FilterItemList(ItemType.SimpleRanged);
                 }
-                else if (object.Equals(itemType, StaticVariables.martialMelee))
+                else if (object.Equals(itemType, ItemType.MartialMelee))
                 {
-                    FilterItemList(StaticVariables.martialMelee);
+                    FilterItemList(ItemType.MartialMelee);
                 }
-                else if (object.Equals(itemType, StaticVariables.martialRanged))
+                else if (object.Equals(itemType, ItemType.MartialRanged))
                 {
-                    FilterItemList(StaticVariables.martialRanged);
+                    FilterItemList(ItemType.MartialRanged);
                 }
                 else
                 {
@@ -76,7 +76,7 @@ namespace DnDMobile.Pages
         }
 
 
-        private void FilterItemList(string type)
+        private void FilterItemList(ItemType type)
         {
             List<Weapon> filterMatches = new List<Weapon>();
             foreach (Weapon weapon in weaponList)

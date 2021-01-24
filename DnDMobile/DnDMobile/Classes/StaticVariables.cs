@@ -9,26 +9,13 @@ namespace DnDMobile.Classes
         public static Random randomNumber = new Random();
 
         // Weapons.
-        public static string simpleMelee = "Simple Melee";
-        public static string simpleRanged = "Simple Ranged";
-        public static string martialMelee = "Martial Melee";
-        public static string martialRanged = "Martial Ranged";
-        public static string[] meleeTypes = { simpleMelee, simpleRanged, martialMelee, martialRanged, reset };
+        public static ItemType[] meleeTypes = { ItemType.SimpleMelee, ItemType.SimpleRanged, ItemType.MartialMelee, ItemType.MartialRanged, ItemType.Reset };
 
         //Armor.
-        public static string lightAmor = "Light Armor";
-        public static string mediumAmor = "Medium Armor";
-        public static string heavyAmor = "Heavy Armor";
-        public static string shields = "Shields";
-        public static string[] armorTypes = { lightAmor, mediumAmor, heavyAmor, shields, reset};
+        public static ItemType[] armorTypes = { ItemType.LightArmor, ItemType.MediumArmor, ItemType.HeavyArmor, ItemType.Shield, ItemType.Reset };
 
         // General Items.
-        public static string ammunition = "Ammunition";
-        public static string arcaneFocus = "Arcane Focus";
-        public static string druidicFocus = "Druidic Focus";
-        public static string generalGood = "General Good";
-        public static string holySymbol = "Holy Symbol";
-        public static string[] generalTypes = { ammunition, arcaneFocus, druidicFocus, generalGood, holySymbol, reset };
+        public static ItemType[] generalTypes = { ItemType.Ammunition, ItemType.ArcaneFocus, ItemType.DruidicFocus, ItemType.GeneralGood, ItemType.HolySymbol, ItemType.Reset };
 
         // Gems.
         public static string gp10 = "10 gp";

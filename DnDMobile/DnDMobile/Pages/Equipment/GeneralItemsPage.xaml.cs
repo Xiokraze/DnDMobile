@@ -52,25 +52,25 @@ namespace DnDMobile.Pages.Equipment
             if (selectedIndex != -1)
             {
                 var itemType = ItemFilterPicker.ItemsSource[selectedIndex];
-                if (object.Equals(itemType, StaticVariables.ammunition))
+                if (object.Equals(itemType, ItemType.Ammunition))
                 {
-                    FilterItemList(StaticVariables.ammunition);
+                    FilterItemList(ItemType.Ammunition);
                 }
-                else if (object.Equals(itemType, StaticVariables.arcaneFocus))
+                else if (object.Equals(itemType, ItemType.ArcaneFocus))
                 {
-                    FilterItemList(StaticVariables.arcaneFocus);
+                    FilterItemList(ItemType.ArcaneFocus);
                 }
-                else if (object.Equals(itemType, StaticVariables.druidicFocus))
+                else if (object.Equals(itemType, ItemType.DruidicFocus))
                 {
-                    FilterItemList(StaticVariables.druidicFocus);
+                    FilterItemList(ItemType.DruidicFocus);
                 }
-                else if (object.Equals(itemType, StaticVariables.generalGood))
+                else if (object.Equals(itemType, ItemType.GeneralGood))
                 {
-                    FilterItemList(StaticVariables.generalGood);
+                    FilterItemList(ItemType.GeneralGood);
                 }
-                else if (object.Equals(itemType, StaticVariables.holySymbol))
+                else if (object.Equals(itemType, ItemType.HolySymbol))
                 {
-                    FilterItemList(StaticVariables.holySymbol);
+                    FilterItemList(ItemType.HolySymbol);
                 }
                 else
                 {
@@ -81,7 +81,7 @@ namespace DnDMobile.Pages.Equipment
         }
 
 
-        private void FilterItemList(string type)
+        private void FilterItemList(ItemType type)
         {
             List<GeneralItem> filterMatches = new List<GeneralItem>();
             foreach (GeneralItem generalItem in generalItemList)

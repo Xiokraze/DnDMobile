@@ -50,21 +50,21 @@ namespace DnDMobile.Pages.Equipment
             if (selectedIndex != -1)
             {
                 Object itemType = ItemFilterPicker.ItemsSource[selectedIndex];
-                if (object.Equals(itemType, StaticVariables.lightAmor))
+                if (object.Equals(itemType, ItemType.LightArmor))
                 {
-                    FilterItemList(StaticVariables.lightAmor);
+                    FilterItemList(ItemType.LightArmor);
                 }
-                else if (object.Equals(itemType, StaticVariables.mediumAmor))
+                else if (object.Equals(itemType, ItemType.MediumArmor))
                 {
-                    FilterItemList(StaticVariables.mediumAmor);
+                    FilterItemList(ItemType.MediumArmor);
                 }
-                else if (object.Equals(itemType, StaticVariables.heavyAmor))
+                else if (object.Equals(itemType, ItemType.HeavyArmor))
                 {
-                    FilterItemList(StaticVariables.heavyAmor);
+                    FilterItemList(ItemType.HeavyArmor);
                 }
-                else if (object.Equals(itemType, StaticVariables.shields))
+                else if (object.Equals(itemType, ItemType.Shield))
                 {
-                    FilterItemList(StaticVariables.shields);
+                    FilterItemList(ItemType.Shield);
                 }
                 else
                 {
@@ -75,7 +75,7 @@ namespace DnDMobile.Pages.Equipment
         }
 
 
-        private void FilterItemList(string type)
+        private void FilterItemList(ItemType type)
         {
             List<Armor> filterMatches = new List<Armor>();
             foreach (Armor armor in armorList)
