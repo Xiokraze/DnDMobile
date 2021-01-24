@@ -1,5 +1,6 @@
 ﻿using DnDMobile.Classes;
 using DnDMobile.Classes.ItemsFolder;
+using DnDMobile.Classes.ItemsFolder.ItemLists;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -22,25 +23,8 @@ namespace DnDMobile.Pages.Equipment
 
         private void InitializeItemLists()
         {
-            Items items = new Items();
-            InitializeItems(items.StandardLightArmor);
-            InitializeItems(items.StandardMediumArmor);
-            InitializeItems(items.StandardHeavyArmor);
-            InitializeItems(items.StandardShields);
-            armorList.Sort((x, y) => x.Description.CompareTo(y.Description));
-            ListViewItems.ItemsSource = armorList;
-
-            // Update type picker options.
+            ListViewItems.ItemsSource = ArmorList.All;
             ItemFilterPicker.ItemsSource = StaticVariables.armorTypes;
-        }
-
-
-        private void InitializeItems(List<Armor> weapons)
-        {
-            foreach (Armor weapon in weapons)
-            {
-                armorList.Add(weapon);
-            }
         }
 
 
@@ -50,21 +34,21 @@ namespace DnDMobile.Pages.Equipment
             if (selectedIndex != -1)
             {
                 Object itemType = ItemFilterPicker.ItemsSource[selectedIndex];
-                if (object.Equals(itemType, ItemType.LightArmor))
+                if (object.Equals(itemType, ItemTypes.LightArmor))
                 {
-                    FilterItemList(ItemType.LightArmor);
+                    FilterItemList(ItemTypes.LightArmor);
                 }
-                else if (object.Equals(itemType, ItemType.MediumArmor))
+                else if (object.Equals(itemType, ItemTypes.MediumArmor))
                 {
-                    FilterItemList(ItemType.MediumArmor);
+                    FilterItemList(ItemTypes.MediumArmor);
                 }
-                else if (object.Equals(itemType, ItemType.HeavyArmor))
+                else if (object.Equals(itemType, ItemTypes.HeavyArmor))
                 {
-                    FilterItemList(ItemType.HeavyArmor);
+                    FilterItemList(ItemTypes.HeavyArmor);
                 }
-                else if (object.Equals(itemType, ItemType.Shield))
+                else if (object.Equals(itemType, ItemTypes.Shield))
                 {
-                    FilterItemList(ItemType.Shield);
+                    FilterItemList(ItemTypes.Shield);
                 }
                 else
                 {
@@ -75,7 +59,7 @@ namespace DnDMobile.Pages.Equipment
         }
 
 
-        private void FilterItemList(ItemType type)
+        private void FilterItemList(ItemTypes type)
         {
             List<Armor> filterMatches = new List<Armor>();
             foreach (Armor armor in armorList)

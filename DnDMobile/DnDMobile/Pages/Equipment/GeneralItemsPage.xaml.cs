@@ -1,5 +1,6 @@
 ﻿using DnDMobile.Classes;
 using DnDMobile.Classes.ItemsFolder;
+using DnDMobile.Classes.ItemsFolder.ItemLists;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -23,26 +24,8 @@ namespace DnDMobile.Pages.Equipment
 
         private void LoadGeneralItems()
         {
-            Items items = new Items();
-            InitializeItems(items.GeneralItems);
-            InitializeItems(items.GeneralItemsAmmunition);
-            InitializeItems(items.GeneralItemsArcaneFocus);
-            InitializeItems(items.GeneralItemsDruidicFocus);
-            InitializeItems(items.GeneralItemsHolySymbol);
-            generalItemList.Sort((x, y) => x.Description.CompareTo(y.Description));
-            ListViewItems.ItemsSource = generalItemList;
-
-            // Update type picker options.
+            ListViewItems.ItemsSource = GeneralItems.All;
             ItemFilterPicker.ItemsSource = StaticVariables.generalTypes;
-        }
-
-
-        private void InitializeItems(List<GeneralItem> generalItems)
-        {
-            foreach (GeneralItem generalItem in generalItems)
-            {
-                generalItemList.Add(generalItem);
-            }
         }
 
 
@@ -52,25 +35,25 @@ namespace DnDMobile.Pages.Equipment
             if (selectedIndex != -1)
             {
                 var itemType = ItemFilterPicker.ItemsSource[selectedIndex];
-                if (object.Equals(itemType, ItemType.Ammunition))
+                if (object.Equals(itemType, ItemTypes.Ammunition))
                 {
-                    FilterItemList(ItemType.Ammunition);
+                    FilterItemList(ItemTypes.Ammunition);
                 }
-                else if (object.Equals(itemType, ItemType.ArcaneFocus))
+                else if (object.Equals(itemType, ItemTypes.ArcaneFocus))
                 {
-                    FilterItemList(ItemType.ArcaneFocus);
+                    FilterItemList(ItemTypes.ArcaneFocus);
                 }
-                else if (object.Equals(itemType, ItemType.DruidicFocus))
+                else if (object.Equals(itemType, ItemTypes.DruidicFocus))
                 {
-                    FilterItemList(ItemType.DruidicFocus);
+                    FilterItemList(ItemTypes.DruidicFocus);
                 }
-                else if (object.Equals(itemType, ItemType.GeneralGood))
+                else if (object.Equals(itemType, ItemTypes.GeneralGood))
                 {
-                    FilterItemList(ItemType.GeneralGood);
+                    FilterItemList(ItemTypes.GeneralGood);
                 }
-                else if (object.Equals(itemType, ItemType.HolySymbol))
+                else if (object.Equals(itemType, ItemTypes.HolySymbol))
                 {
-                    FilterItemList(ItemType.HolySymbol);
+                    FilterItemList(ItemTypes.HolySymbol);
                 }
                 else
                 {
@@ -81,7 +64,7 @@ namespace DnDMobile.Pages.Equipment
         }
 
 
-        private void FilterItemList(ItemType type)
+        private void FilterItemList(ItemTypes type)
         {
             List<GeneralItem> filterMatches = new List<GeneralItem>();
             foreach (GeneralItem generalItem in generalItemList)

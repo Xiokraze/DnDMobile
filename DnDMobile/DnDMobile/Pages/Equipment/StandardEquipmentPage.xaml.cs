@@ -1,4 +1,5 @@
 ﻿using DnDMobile.Classes.ItemsFolder;
+using DnDMobile.Classes.ItemsFolder.ItemLists;
 using DnDMobile.Pages.Equipment;
 using System;
 using System.Collections.Generic;
@@ -19,15 +20,14 @@ namespace DnDMobile.Pages
 
         private void LoadMenuListView()
         {
-            Items items = new Items();
             List<MenuListViewItem> menuListViewItems = new List<MenuListViewItem>()
             {
-                new MenuListViewItem("Armor", items.GetNumberOfArmorCount()),
-                new MenuListViewItem("Art", items.GetArtCount()),
-                new MenuListViewItem("Gems", items.GetGemCount()),
-                new MenuListViewItem("General Items", items.GetGeneralItemsCount()),
-                new MenuListViewItem("Trinkets", items.GetTrinketCount()),
-                new MenuListViewItem("Weapons", items.GetNumberOfWeaponsCount())
+                new MenuListViewItem("Armor", ArmorList.Count),
+                new MenuListViewItem("Art", ArtList.Count),
+                new MenuListViewItem("Gems", Gemstones.Count),
+                new MenuListViewItem("General Items", GeneralItems.Count),
+                new MenuListViewItem("Trinkets", Trinkets.Count),
+                new MenuListViewItem("Weapons", Weapons.Count)
             };
             menuListView.ItemsSource = menuListViewItems;
             PageStack.FadeTo(1, 2000);

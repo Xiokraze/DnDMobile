@@ -1,5 +1,6 @@
 ﻿using DnDMobile.Classes;
 using DnDMobile.Classes.ItemsFolder;
+using DnDMobile.Classes.ItemsFolder.ItemLists;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,26 +26,8 @@ namespace DnDMobile.Pages.Equipment
 
         private void InitializeItemLists()
         {
-            Items items = new Items();
-            InitializeItems(items.Art25);
-            InitializeItems(items.Art250);
-            InitializeItems(items.Art750);
-            InitializeItems(items.Art2500);
-            InitializeItems(items.Art7500);
-            artList.Sort((x, y) => x.Description.CompareTo(y.Description));
-            ListViewItems.ItemsSource = artList;
-
-            // Update type picker options.
+            ListViewItems.ItemsSource = ArtList.All;
             ItemFilterPicker.ItemsSource = StaticVariables.artTypes;
-        }
-
-
-        private void InitializeItems(List<Art> artwork)
-        {
-            foreach (Art art in artwork)
-            {
-                artList.Add(art);
-            }
         }
 
 

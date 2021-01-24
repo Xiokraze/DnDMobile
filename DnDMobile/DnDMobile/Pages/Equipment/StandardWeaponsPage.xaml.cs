@@ -1,5 +1,6 @@
 ﻿using DnDMobile.Classes;
 using DnDMobile.Classes.ItemsFolder;
+using DnDMobile.Classes.ItemsFolder.ItemLists;
 using DnDMobile.Pages.Equipment;
 using System;
 using System.Collections.Generic;
@@ -23,25 +24,8 @@ namespace DnDMobile.Pages
 
         private void InitializeItemLists()
         {
-            Items items = new Items();
-            InitializeItems(items.SimpleMeleeWeapons);
-            InitializeItems(items.SimpleRangedWeapons);
-            InitializeItems(items.MartialMeleeWeapons);
-            InitializeItems(items.MartialRangedWeapons);
-            weaponList.Sort((x, y) => x.Description.CompareTo(y.Description));
-            ListViewItems.ItemsSource = weaponList;
-
-            // Update type picker options.
+            ListViewItems.ItemsSource = Weapons.All;
             ItemFilterPicker.ItemsSource = StaticVariables.meleeTypes;
-        }
-
-
-        private void InitializeItems(List<Weapon> weapons)
-        {
-            foreach (Weapon weapon in weapons)
-            {
-                weaponList.Add(weapon);
-            }
         }
 
 
@@ -51,21 +35,21 @@ namespace DnDMobile.Pages
             if (selectedIndex != -1)
             {
                 Object itemType = ItemFilterPicker.ItemsSource[selectedIndex];
-                if (object.Equals(itemType, ItemType.SimpleMelee))
+                if (object.Equals(itemType, ItemTypes.SimpleMelee))
                 {
-                    FilterItemList(ItemType.SimpleMelee);
+                    FilterItemList(ItemTypes.SimpleMelee);
                 }
-                else if (object.Equals(itemType, ItemType.SimpleRanged))
+                else if (object.Equals(itemType, ItemTypes.SimpleRanged))
                 {
-                    FilterItemList(ItemType.SimpleRanged);
+                    FilterItemList(ItemTypes.SimpleRanged);
                 }
-                else if (object.Equals(itemType, ItemType.MartialMelee))
+                else if (object.Equals(itemType, ItemTypes.MartialMelee))
                 {
-                    FilterItemList(ItemType.MartialMelee);
+                    FilterItemList(ItemTypes.MartialMelee);
                 }
-                else if (object.Equals(itemType, ItemType.MartialRanged))
+                else if (object.Equals(itemType, ItemTypes.MartialRanged))
                 {
-                    FilterItemList(ItemType.MartialRanged);
+                    FilterItemList(ItemTypes.MartialRanged);
                 }
                 else
                 {
@@ -76,7 +60,7 @@ namespace DnDMobile.Pages
         }
 
 
-        private void FilterItemList(ItemType type)
+        private void FilterItemList(ItemTypes type)
         {
             List<Weapon> filterMatches = new List<Weapon>();
             foreach (Weapon weapon in weaponList)

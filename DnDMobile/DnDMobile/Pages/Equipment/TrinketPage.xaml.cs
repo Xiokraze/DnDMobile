@@ -1,4 +1,4 @@
-﻿using DnDMobile.Classes.ItemsFolder;
+﻿using DnDMobile.Classes.ItemsFolder.ItemLists;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,8 +10,7 @@ namespace DnDMobile.Pages.Equipment
         public TrinketPage()
         {
             InitializeComponent();
-            Items items = new Items();
-            ListViewTrinkets.ItemsSource = items.GeneralItemsTrinkets;
+            ListViewTrinkets.ItemsSource = Trinkets.All;
             PageStack.FadeTo(1, 2000);
         }
     }

@@ -1,5 +1,6 @@
 ﻿using DnDMobile.Classes;
 using DnDMobile.Classes.ItemsFolder;
+using DnDMobile.Classes.ItemsFolder.ItemLists;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -22,27 +23,8 @@ namespace DnDMobile.Pages.Equipment
 
         private void InitializeItemLists()
         {
-            Items items = new Items();
-            InitializeItems(items.Gems10);
-            InitializeItems(items.Gems50);
-            InitializeItems(items.Gems100);
-            InitializeItems(items.Gems500);
-            InitializeItems(items.Gems1000);
-            InitializeItems(items.Gems5000);
-            gemList.Sort((x, y) => x.Name.CompareTo(y.Name));
-            ListViewItems.ItemsSource = gemList;
-
-            // Update type picker options.
+            ListViewItems.ItemsSource = Gemstones.All;
             ItemFilterPicker.ItemsSource = StaticVariables.gemTypes;
-        }
-
-
-        private void InitializeItems(List<Gem> gems)
-        {
-            foreach (Gem gem in gems)
-            {
-                gemList.Add(gem);
-            }
         }
 
 
