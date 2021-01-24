@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Text;
-
-namespace DnDMobile.Classes
+﻿namespace DnDMobile.Classes
 {
     public class Spell
     {
