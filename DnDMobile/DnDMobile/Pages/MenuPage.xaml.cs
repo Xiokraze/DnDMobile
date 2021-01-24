@@ -27,7 +27,7 @@ namespace DnDMobile.Pages
             {
                  new MenuListViewItem("Standard Items", itemCount, MenuOptions.StandardItems),
                  new MenuListViewItem("Random Generators", MenuOptions.RandomGenerators),
-                 new MenuListViewItem("Spells", spells.GetSpellCount(), MenuOptions.Spells)
+                 new MenuListViewItem("Spells", Spells.Count, MenuOptions.Spells)
             };
             menuListView.ItemsSource = menuListViewItems;
             PageStack.FadeTo(1, 2000);

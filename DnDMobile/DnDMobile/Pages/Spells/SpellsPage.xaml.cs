@@ -10,12 +10,11 @@ namespace DnDMobile.Pages
     public partial class SpellsPage : ContentPage
     {
         private Spells spells = new Spells();
-        private List<Spell> spellList = new List<Spell>();
+        private List<Spell> spellList = Spells.All;
 
         public SpellsPage()
         {
             InitializeComponent();
-            spellList = spells.GetSpellList();
             ListViewSpells.ItemsSource = spellList;
             PageStack.FadeTo(1, 2000);
         }
@@ -51,7 +50,7 @@ namespace DnDMobile.Pages
             SpellConcentrationPicker.SelectedIndex = -1;
             SpellCastableByPicker.SelectedIndex = -1;
             SpellSourcePicker.SelectedIndex = -1;
-            spellList = spells.GetSpellList();
+            spellList = Spells.All;
             ListViewSpells.ItemsSource = spellList;
         }
 
@@ -63,7 +62,7 @@ namespace DnDMobile.Pages
         /// </summary>
         private void SpellFilterSelected(object sender, EventArgs e)
         {
-            spellList = spells.GetSpellList();
+            spellList = Spells.All;
             ApplySpellLevelFilter();
             ApplySpellSchoolFilter();
             ApplySpellRitualFilter();
@@ -232,7 +231,7 @@ namespace DnDMobile.Pages
                 switch (spellLevel)
                 {
                     case "Show All":
-                        spellList = spells.GetSpellList();
+                        spellList = Spells.All;
                         break;
                     case "Cantrip":
                         spellList = spells.FilterSpellsByLevel("0", spellList);
@@ -277,7 +276,7 @@ namespace DnDMobile.Pages
             SearchBar searchBar = (SearchBar)sender;
             string searchText = searchBar.Text.ToLower();
             List<Spell> matchedSpells = new List<Spell>();
-            foreach (Spell spell in spells.GetSpellList())
+            foreach (Spell spell in Spells.All)
             {
                 bool nameFound = false;
 

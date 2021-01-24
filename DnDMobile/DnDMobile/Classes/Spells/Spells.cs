@@ -7,22 +7,12 @@ namespace DnDMobile.Classes
 {
     class Spells
     {
-        private List<Spell> SpellList { get; } = FetchSpells();
+        public static List<Spell> All { get; } = FetchSpells();
+
+        public static int Count { get; } = All.Count;
 
 
         public Spells() { }
-
-
-        public List<Spell> GetSpellList()
-        {
-            return SpellList;
-        }
-
-
-        public int GetSpellCount()
-        {
-            return SpellList.Count;
-        }
 
 
         public List<Spell> FilterSpellsByLevel(string spellLevel, List<Spell> spellList)

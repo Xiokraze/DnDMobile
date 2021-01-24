@@ -20,7 +20,7 @@ namespace DnDMobile.Classes.ItemsFolder
             }
             else if (roll >= 51 && roll <= 60)
             {
-                List<Spell> spells = spellList.FilterSpellsByLevel("0", spellList.GetSpellList());
+                List<Spell> spells = spellList.FilterSpellsByLevel("0", Spells.All);
                 int spellIndex = rollDice.RollRandom(1, spells.Count) - 1;
                 result = "Spell scroll of " + spells[spellIndex].Name;
             }
@@ -30,13 +30,13 @@ namespace DnDMobile.Classes.ItemsFolder
             }
             else if (roll >= 71 && roll <= 90)
             {
-                List<Spell> spells = spellList.FilterSpellsByLevel("1", spellList.GetSpellList());
+                List<Spell> spells = spellList.FilterSpellsByLevel("1", Spells.All);
                 int spellIndex = rollDice.RollRandom(1, spells.Count) - 1;
                 result = "Spell scroll of " + spells[spellIndex].Name;
             }
             else if (roll >= 91 && roll <= 94)
             {
-                List<Spell> spells = spellList.FilterSpellsByLevel("2", spellList.GetSpellList());
+                List<Spell> spells = spellList.FilterSpellsByLevel("2", Spells.All);
                 int spellIndex = rollDice.RollRandom(1, spells.Count) - 1;
                 result = "Spell scroll of " + spells[spellIndex].Name;
             }
