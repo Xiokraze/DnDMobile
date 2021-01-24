@@ -26,11 +26,11 @@ namespace DnDMobile.Pages.Equipment
         private void InitializeItemLists()
         {
             Items items = new Items();
-            InitializeItems(items.GetArt25());
-            InitializeItems(items.GetArt250());
-            InitializeItems(items.GetArt750());
-            InitializeItems(items.GetArt2500());
-            InitializeItems(items.GetArt7500());
+            InitializeItems(items.Art25);
+            InitializeItems(items.Art250);
+            InitializeItems(items.Art750);
+            InitializeItems(items.Art2500);
+            InitializeItems(items.Art7500);
             artList.Sort((x, y) => x.Description.CompareTo(y.Description));
             ListViewItems.ItemsSource = artList;
 

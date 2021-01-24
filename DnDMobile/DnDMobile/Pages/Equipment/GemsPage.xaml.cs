@@ -23,12 +23,12 @@ namespace DnDMobile.Pages.Equipment
         private void InitializeItemLists()
         {
             Items items = new Items();
-            InitializeItems(items.GetGems10());
-            InitializeItems(items.GetGems50());
-            InitializeItems(items.GetGems100());
-            InitializeItems(items.GetGems500());
-            InitializeItems(items.GetGems1000());
-            InitializeItems(items.GetGems5000());
+            InitializeItems(items.Gems10);
+            InitializeItems(items.Gems50);
+            InitializeItems(items.Gems100);
+            InitializeItems(items.Gems500);
+            InitializeItems(items.Gems1000);
+            InitializeItems(items.Gems5000);
             gemList.Sort((x, y) => x.Name.CompareTo(y.Name));
             ListViewItems.ItemsSource = gemList;
 

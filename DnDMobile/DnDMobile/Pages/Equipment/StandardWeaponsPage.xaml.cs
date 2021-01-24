@@ -24,10 +24,10 @@ namespace DnDMobile.Pages
         private void InitializeItemLists()
         {
             Items items = new Items();
-            InitializeItems(items.GetSimpleMeleeWeapons());
-            InitializeItems(items.GetSimpleRangedWeapons());
-            InitializeItems(items.GetMartialMeleeWeapons());
-            InitializeItems(items.GetMartialRangedWeapons());
+            InitializeItems(items.SimpleMeleeWeapons);
+            InitializeItems(items.SimpleRangedWeapons);
+            InitializeItems(items.MartialMeleeWeapons);
+            InitializeItems(items.MartialRangedWeapons);
             weaponList.Sort((x, y) => x.Description.CompareTo(y.Description));
             ListViewItems.ItemsSource = weaponList;
 

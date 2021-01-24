@@ -11,7 +11,7 @@ namespace DnDMobile.Pages.Equipment
         {
             InitializeComponent();
             Items items = new Items();
-            ListViewTrinkets.ItemsSource = items.GetGeneralItemsTrinkets();
+            ListViewTrinkets.ItemsSource = items.GeneralItemsTrinkets;
             PageStack.FadeTo(1, 2000);
         }
     }

@@ -4,254 +4,42 @@ namespace DnDMobile.Classes.ItemsFolder
 {
     class Items
     {
-        private List<Armor> StandardLightArmor { get; } = FetchStandardLightArmor();
-        private List<Armor> StandardMediumArmor { get; } = FetchStandardMediumArmor();
-        private List<Armor> StandardHeavyArmor { get; } = FetchStandardHeavyArmor();
-        private List<Armor> StandardShields { get; } = FetchStandardShilelds();
-        private List<Weapon> SimpleMeleeWeapons { get; } = FetchSimpleMeleeWeapons();
-        private List<Weapon> SimpleRangedWeapons { get; } = FetchSimpleRangedWeapons();
-        private List<Weapon> MartialMeleeWeapons { get; } = FetchMartialMeleeWeapons();
-        private List<Weapon> MartialRangedWeapons { get; } = FetchMartialRangedWeapons();
-        private List<GeneralItem> GeneralItems { get; } = FetchGeneralItems();
-        private List<GeneralItem> GeneralItemsAmmunition { get; } = FetchGeneralItemsAmmunition();
-        private List<GeneralItem> GeneralItemsArcaneFocus { get; } = FetchGeneralItemsArcaneFocus();
-        private List<GeneralItem> GeneralItemsDruidicFocus { get; } = FetchGeneralItemsDruidicFocus();
-        private List<GeneralItem> GeneralItemsHolySymbol { get; } = FetchGeneralItemsHolySymbol();
-        private List<string> GeneralItemsTrinkets { get; } = FetchGeneralItemsTrinkets();
-        private List<Art> Art25 { get; set; } = FetchArt25();
-        private List<Art> Art250 { get; set; } = FetchArt250();
-        private List<Art> Art750 { get; set; } = FetchArt750();
-        private List<Art> Art2500 { get; set; } = FetchArt2500();
-        private List<Art> Art7500 { get; set; } = FetchArt7500();
-        private List<Gem> Gems10 { get; set; } = FetchGems10();
-        private List<Gem> Gems50 { get; set; } = FetchGems50();
-        private List<Gem> Gems100 { get; set; } = FetchGems100();
-        private List<Gem> Gems500 { get; set; } = FetchGems500();
-        private List<Gem> Gems1000 { get; set; } = FetchGems1000();
-        private List<Gem> Gems5000 { get; set; } = FetchGems5000();
+        public List<Armor> StandardLightArmor { get; } = FetchStandardLightArmor();
+        public List<Armor> StandardMediumArmor { get; } = FetchStandardMediumArmor();
+        public List<Armor> StandardHeavyArmor { get; } = FetchStandardHeavyArmor();
+        public List<Armor> StandardShields { get; } = FetchStandardShilelds();
+        public List<Weapon> SimpleMeleeWeapons { get; } = FetchSimpleMeleeWeapons();
+        public List<Weapon> SimpleRangedWeapons { get; } = FetchSimpleRangedWeapons();
+        public List<Weapon> MartialMeleeWeapons { get; } = FetchMartialMeleeWeapons();
+        public List<Weapon> MartialRangedWeapons { get; } = FetchMartialRangedWeapons();
+        public List<GeneralItem> GeneralItems { get; } = FetchGeneralItems();
+        public List<GeneralItem> GeneralItemsAmmunition { get; } = FetchGeneralItemsAmmunition();
+        public List<GeneralItem> GeneralItemsArcaneFocus { get; } = FetchGeneralItemsArcaneFocus();
+        public List<GeneralItem> GeneralItemsDruidicFocus { get; } = FetchGeneralItemsDruidicFocus();
+        public List<GeneralItem> GeneralItemsHolySymbol { get; } = FetchGeneralItemsHolySymbol();
+        public List<string> GeneralItemsTrinkets { get; } = FetchGeneralItemsTrinkets();
+        public List<Art> Art25 { get; } = FetchArt25();
+        public List<Art> Art250 { get; } = FetchArt250();
+        public List<Art> Art750 { get; } = FetchArt750();
+        public List<Art> Art2500 { get; } = FetchArt2500();
+        public List<Art> Art7500 { get; } = FetchArt7500();
+        public List<Gem> Gems10 { get; } = FetchGems10();
+        public List<Gem> Gems50 { get; } = FetchGems50();
+        public List<Gem> Gems100 { get; } = FetchGems100();
+        public List<Gem> Gems500 { get; } = FetchGems500();
+        public List<Gem> Gems1000 { get; } = FetchGems1000();
+        public List<Gem> Gems5000 { get; } = FetchGems5000();
 
         public Items() { }
 
 
-        public int GetNumberOfWeaponsCount()
-        {
-            int simpleMeleeCount = SimpleMeleeWeapons.Count;
-            int simpleRangedCount = SimpleRangedWeapons.Count;
-            int martialMeleeCount = MartialMeleeWeapons.Count;
-            int martialRangedCount = MartialRangedWeapons.Count;
-            return simpleMeleeCount + simpleRangedCount + martialMeleeCount + martialRangedCount;
-        }
-
-
-        public int GetNumberOfArmorCount()
-        {
-            int lightArmorCount = StandardLightArmor.Count;
-            int mediumArmorCount = StandardMediumArmor.Count;
-            int heavyArmorCount = StandardHeavyArmor.Count;
-            int shieldCount = StandardShields.Count;
-            return lightArmorCount + mediumArmorCount + heavyArmorCount + shieldCount;
-        }
-
-
-        public int GetGeneralItemsCount()
-        {
-            int generalItemCount = GeneralItems.Count;
-            int ammunitionCount = GeneralItemsAmmunition.Count;
-            int arcaneFocusCount = GeneralItemsArcaneFocus.Count;
-            int druidicFocusCount = GeneralItemsDruidicFocus.Count;
-            int holySymbolCount = GeneralItemsHolySymbol.Count;
-            return generalItemCount + ammunitionCount + arcaneFocusCount + druidicFocusCount + holySymbolCount;
-        }
-
-
-        public int GetEquipmentCount()
-        {
-            int weaponsCount = GetNumberOfWeaponsCount();
-            int armorCount = GetNumberOfArmorCount();
-            int generalItemsCount = GetGeneralItemsCount();
-            int trinketCount = GetTrinketCount();
-            int artCount = GetArtCount();
-            int gemCount = GetGemCount();
-            return weaponsCount + armorCount + generalItemsCount + trinketCount + artCount + gemCount;
-        }
-
-
-        public int GetTrinketCount()
-        {
-            return GetGeneralItemsTrinkets().Count;
-        }
-
-
-        public int GetArtCount()
-        {
-            int art25Count = Art25.Count;
-            int art250Count = Art250.Count;
-            int art750Count = Art750.Count;
-            int art2500Count = Art2500.Count;
-            int art7500Count = Art7500.Count;
-            return art25Count + art250Count + art750Count + art2500Count + art7500Count;
-        }
-
-
-        public int GetGemCount()
-        {
-            int get10Count = Gems10.Count;
-            int get50Count = Gems50.Count;
-            int get100Count = Gems100.Count;
-            int get500Count = Gems500.Count;
-            int get1000Count = Gems5000.Count;
-            int get5000Count = Gems5000.Count;
-            return get10Count + get50Count + get100Count + get500Count + get1000Count + get5000Count;
-        }
-
-
-        public List<Armor> GetStandardLightArmor()
-        {
-            return StandardLightArmor;
-        }
-
-
-        public List<Armor> GetStandardMediumArmor()
-        {
-            return StandardMediumArmor;
-        }
-
-
-        public List<Armor> GetStandardHeavyArmor()
-        {
-            return StandardHeavyArmor;
-        }
-
-
-        public List<Armor> GetStandardShields()
-        {
-            return StandardShields;
-        }
-
-
-        public List<Weapon> GetSimpleMeleeWeapons()
-        {
-            return SimpleMeleeWeapons;
-        }
-
-
-        public List<Weapon> GetSimpleRangedWeapons()
-        {
-            return SimpleRangedWeapons;
-        }
-
-
-        public List<Weapon> GetMartialMeleeWeapons()
-        {
-            return MartialMeleeWeapons;
-        }
-
-
-        public List<Weapon> GetMartialRangedWeapons()
-        {
-            return MartialRangedWeapons;
-        }
-
-
-        public List<GeneralItem> GetGeneralItems()
-        {
-            return GeneralItems;
-        }
-
-
-        public List<GeneralItem> GetGeneralItemsAmmunition()
-        {
-            return GeneralItemsAmmunition;
-        }
-
-
-        public List<GeneralItem> GetGeneralItemsArcaneFocusn()
-        {
-            return GeneralItemsArcaneFocus;
-        }
-
-
-        public List<GeneralItem> GetGeneralItemsDruidicFocus()
-        {
-            return GeneralItemsDruidicFocus;
-        }
-
-
-        public List<GeneralItem> GetGeneralItemsHolySymbol()
-        {
-            return GeneralItemsHolySymbol;
-        }
-
-
-        public List<string> GetGeneralItemsTrinkets()
-        {
-            return GeneralItemsTrinkets;
-        }
-
-
-        public List<Art> GetArt25()
-        {
-            return Art25;
-        }
-
-
-        public List<Art> GetArt250()
-        {
-            return Art250;
-        }
-
-        public List<Art> GetArt750()
-        {
-            return Art750;
-        }
-
-
-        public List<Art> GetArt2500()
-        {
-            return Art2500;
-        }
-
-
-        public List<Art> GetArt7500()
-        {
-            return Art7500;
-        }
-
-
-        public List<Gem> GetGems10()
-        {
-            return Gems10;
-        }
-
-
-        public List<Gem> GetGems50()
-        {
-            return Gems50;
-        }
-
-
-        public List<Gem> GetGems100()
-        {
-            return Gems100;
-        }
-
-
-        public List<Gem> GetGems500()
-        {
-            return Gems500;
-        }
-
-
-        public List<Gem> GetGems1000()
-        {
-            return Gems1000;
-        }
-
-
-        public List<Gem> GetGems5000()
-        {
-            return Gems5000;
-        }
+        public int GetNumberOfWeaponsCount() { return SimpleMeleeWeapons.Count + SimpleRangedWeapons.Count + MartialMeleeWeapons.Count + MartialRangedWeapons.Count; }
+        public int GetNumberOfArmorCount() { return StandardLightArmor.Count + StandardMediumArmor.Count + StandardHeavyArmor.Count + StandardShields.Count; }
+        public int GetGeneralItemsCount() { return GeneralItems.Count + GeneralItemsAmmunition.Count + GeneralItemsArcaneFocus.Count + GeneralItemsDruidicFocus.Count + GeneralItemsHolySymbol.Count; }
+        public int GetEquipmentCount() { return GetNumberOfWeaponsCount() + GetNumberOfArmorCount() + GetGeneralItemsCount() + GetTrinketCount() + GetArtCount() + GetGemCount(); }
+        public int GetTrinketCount() { return GeneralItemsTrinkets.Count; }
+        public int GetArtCount() { return Art25.Count + Art250.Count + Art750.Count + Art2500.Count + Art7500.Count; }
+        public int GetGemCount() { return Gems10.Count + Gems50.Count + Gems100.Count + Gems500.Count + Gems1000.Count + Gems5000.Count; }
 
 
         private static List<Armor> FetchStandardLightArmor()
@@ -389,7 +177,7 @@ namespace DnDMobile.Classes.ItemsFolder
                 new GeneralItem("Barrel",  "2 gp", "70 lbs", "General Good"),
                 new GeneralItem("Basket",  "4 sp", "2 lbs", "General Good"),
                 new GeneralItem("Bedroll", "1 gp", "7 lbs", "General Good"),
-                new GeneralItem("Bell",    "1 gp", "-", "General Good"),
+                new GeneralItem("Bell", "1 gp", "-", "General Good"),
                 new GeneralItem("Blanket", "5 sp", "3 lbs", "General Good"),
                 new GeneralItem("Block and tackle", "1 gp", "5 lbs", "General Good"),
                 new GeneralItem("Book", "25 gp", "5 lbs", "General Good"),

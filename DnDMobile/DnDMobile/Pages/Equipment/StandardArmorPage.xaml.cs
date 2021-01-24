@@ -23,10 +23,10 @@ namespace DnDMobile.Pages.Equipment
         private void InitializeItemLists()
         {
             Items items = new Items();
-            InitializeItems(items.GetStandardLightArmor());
-            InitializeItems(items.GetStandardMediumArmor());
-            InitializeItems(items.GetStandardHeavyArmor());
-            InitializeItems(items.GetStandardShields());
+            InitializeItems(items.StandardLightArmor);
+            InitializeItems(items.StandardMediumArmor);
+            InitializeItems(items.StandardHeavyArmor);
+            InitializeItems(items.StandardShields);
             armorList.Sort((x, y) => x.Description.CompareTo(y.Description));
             ListViewItems.ItemsSource = armorList;
 

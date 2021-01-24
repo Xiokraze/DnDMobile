@@ -24,11 +24,11 @@ namespace DnDMobile.Pages.Equipment
         private void LoadGeneralItems()
         {
             Items items = new Items();
-            InitializeItems(items.GetGeneralItems());
-            InitializeItems(items.GetGeneralItemsAmmunition());
-            InitializeItems(items.GetGeneralItemsArcaneFocusn());
-            InitializeItems(items.GetGeneralItemsDruidicFocus());
-            InitializeItems(items.GetGeneralItemsHolySymbol());
+            InitializeItems(items.GeneralItems);
+            InitializeItems(items.GeneralItemsAmmunition);
+            InitializeItems(items.GeneralItemsArcaneFocus);
+            InitializeItems(items.GeneralItemsDruidicFocus);
+            InitializeItems(items.GeneralItemsHolySymbol);
             generalItemList.Sort((x, y) => x.Description.CompareTo(y.Description));
             ListViewItems.ItemsSource = generalItemList;
 
