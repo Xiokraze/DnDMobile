@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DnDMobile.Classes
+﻿namespace DnDMobile.Classes
 {
     public enum MenuOptions
     {
@@ -28,5 +24,4 @@ namespace DnDMobile.Classes
         SimpleMelee,
         SimpleRanged
     }
-
 }
