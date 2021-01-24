@@ -9,13 +9,13 @@ namespace DnDMobile.Classes
         public static Random randomNumber = new Random();
 
         // Weapons.
-        public static ItemType[] meleeTypes = { ItemType.SimpleMelee, ItemType.SimpleRanged, ItemType.MartialMelee, ItemType.MartialRanged, ItemType.Reset };
+        public static ItemTypes[] meleeTypes = { ItemTypes.SimpleMelee, ItemTypes.SimpleRanged, ItemTypes.MartialMelee, ItemTypes.MartialRanged, ItemTypes.Reset };
 
         //Armor.
-        public static ItemType[] armorTypes = { ItemType.LightArmor, ItemType.MediumArmor, ItemType.HeavyArmor, ItemType.Shield, ItemType.Reset };
+        public static ItemTypes[] armorTypes = { ItemTypes.LightArmor, ItemTypes.MediumArmor, ItemTypes.HeavyArmor, ItemTypes.Shield, ItemTypes.Reset };
 
         // General Items.
-        public static ItemType[] generalTypes = { ItemType.Ammunition, ItemType.ArcaneFocus, ItemType.DruidicFocus, ItemType.GeneralGood, ItemType.HolySymbol, ItemType.Reset };
+        public static ItemTypes[] generalTypes = { ItemTypes.Ammunition, ItemTypes.ArcaneFocus, ItemTypes.DruidicFocus, ItemTypes.GeneralGood, ItemTypes.HolySymbol, ItemTypes.Reset };
 
         // Gems.
         public static string gp10 = "10 gp";
