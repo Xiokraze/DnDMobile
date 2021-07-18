@@ -9,8 +9,12 @@
         <ScrollView Orientation="Vertical">
             <StackLayout Orientation="Vertical">
                 <Label Text="Spell Info" Style="{StaticResource labelHeaderStyle}" />
-                <Grid Padding="5">
+                <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
@@ -95,15 +99,15 @@
                     <BoxView Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Color="#290000" />
                     <Label Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource labelGridDataStyle}" Text="{Binding AtHigherLevel, StringFormat='{0:N}'}" />
 
-                    <BoxView Grid.Row="12" Grid.Column="0" Color="#290000" />
-                    <Label Grid.Row="12" Grid.Column="0" Style="{StaticResource labelGridHeaderStyle}" Text="Source" />
-                    <BoxView Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Color="#290000" />
-                    <Label Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource labelGridDataStyle}" Text="{Binding Source, StringFormat='{0:N}'}" />
-
                     <BoxView Grid.Row="13" Grid.Column="0" Color="#290000" />
-                    <Label Grid.Row="13" Grid.Column="0" Style="{StaticResource labelGridHeaderStyle}" Text="Description" />
+                    <Label Grid.Row="13" Grid.Column="0" Style="{StaticResource labelGridHeaderStyle}" Text="Source" />
                     <BoxView Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" Color="#290000" />
-                    <Label Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource labelGridDataStyle}" Text="{Binding Description, StringFormat='{0:N}'}" />
+                    <Label Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource labelGridDataStyle}" Text="{Binding Source, StringFormat='{0:N}'}" />
+
+                    <BoxView Grid.Row="14" Grid.Column="0" Color="#290000" />
+                    <Label Grid.Row="14" Grid.Column="0" Style="{StaticResource labelGridHeaderStyle}" Text="Description" />
+                    <BoxView Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="2" Color="#290000" />
+                    <Label Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource labelGridDataStyle}" Text="{Binding Description, StringFormat='{0:N}'}" />
                 </Grid>
             </StackLayout>
         </ScrollView>
