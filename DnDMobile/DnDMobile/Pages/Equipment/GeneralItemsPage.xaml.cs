@@ -11,9 +11,6 @@ namespace DnDMobile.Pages.Equipment
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GeneralItemsPage : ContentPage
     {
-        private readonly List<GeneralItem> generalItemList = new List<GeneralItem>();
-
-
         public GeneralItemsPage()
         {
             InitializeComponent();
@@ -57,7 +54,7 @@ namespace DnDMobile.Pages.Equipment
                 }
                 else
                 {
-                    ListViewItems.ItemsSource = generalItemList;
+                    ListViewItems.ItemsSource = GeneralItems.All;
                     ItemFilterPicker.SelectedIndex = -1;
                 }
             }
@@ -67,7 +64,7 @@ namespace DnDMobile.Pages.Equipment
         private void FilterItemList(ItemTypes type)
         {
             List<GeneralItem> filterMatches = new List<GeneralItem>();
-            foreach (GeneralItem generalItem in generalItemList)
+            foreach (GeneralItem generalItem in GeneralItems.All)
             {
                 if (object.Equals(type, generalItem.Type))
                 {
@@ -92,7 +89,7 @@ namespace DnDMobile.Pages.Equipment
             string searchText = searchBar.Text.ToLower();
             if (string.IsNullOrEmpty(searchText))
             {
-                FilterList();
+                ListViewItems.ItemsSource = GeneralItems.All;
             }
             else
             {
@@ -103,22 +100,15 @@ namespace DnDMobile.Pages.Equipment
 
         private void FilterList(string searchText = "")
         {
-            if (string.IsNullOrEmpty(searchText))
+            List<GeneralItem> tempList = new List<GeneralItem>();
+            foreach (GeneralItem item in GeneralItems.All)
             {
-                ListViewItems.ItemsSource = generalItemList;
-            }
-            else
-            {
-                List<GeneralItem> tempList = new List<GeneralItem>();
-                foreach (GeneralItem item in generalItemList)
+                if (item.Description.ToLower().Contains(searchText))
                 {
-                    if (item.Description.ToLower().Contains(searchText))
-                    {
-                        tempList.Add(item);
-                    }
+                    tempList.Add(item);
                 }
-                ListViewItems.ItemsSource = tempList;
             }
+            ListViewItems.ItemsSource = tempList;
         }
     }
 }
