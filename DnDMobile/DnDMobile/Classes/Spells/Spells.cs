@@ -5,118 +5,9 @@ using System.Reflection;
 
 namespace DnDMobile.Classes
 {
-    class Spells
-    {
-        public static List<Spell> All { get; } = FetchSpells();
-
-        public static int Count { get; } = All.Count;
-
-
-        public Spells() { }
-
-
-        public List<Spell> FilterSpellsByLevel(string spellLevel, List<Spell> spellList)
-        {
-            List<Spell> spellMatches = new List<Spell>();
-            spellList.ForEach(x =>
-            {
-                if (x.Level == spellLevel)
-                {
-                    spellMatches.Add(x);
-                }
-            });
-            return spellMatches;
-        }
-
-
-        public List<Spell> FilterSpellsByCastableBy(string spellCastableBy, List<Spell> spellList)
-        {
-            List<Spell> spellMatches = new List<Spell>();
-            spellList.ForEach(x =>
-            {
-                if (x.CastableBy.ToLower().Contains(spellCastableBy.ToLower()))
-                {
-                    spellMatches.Add(x);
-                }
-            });
-            return spellMatches;
-        }
-
-
-        public List<Spell> FilterSpellsBySchool(string spellSchool, List<Spell> spellList)
-        {
-            List<Spell> spellMatches = new List<Spell>();
-            spellList.ForEach(x =>
-            {
-                if (x.School == spellSchool)
-                {
-                    spellMatches.Add(x);
-                }
-            });
-            return spellMatches;
-        }
-
-
-        public List<Spell> FilterSpellsByConcentration(string spellConcentration, List<Spell> spellList)
-        {
-            List<Spell> spellMatches = new List<Spell>();
-            spellList.ForEach(x =>
-            {
-                if (x.Concentration == spellConcentration)
-                {
-                    spellMatches.Add(x);
-                }
-            });
-            return spellMatches;
-        }
-
-
-        public List<Spell> FilterSpellsByRitual(string spellRitual, List<Spell> spellList)
-        {
-            List<Spell> spellMatches = new List<Spell>();
-            spellList.ForEach(x =>
-            {
-                if (x.Ritual == spellRitual)
-                {
-                    spellMatches.Add(x);
-                }
-            });
-            return spellMatches;
-        }
-
-
-        public List<Spell> FilterSpellsBySource(string spellSource, List<Spell> spellList)
-        {
-            List<Spell> spellMatches = new List<Spell>();
-            spellList.ForEach(x =>
-            {
-                if (x.Source.ToLower().Contains(spellSource.ToLower()))
-                {
-                    spellMatches.Add(x);
-                }
-            });
-            return spellMatches;
-        }
-
-
-        private static List<Spell> FetchSpells()
-        {
-            //List<Spell> spellList = new List<Spell>();
-            //var assembly = Assembly.GetExecutingAssembly();
-            //using (Stream stream = assembly.GetManifestResourceStream("DnDMobile.completedSpells.txt"))
-            //using (StreamReader reader = new StreamReader(stream))
-            //{
-            //    string line;
-            //    while ((line = reader.ReadLine()) != null)
-            //    {
-            //        Spell spell = JsonConvert.DeserializeObject<Spell>(line);
-            //        spellList.Add(spell);
-            //    }
-            //}
-            //return spellList;
-
-            return new List<Spell>()
-            {
+	class Spells
+	{
+		public static List<Spell> All = new List<Spell>() {
 				new Spell()
 				{
 					Name = "Abi-Dalzim's Horrid Wilting",
@@ -8722,6 +8613,113 @@ namespace DnDMobile.Classes
 					Description = "You create a magical zone that guards against deception in a 15- foot-radius sphere centered on a point of your choice within range. Until the spell ends, a creature that enters the spell’s area for the first time on a turn or starts its turn there must make a Charisma saving throw. On a failed save, a creature can’t speak a deliberate lie while in the radius. You know whether each creature succeeds or fails on its saving throw. An affected creature is aware of the spell and can thus avoid answering questions to which it would normally respond with a lie. Such creatures can be evasive in its answers as long as it remains within the boundaries of the truth. "
 				},
 			};
+	
+
+        public static int Count { get; } = All.Count;
+
+
+        public Spells() { }
+
+
+        public List<Spell> FilterSpellsByLevel(string spellLevel, List<Spell> spellList)
+        {
+            List<Spell> spellMatches = new List<Spell>();
+            spellList.ForEach(x =>
+            {
+                if (x.Level == spellLevel)
+                {
+                    spellMatches.Add(x);
+                }
+            });
+            return spellMatches;
         }
+
+
+        public List<Spell> FilterSpellsByCastableBy(string spellCastableBy, List<Spell> spellList)
+        {
+            List<Spell> spellMatches = new List<Spell>();
+            spellList.ForEach(x =>
+            {
+                if (x.CastableBy.ToLower().Contains(spellCastableBy.ToLower()))
+                {
+                    spellMatches.Add(x);
+                }
+            });
+            return spellMatches;
+        }
+
+
+        public List<Spell> FilterSpellsBySchool(string spellSchool, List<Spell> spellList)
+        {
+            List<Spell> spellMatches = new List<Spell>();
+            spellList.ForEach(x =>
+            {
+                if (x.School == spellSchool)
+                {
+                    spellMatches.Add(x);
+                }
+            });
+            return spellMatches;
+        }
+
+
+        public List<Spell> FilterSpellsByConcentration(string spellConcentration, List<Spell> spellList)
+        {
+            List<Spell> spellMatches = new List<Spell>();
+            spellList.ForEach(x =>
+            {
+                if (x.Concentration == spellConcentration)
+                {
+                    spellMatches.Add(x);
+                }
+            });
+            return spellMatches;
+        }
+
+
+        public List<Spell> FilterSpellsByRitual(string spellRitual, List<Spell> spellList)
+        {
+            List<Spell> spellMatches = new List<Spell>();
+            spellList.ForEach(x =>
+            {
+                if (x.Ritual == spellRitual)
+                {
+                    spellMatches.Add(x);
+                }
+            });
+            return spellMatches;
+        }
+
+
+        public List<Spell> FilterSpellsBySource(string spellSource, List<Spell> spellList)
+        {
+            List<Spell> spellMatches = new List<Spell>();
+            spellList.ForEach(x =>
+            {
+                if (x.Source.ToLower().Contains(spellSource.ToLower()))
+                {
+                    spellMatches.Add(x);
+                }
+            });
+            return spellMatches;
+        }
+
+
+		//private static List<Spell> FetchSpells()
+		//{
+		//	List<Spell> spellList = new List<Spell>();
+		//	var assembly = Assembly.GetExecutingAssembly();
+		//	using (Stream stream = assembly.GetManifestResourceStream("DnDMobile.completedSpells.txt"))
+		//	using (StreamReader reader = new StreamReader(stream))
+		//	{
+		//		string line;
+		//		while ((line = reader.ReadLine()) != null)
+		//		{
+		//			Spell spell = JsonConvert.DeserializeObject<Spell>(line);
+		//			spellList.Add(spell);
+		//		}
+		//	}
+		//	return spellList;
+		//}
     }
 }
